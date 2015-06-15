@@ -74,10 +74,12 @@ p {
     padding: 0px;
     -moz-box-shadow: inset 0 0 8px #2b5ea5;
     -webkit-box-shadow: inset 0 0 8px #2b5ea5;
-    box-shadow: inset 0 0 8px #2b5ea5; }
+    box-shadow: inset 0 0 8px #2b5ea5;
+    float: left; }
     .menu-wrap .top-menu-wraper ul {
       list-style: none;
-      height: 60px; }
+      height: 60px;
+      margin-bottom: 0px; }
       .menu-wrap .top-menu-wraper ul li {
         display: inline-block;
         height: 60px;
@@ -100,8 +102,7 @@ p {
             display: block;
             position: absolute;
             top: 100%;
-            margin-left: -2.5%;
-            margin-top: -10px; }
+            margin-left: -2.5%; }
             .menu-wrap .top-menu-wraper ul li:hover ul li {
               float: none;
               position: relative;
