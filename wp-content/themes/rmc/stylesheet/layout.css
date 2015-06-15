@@ -5,18 +5,57 @@
 /**
     Header Part
 */
+@font-face {
+  font-family: GillSansStd-Bold;
+  src: url("../fonts/GillSansStd-Bold.otf"); }
+@font-face {
+  font-family: GillSansStd-BoldCondensed;
+  src: url("../fonts/GillSansStd-BoldCondensed.otf"); }
+@font-face {
+  font-family: GillSansStd-BoldExtraCond;
+  src: url("../fonts/GillSansStd-BoldExtraCond.otf"); }
+@font-face {
+  font-family: GillSansStd-BoldItalic;
+  src: url("../fonts/GillSansStd-BoldItalic.otf"); }
+@font-face {
+  font-family: GillSansStd-Condensed;
+  src: url("../fonts/GillSansStd-Condensed.otf"); }
+@font-face {
+  font-family: GillSansStd-ExtraBold;
+  src: url("../fonts/GillSansStd-ExtraBold.otf"); }
+@font-face {
+  font-family: GillSansStd-ExtraBoldDisp;
+  src: url("../fonts/GillSansStd-ExtraBoldDisp.otf"); }
+@font-face {
+  font-family: GillSansStd-Italic;
+  src: url("../fonts/GillSansStd-Italic.otf"); }
+@font-face {
+  font-family: GillSansStd-Light;
+  src: url("../fonts/GillSansStd-Light.otf"); }
+@font-face {
+  font-family: GillSansStd-LightItalic;
+  src: url("../fonts/GillSansStd-LightItalic.otf"); }
+@font-face {
+  font-family: GillSansStd-UltraBold;
+  src: url("../fonts/GillSansStd-UltraBold.otf"); }
+@font-face {
+  font-family: GillSansStd-UltraBoldCond;
+  src: url("../fonts/GillSansStd-UltraBoldCond.otf"); }
+@font-face {
+  font-family: GillSansStd;
+  src: url("../fonts/GillSansStd.otf"); }
 /*
     Text headers configuration
 */
 h1 {
-  font-family: "Lato", sans-serif;
+  font-family: 'GillSansStd-Bold';
   font-size: 50px;
   line-height: 55px;
   font-weight: 600;
   color: #4782b8; }
 
 h3 {
-  font-family: "Lato", sans-serif;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 19px;
   font-weight: 400;
@@ -25,9 +64,10 @@ h3 {
 
 h2 {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-  font-size: 2vw;
-  line-height: 40px;
-  font-weight: 400;
+  font-size: 1.5vw;
+  line-height: 42px;
+  font-weight: 100;
+  letter-spacing: 0.5px;
   color: #4f91cd; }
 
 p {
@@ -232,19 +272,22 @@ p {
     About RMC Page
 */
 .about-content-wrap {
-  width: 75%; }
+  width: 70%; }
   .about-content-wrap .about-content {
     float: left;
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    margin-top: 40px; }
     .about-content-wrap .about-content img {
       float: left;
-      padding-right: 10px; }
+      padding-right: 35px;
+      padding-bottom: 25px; }
     .about-content-wrap .about-content p {
       font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-      line-height: 28px; }
+      line-height: 20px; }
 
 .about-wrapper {
-  padding-left: 2%; }
+  padding-left: 50px;
+  padding-top: 20px; }
 
 /**
     Contact Page
