@@ -14,18 +14,40 @@ $font-awesome: 'FontAwesome';
 $font-arial: Arial,Helvetica Neue,Helvetica,sans-serif; 
 $font-lato: 'Lato', sans-serif;
 
+
+@each $font, $ext in (GillSansStd-Bold,otf),
+					 (GillSansStd-BoldCondensed,otf),
+					 (GillSansStd-BoldExtraCond,otf),
+					 (GillSansStd-BoldItalic,otf),
+					 (GillSansStd-Condensed,otf),
+					 (GillSansStd-ExtraBold,otf),
+					 (GillSansStd-ExtraBoldDisp,otf),
+					 (GillSansStd-Italic,otf),
+					 (GillSansStd-Light,otf),
+					 (GillSansStd-LightItalic,otf),
+					 (GillSansStd-UltraBold,otf),
+					 (GillSansStd-UltraBoldCond,otf),
+					 (GillSansStd,otf)
+	{
+	@font-face{
+		font-family:#{$font};
+    	src: url('../fonts/#{$font}.#{$ext}');
+	}
+}
+
 /*
     Text headers configuration
 */
 h1{
-    font-family: $font-lato;
+    font-family: 'GillSansStd-Bold';
     font-size: 50px;
     line-height: 55px;
     font-weight: 600;
     color: $dark-blue;
+	margin-bottom:0;
 }
 h3{
-    font-family: $font-lato;
+    font-family: $font-arial;
     font-size: 14px;
     line-height: 19px;
     font-weight: 400;
@@ -34,9 +56,10 @@ h3{
 }
 h2{
     font-family: $font-arial;
-    font-size: 2vw;
-    line-height: 40px;
-    font-weight: 400;
+    font-size: 1.5vw;
+    line-height: 42px;
+    font-weight: 100;
+    letter-spacing: 0.5px;
     color: $blue;
 }
 p{
@@ -339,22 +362,25 @@ p{
 */
 
 .about-content-wrap{
-    width: 75%;
+    width: 70%;
     .about-content{
         float: left;
         margin-bottom: 50px;
+		margin-top:40px;
         img{
             float: left;
-            padding-right: 10px;
+            padding-right:35px;
+			padding-bottom:25px;
         }
         p{
             font-family: $font-arial;
-            line-height: 28px;
+            line-height: 20px;
         }
     }
 }
 .about-wrapper{
-    padding-left: 2%;
+    padding-left: 50px;
+	padding-top:20px;
 }
 
 /**
@@ -436,7 +462,7 @@ p{
                         margin-top: 10px;
                         li{
                             display: inline-block;
-                            padding-right: 3%;
+                            padding-right: 0;
                         }
                     }
                 }
