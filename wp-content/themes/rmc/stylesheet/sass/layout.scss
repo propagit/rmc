@@ -540,6 +540,12 @@ p{
     }
 }
 
+.v-slider{
+	img{
+		width:100%;	
+	}
+}
+
 /**
     Footer Part
 */
@@ -547,11 +553,16 @@ p{
 .footer-wrapper{
     background: $blue;
     text-align: center;
-    .scroll-to-top{
-        &:hover{
-            cursor: pointer;
-        }
-    }
+	margin-top:15px;
+	.scrop-top-wrap{
+		height:45px;
+		width:100%;
+		.scroll-to-top{
+			&:hover{
+				cursor: pointer;
+			}
+		}
+	}
     .social-media{
         margin-top: 5px;
         padding-left: 8px;
@@ -615,7 +626,7 @@ p{
         background: white;
         width: 80%;
         margin: 15px auto;
-        margin-bottom: 40px;
+        margin-bottom: 0;
         .footer-logo{
             img{
                 margin: auto;
@@ -633,6 +644,14 @@ p{
         }
     }
 }
+
+/* Helpers */
+.x-gutters{
+	padding-left:0;
+	padding-right:0;	
+}
+
+
 @media(max-width: 1400px){
     .product-brochures{
         ul{

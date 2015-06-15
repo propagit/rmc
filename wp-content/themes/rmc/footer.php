@@ -1,8 +1,10 @@
 <div class="container-fluid">
     <div class="container">
         <div class="footer-wrapper">
-            <div class="scroll-to-top">`
-                <img src="<?php echo bloginfo('template_directory') . '/img/back-to-top.jpg'; ?>" id="top"/>
+        	<div class="scrop-top-wrap">
+                <div class="scroll-to-top">
+                    <img src="<?php echo bloginfo('template_directory') . '/img/back-to-top.jpg'; ?>" id="top"/>
+                </div>
             </div>
             <div class="social-media">
                 <p>JOIN US ON</p>

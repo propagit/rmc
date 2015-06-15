@@ -38,7 +38,7 @@ p {
   color: #707070; }
 
 #sb-site {
-  background: #c0c0c0 !important; }
+  background: silver !important; }
 
 .container {
   background: white;
@@ -427,20 +427,27 @@ p {
   .products-category-content .search-product .search-right {
     text-align: left; }
 
+.v-slider img {
+  width: 100%; }
+
 /**
     Footer Part
 */
 .footer-wrapper {
   background: #4f91cd;
   text-align: center;
+  margin-top: 15px;
   /**
       Footer Menu
   */
   /**
       Footer Logo and Footer Text
   */ }
-  .footer-wrapper .scroll-to-top:hover {
-    cursor: pointer; }
+  .footer-wrapper .scrop-top-wrap {
+    height: 45px;
+    width: 100%; }
+    .footer-wrapper .scrop-top-wrap .scroll-to-top:hover {
+      cursor: pointer; }
   .footer-wrapper .social-media {
     margin-top: 5px;
     padding-left: 8px; }
@@ -485,7 +492,7 @@ p {
     background: white;
     width: 80%;
     margin: 15px auto;
-    margin-bottom: 40px; }
+    margin-bottom: 0; }
     .footer-wrapper .footer-logo-wrap .footer-logo img {
       margin: auto; }
     .footer-wrapper .footer-logo-wrap .footer-bottom-text {
@@ -497,6 +504,11 @@ p {
       font-weight: 400;
       padding: 0px 34%;
       padding-bottom: 190px; }
+
+/* Helpers */
+.x-gutters {
+  padding-left: 0;
+  padding-right: 0; }
 
 @media (max-width: 1400px) {
   .product-brochures ul li {
@@ -520,5 +532,3 @@ p {
 @media (max-width: 400px) {
   .header .logo img {
     width: 150%; } }
-
-/*# sourceMappingURL=layout.css.map */
