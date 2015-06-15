@@ -309,7 +309,7 @@ p {
           margin-top: 10px; }
           .resources-wrap .resources-content .resources-top-part .resources-left-wrap .product-brochures ul li {
             display: inline-block;
-            padding-right: 3%; }
+            padding-right: 0; }
     .resources-wrap .resources-content .resources-top-part .resources-right-wrap {
       padding: 0px; }
       .resources-wrap .resources-content .resources-top-part .resources-right-wrap .resources-content-right-header {
