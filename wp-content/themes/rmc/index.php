@@ -29,6 +29,13 @@ get_header();
             </a>
         </div>
     </div>
+    
+    
+    <div class="container">
+    	<div class="col-xs-12 x-gutters v-slider">
+    		<img src="<?php echo bloginfo('template_directory') . '/img/rmcPlaceholder.jpg';?>" />
+        </div>
+    </div>
 </div>
 
 
