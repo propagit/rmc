@@ -1,0 +1,523 @@
+/*
+ Website: RMC
+ Author: Zack
+*/
+/**
+    Header Part
+*/
+/*
+    Text headers configuration
+*/
+h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 50px;
+  line-height: 55px;
+  font-weight: 600;
+  color: #4782b8; }
+
+h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #707070;
+  margin-top: 0px; }
+
+h2 {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 2vw;
+  line-height: 40px;
+  font-weight: 400;
+  color: #4f91cd; }
+
+p {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #707070; }
+
+#sb-site {
+  background: #c0c0c0 !important; }
+
+.container {
+  background: white;
+  box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 12px 0 15px -4px #a2a2a2, -12px 0 15px -4px #a2a2a2; }
+
+.header {
+  padding: 0;
+  padding-top: 45px; }
+
+.header-details {
+  font-family: "FontAwesome";
+  font-size: 18px;
+  line-height: 15px;
+  font-weight: bold;
+  text-align: right;
+  color: #707070;
+  margin-top: 1.5%; }
+  .header-details p {
+    margin-bottom: 0px; }
+  .header-details .header-details-text {
+    font-size: 13px;
+    font-weight: 300; }
+
+/** 
+    Top Menu
+*/
+.menu-wrap {
+  padding-top: 45px;
+  background: white; }
+  .menu-wrap .top-menu-wraper {
+    background: #4f91cd;
+    width: 100%;
+    padding: 0px;
+    -moz-box-shadow: inset 0 0 8px #2b5ea5;
+    -webkit-box-shadow: inset 0 0 8px #2b5ea5;
+    box-shadow: inset 0 0 8px #2b5ea5; }
+    .menu-wrap .top-menu-wraper ul {
+      list-style: none;
+      height: 60px; }
+      .menu-wrap .top-menu-wraper ul li {
+        display: inline-block;
+        height: 60px;
+        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 65px;
+        font-weight: 600;
+        color: white;
+        vertical-align: central;
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0px 2.5%; }
+        .menu-wrap .top-menu-wraper ul li:hover {
+          background: #4782b8;
+          -moz-box-shadow: inset 0 0 8px #2b5ea5;
+          -webkit-box-shadow: inset 0 0 8px #2b5ea5;
+          box-shadow: inset 0 0 8px #2b5ea5;
+          height: 60px; }
+          .menu-wrap .top-menu-wraper ul li:hover ul {
+            display: block;
+            position: absolute;
+            top: 100%;
+            margin-left: -2.5%;
+            margin-top: -10px; }
+            .menu-wrap .top-menu-wraper ul li:hover ul li {
+              float: none;
+              position: relative;
+              background: rgba(219, 219, 219, 0.9);
+              text-align: left;
+              border: none;
+              width: 145%;
+              height: 40px;
+              display: inherit;
+              line-height: 38px;
+              z-index: 100; }
+              .menu-wrap .top-menu-wraper ul li:hover ul li:hover {
+                background: #4f91cd;
+                cursor: pointer; }
+                .menu-wrap .top-menu-wraper ul li:hover ul li:hover a {
+                  color: white !important; }
+              .menu-wrap .top-menu-wraper ul li:hover ul li a {
+                font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                color: #707070;
+                text-transform: none;
+                padding-left: 8px; }
+        .menu-wrap .top-menu-wraper ul li a {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: white; }
+      .menu-wrap .top-menu-wraper ul .menu-item-has-children:after {
+        content: "\f0d7";
+        font-family: "FontAwesome";
+        padding-left: 5px; }
+      .menu-wrap .top-menu-wraper ul ul {
+        display: none; }
+      .menu-wrap .top-menu-wraper ul:after {
+        content: "";
+        clear: both;
+        display: block; }
+    .menu-wrap .top-menu-wraper .top-menu {
+      padding: 0px; }
+    .menu-wrap .top-menu-wraper .menu-item-21, .menu-wrap .top-menu-wraper .menu-item-22, .menu-wrap .top-menu-wraper .menu-item-23, .menu-wrap .top-menu-wraper .menu-item-25, .menu-wrap .top-menu-wraper .menu-item-92 {
+      margin-left: -4px; }
+    .menu-wrap .top-menu-wraper .current_page_item {
+      background: #4782b8;
+      -moz-box-shadow: inset 0 0 8px #2b5ea5;
+      -webkit-box-shadow: inset 0 0 8px #2b5ea5;
+      box-shadow: inset 0 0 8px #2b5ea5; }
+
+/**
+    Sidebar
+*/
+.navicon-line {
+  background: #4f91cd;
+  width: 24px;
+  height: 4px;
+  border-radius: 1px;
+  margin-bottom: 3px; }
+
+.mobile-nav {
+  text-align: right;
+  width: 55px;
+  float: right; }
+
+/** 
+    Search Form
+*/
+.header-search {
+  padding: 0px;
+  margin-top: 1.5%;
+  text-align: right;
+  margin-left: -15px; }
+  .header-search input {
+    background: #72a7d7;
+    width: 90%;
+    height: 30px;
+    color: white;
+    font-family: "FontAwesome";
+    font-weight: 600;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-top: 3px;
+    border: none; }
+    .header-search input::-webkit-input-placeholder {
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      color: white; }
+    .header-search input:-moz-placeholder {
+      /* Firefox 18- */
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      color: white; }
+    .header-search input::-moz-placeholder {
+      /* Firefox 19+ */
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      color: white; }
+    .header-search input:-ms-input-placeholder {
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      color: white; }
+  .header-search .fa-search {
+    position: absolute;
+    top: 8px;
+    margin-left: -13%;
+    color: white; }
+
+/**
+    Home Page
+*/
+/*
+    Slider
+*/
+.item {
+  text-align: center; }
+  .item img {
+    max-width: 437px; }
+  .item .item-text {
+    position: absolute;
+    z-index: 10; }
+
+/**
+    About RMC Page
+*/
+.about-content-wrap {
+  width: 75%; }
+  .about-content-wrap .about-content {
+    float: left;
+    margin-bottom: 50px; }
+    .about-content-wrap .about-content img {
+      float: left;
+      padding-right: 10px; }
+    .about-content-wrap .about-content p {
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      line-height: 28px; }
+
+.about-wrapper {
+  padding-left: 2%; }
+
+/**
+    Contact Page
+*/
+.contact-wrap p {
+  padding-left: 3%; }
+  .contact-wrap p .fa {
+    margin-left: -3%;
+    padding-right: 3px; }
+.contact-wrap .contact-social-links {
+  margin-bottom: 80px; }
+  .contact-wrap .contact-social-links p {
+    padding: 0; }
+  .contact-wrap .contact-social-links .fa {
+    color: #4f91cd;
+    font-size: 20px;
+    padding-right: 15px; }
+
+.contact-form-wrap {
+  background: #f6f6f6;
+  border: 1px solid #e2e2e2; }
+  .contact-form-wrap .contact-form {
+    margin-top: 25px; }
+    .contact-form-wrap .contact-form .fields {
+      margin-bottom: 10px;
+      border: 1px solid #e2e2e2; }
+    .contact-form-wrap .contact-form .btn {
+      text-transform: uppercase;
+      background: #3e7ac2;
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 44px;
+      font-weight: 400;
+      color: white;
+      padding: 0px 20px; }
+
+/**
+    Resources Page
+*/
+.resources-wrap {
+  text-align: center; }
+  .resources-wrap .resources-content .resources-top-part {
+    border: 2px solid #e6e6e6;
+    padding: 0px; }
+    .resources-wrap .resources-content .resources-top-part .resources-left-wrap {
+      padding: 0px; }
+      .resources-wrap .resources-content .resources-top-part .resources-left-wrap .resources-content-left-header {
+        padding: 0px;
+        background: #f6f6f6;
+        border-bottom: 1px solid #e6e6e6;
+        border-right: 1px solid #e6e6e6; }
+        .resources-wrap .resources-content .resources-top-part .resources-left-wrap .resources-content-left-header h3 {
+          font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+          font-size: 14px;
+          line-height: 55px;
+          font-weight: 600;
+          color: #4f91cd; }
+      .resources-wrap .resources-content .resources-top-part .resources-left-wrap .product-brochures {
+        border-right: 1px solid #e6e6e6; }
+        .resources-wrap .resources-content .resources-top-part .resources-left-wrap .product-brochures ul {
+          list-style: none;
+          margin-top: 10px; }
+          .resources-wrap .resources-content .resources-top-part .resources-left-wrap .product-brochures ul li {
+            display: inline-block;
+            padding-right: 3%; }
+    .resources-wrap .resources-content .resources-top-part .resources-right-wrap {
+      padding: 0px; }
+      .resources-wrap .resources-content .resources-top-part .resources-right-wrap .resources-content-right-header {
+        padding: 0px;
+        background: #f6f6f6;
+        border-bottom: 1px solid #e6e6e6; }
+        .resources-wrap .resources-content .resources-top-part .resources-right-wrap .resources-content-right-header h3 {
+          font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+          font-size: 14px;
+          line-height: 55px;
+          font-weight: 600;
+          color: #4f91cd; }
+      .resources-wrap .resources-content .resources-top-part .resources-right-wrap .resources-video iframe {
+        margin-top: 15px;
+        width: 95%;
+        height: 100%; }
+      .resources-wrap .resources-content .resources-top-part .resources-right-wrap .resources-video p {
+        margin-top: 2%; }
+  .resources-wrap .resources-content .resources-table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0px; }
+    .resources-wrap .resources-content .resources-table th {
+      border: 1px solid #e6e6e6;
+      border-top: 1px solid #e6e6e6 !important; }
+    .resources-wrap .resources-content .resources-table td {
+      text-align: left;
+      border: 1px solid #e6e6e6; }
+    .resources-wrap .resources-content .resources-table .download {
+      text-align: center; }
+    .resources-wrap .resources-content .resources-table #table-search-header {
+      background: #f6f6f6; }
+      .resources-wrap .resources-content .resources-table #table-search-header th {
+        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 24px;
+        color: #7b7b7b; }
+        .resources-wrap .resources-content .resources-table #table-search-header th input {
+          width: 70%;
+          background: #fdfdfd;
+          border: 1px solid #e2e2e2;
+          padding-left: 5px;
+          font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+          -moz-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          border-radius: 5px; }
+          .resources-wrap .resources-content .resources-table #table-search-header th input::-webkit-input-placeholder {
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: bold;
+            color: #707070; }
+          .resources-wrap .resources-content .resources-table #table-search-header th input:-moz-placeholder {
+            /* Firefox 18- */
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: bold;
+            color: #707070; }
+          .resources-wrap .resources-content .resources-table #table-search-header th input::-moz-placeholder {
+            /* Firefox 19+ */
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: bold;
+            color: #707070; }
+          .resources-wrap .resources-content .resources-table #table-search-header th input:-ms-input-placeholder {
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: bold;
+            color: #707070; }
+        .resources-wrap .resources-content .resources-table #table-search-header th .fa {
+          margin-left: -30px; }
+
+/**
+    Products Category Page
+*/
+.products-category-content {
+  text-align: center; }
+  .products-category-content h3 {
+    padding: 0px 13%; }
+  .products-category-content p {
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: bold; }
+  .products-category-content .search-product select {
+    width: 45%;
+    height: 30px;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #707070;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #e2e2e2; }
+  .products-category-content .search-product input {
+    width: 45%;
+    height: 30px;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #707070;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #e2e2e2;
+    padding-left: 5px; }
+  .products-category-content .search-product .search-left {
+    text-align: right; }
+  .products-category-content .search-product .search-right {
+    text-align: left; }
+
+/**
+    Footer Part
+*/
+.footer-wrapper {
+  background: #4f91cd;
+  text-align: center;
+  /**
+      Footer Menu
+  */
+  /**
+      Footer Logo and Footer Text
+  */ }
+  .footer-wrapper .scroll-to-top:hover {
+    cursor: pointer; }
+  .footer-wrapper .social-media {
+    margin-top: 5px;
+    padding-left: 8px; }
+    .footer-wrapper .social-media p {
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 28px;
+      font-weight: 400;
+      color: white;
+      letter-spacing: 1px; }
+    .footer-wrapper .social-media .social-media-links .fa {
+      font-size: 22px;
+      line-height: 37px;
+      color: white;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      -moz-border-radius: 22px;
+      -webkit-border-radius: 22px;
+      border-radius: 22px;
+      width: 40px;
+      margin: 0px 5%; }
+  .footer-wrapper .footer-menu {
+    margin-top: 18px; }
+    .footer-wrapper .footer-menu hr {
+      border: 0.1px solid rgba(255, 255, 255, 0.1);
+      width: 80%;
+      margin: auto;
+      margin-bottom: 15px; }
+    .footer-wrapper .footer-menu ul {
+      list-style: none; }
+      .footer-wrapper .footer-menu ul li {
+        display: inline-block;
+        padding: 0px 4%; }
+        .footer-wrapper .footer-menu ul li a {
+          text-decoration: none;
+          color: white;
+          font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+          font-size: 12px;
+          line-height: 28px;
+          letter-spacing: 1px; }
+  .footer-wrapper .footer-logo-wrap {
+    background: white;
+    width: 80%;
+    margin: 15px auto;
+    margin-bottom: 40px; }
+    .footer-wrapper .footer-logo-wrap .footer-logo img {
+      margin: auto; }
+    .footer-wrapper .footer-logo-wrap .footer-bottom-text {
+      bottom: 0;
+      color: #707070;
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+      padding: 0px 34%;
+      padding-bottom: 190px; }
+
+@media (max-width: 1400px) {
+  .product-brochures ul li {
+    padding-right: 1% !important; }
+    .product-brochures ul li img {
+      width: 100%; } }
+@media (max-width: 990px) {
+  .menu-wrap .top-menu-wraper ul li {
+    font-size: 12px;
+    padding: 0px 2%; } }
+@media (max-width: 792px) {
+  h2 {
+    font-size: 16px;
+    line-height: 25px; }
+
+  .search-left, .search-right {
+    text-align: center !important;
+    margin-bottom: 15px; }
+    .search-left input, .search-left select, .search-right input, .search-right select {
+      width: 100% !important; } }
+@media (max-width: 400px) {
+  .header .logo img {
+    width: 150%; } }
+
+/*# sourceMappingURL=layout.css.map */
