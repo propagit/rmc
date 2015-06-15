@@ -20,11 +20,11 @@ get_header();
                 </div>
             </div>
             <a class="left carousel-control" href="#slider" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-left left-arrow" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="right carousel-control" href="#slider" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-right right-arrow" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>

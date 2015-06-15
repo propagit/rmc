@@ -117,7 +117,7 @@ p{
                         position: absolute;
                         top: 100%;
                         margin-left: -2.5%;
-                        
+
                         li{
                             float: none;
                             position: relative;
@@ -267,6 +267,15 @@ p{
 /*
     Slider
 */
+.carousel-control{
+    .left-arrow{
+        left: 3%;
+    }
+    .right-arrow{
+        right: 3%;
+    }
+}
+
 .item{
     text-align: center;
     img{
@@ -275,6 +284,21 @@ p{
     .item-text{
         position: absolute;
         z-index: 10;
+        
+        h1{
+            font-family: $font-lato;
+            font-weight: 900;
+            color: white;
+            padding: 0px 25%;
+            padding-top: 5%;
+        }
+        h2{
+            font-family: $font-lato;
+            font-weight: 400;
+            color: white;
+            padding: 0px 20%;
+            padding-top: 2%;
+        }
     }
 }
 
