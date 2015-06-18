@@ -51,7 +51,7 @@ get_header();
                 <thead>
                     <tr id="table-search-header">
                         <th>
-                            <?php echo get_search_form(); ?>
+                            <input id="filter" type="text" name="search" id="search" placeholder="search..."/>
                         </th>
                         <th></th>
                         <th></th>
@@ -93,6 +93,7 @@ get_header();
                             }
                         }
                         ?>
+                <tbody class="searchable">
                         <tr>
                             <td>
                                 <p><?php echo $name; ?></p>
@@ -119,12 +120,31 @@ get_header();
 }
 wp_reset_postdata();
 ?>
+                </tbody>
             </table>
         </div>
     </div>
 </div>
 
+<script>
+    $(document).ready(function () {
 
+    (function ($) {
+
+        $('#filter').keyup(function () {
+
+            var rex = new RegExp($(this).val(), 'i');
+            $('.searchable tr').hide();
+            $('.searchable tr').filter(function () {
+                return rex.test($(this).text());
+            }).show();
+
+        })
+
+    }(jQuery));
+
+});
+</script>
 
 
 

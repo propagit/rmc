@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_directory') . '/stylesheet/font-awesome-4.3.0/css/font-awesome.min.css'; ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_directory') . '/stylesheet/slidebars.min.css'; ?>"/>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/jquery-1.11.2.min.js'; ?>"></script>
     <?php wp_head(); ?>
 </head>
 <body>

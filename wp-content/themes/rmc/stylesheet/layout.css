@@ -80,7 +80,7 @@ p {
   color: #707070; }
 
 #sb-site {
-  background: silver !important; }
+  background: #c0c0c0 !important; }
 
 .container {
   background: white;
@@ -261,35 +261,6 @@ p {
     margin-left: -22px;
     color: white; }
 
-.jump-points-header {
-  background: #e5e5e5;
-  margin-top: 20px;
-  border: 1px solid #afafaf;
-  height: 46px;
-  padding: 14px 18px; }
-  .jump-points-header h2 {
-    font-weight: bolder;
-    font-size: 22px;
-    line-height: 22px;
-    margin-top: 0px;
-    color: #4f91cd;
-    padding: 0;
-    font-family: 'GillSansStd-Bold'; }
-
-.jump-points {
-  margin-top: 20px;
-  text-align: center; }
-  .jump-points ul {
-    list-style: none;
-    width: 100%; }
-    .jump-points ul li {
-      display: inline-block;
-      width: 24%; }
-    .jump-points ul p {
-      color: #707070;
-      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-      font-size: 16px; }
-
 /**
     Home Page
 */
@@ -317,7 +288,7 @@ p {
       font-family: 'GillSansStd-Bold';
       color: white;
       text-align: center;
-      padding: 0;
+      padding: 0px 20%;
       margin-top: 90px;
       letter-spacing: 0.5px;
       font-size: 53px; }
@@ -326,7 +297,7 @@ p {
       font-size: 39px;
       color: white;
       letter-spacing: 0;
-      padding: 0;
+      padding: 0px 20%;
       margin-top: 40px; }
 
 .carousel {
@@ -351,7 +322,7 @@ p {
     transition: all 0.5s ease; }
     .carousel .slide-btn .fa {
       font-size: 14px;
-      color: white;
+      color: #fff;
       text-shadow: none; }
   .carousel:hover a.left .slide-btn {
     left: 0; }
@@ -366,6 +337,42 @@ p {
     background-color: transparent; }
 
 /* carousel */
+/* Jump Points */
+.jump-points-wrapper .jump-points-header {
+  background: #e5e5e5;
+  margin-top: 20px;
+  border: 1px solid #afafaf;
+  height: 46px;
+  padding: 14px 18px; }
+  .jump-points-wrapper .jump-points-header h2 {
+    font-weight: bolder;
+    font-size: 22px;
+    line-height: 22px;
+    margin-top: 0px;
+    color: #4f91cd;
+    padding: 0;
+    font-family: 'GillSansStd-Bold'; }
+.jump-points-wrapper .jump-points {
+  text-align: center; }
+  .jump-points-wrapper .jump-points ul {
+    list-style: none;
+    width: 100%; }
+    .jump-points-wrapper .jump-points ul li {
+      display: inline-block;
+      border-right: 1px solid #e9e9e9;
+      border-bottom: 1px solid #e9e9e9;
+      width: 24.7%; }
+      .jump-points-wrapper .jump-points ul li img {
+        margin-top: 20px;
+        width: 163px;
+        height: 100px; }
+    .jump-points-wrapper .jump-points ul p {
+      color: #707070;
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 16px; }
+    .jump-points-wrapper .jump-points ul #jp-first {
+      border-left: 1px solid #e9e9e9; }
+
 /**
     About RMC Page
 */
@@ -571,6 +578,12 @@ p {
 .v-slider img {
   width: 100%; }
 
+/* Where */
+.locations-wrap .locations-content {
+  text-align: center; }
+  .locations-wrap .locations-content .search-location #select-location {
+    width: 30% !important; }
+
 /**
     Footer Part
 */
@@ -622,7 +635,7 @@ p {
       list-style: none; }
       .footer-wrapper .footer-menu ul li {
         display: inline-block;
-        padding: 0px 4%; }
+        padding: 0px 2%; }
         .footer-wrapper .footer-menu ul li a {
           text-decoration: none;
           color: white;
@@ -635,9 +648,14 @@ p {
     background: white;
     width: 80%;
     margin: 15px auto;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    -moz-box-shadow: inset 0 0 8px #2b5ea5;
+    -webkit-box-shadow: inset 0 0 8px #2b5ea5;
+    box-shadow: inset 0 0 8px #2b5ea5;
+    border: 1px solid white;
+    border-bottom: none; }
     .footer-wrapper .footer-logo-wrap .footer-logo img {
-      margin: auto; }
+      margin: 5px auto; }
     .footer-wrapper .footer-logo-wrap .footer-bottom-text {
       bottom: 0;
       font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -645,7 +663,7 @@ p {
       line-height: 16px;
       font-weight: 400;
       /*padding: 0px 34%;*/
-      padding-bottom: 190px; }
+      padding-bottom: 60px; }
       .footer-wrapper .footer-logo-wrap .footer-bottom-text p {
         color: #b5b5b5;
         font-size: 12px; }
@@ -677,3 +695,5 @@ p {
 @media (max-width: 400px) {
   .header .logo img {
     width: 150%; } }
+
+/*# sourceMappingURL=layout.css.map */
