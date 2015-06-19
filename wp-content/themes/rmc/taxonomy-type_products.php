@@ -36,7 +36,8 @@ get_header();
                 <input type="text" id="search-product" name="search-product" placeholder="enter product name..."/>
             </div>
         </div>
-        <div id="selectedProduct">
+        <div id="models">
+            
         </div>
         
     </div>
@@ -46,17 +47,31 @@ get_header();
 
 function selectedProduct(selectedValue)
  {
-      if (window.XMLHttpRequest){ xmlhttpp=new XMLHttpRequest(); }else{ xmlhttpp=new ActiveXObject("Microsoft.XMLHTTP"); }
-    //make the ajax call
-    $.ajax({
-        url: '<?php echo bloginfo("template_directory").'/selected-product.php';  ?>',
-        type: 'POST',
-        data: {option : selectedValue},
-        success: function() {
-            console.log("Data sent!");
-        }
-    });
-    document.getElementById("selectedProduct").innerHTML = xmlhttpp.responseText;
+      var search_val= selectedValue; 
+     
+        // IF A VALUE EXISTS
+	     if(search_val) {
+	     
+            // RUN AN AJAX CALL
+	     	jQuery.ajax({
+	        	url: 'http://localhost/propagate/rmc/wp-json/posts?type[]=post&type[]=products&filter[posts_per_page]=99&filter[taxonomy]=type_products&filter[orderby]=name&filter[order]=asc', // URL USING JSON REST API
+	        	type: 'GET',
+	        	data: 'filter[term]=' + search_val, // PASS IN THE VALUE OF THE DROP DOWN AS A ID (CHECK AGAINST TERMS OF THE TAXONOMY 'MAKE')
+	            dataType: 'JSON',
+	            success:function(data) {
+              		var sel = $("#models"); // SELECT THE SECOND DROP DOWN WITH THE ID MODELS
+				    sel.empty(); // JUST MAKE SURE ITS EMPTY
+				    for (var i=0; i<data.length; i++) { // LOOP THROUGH EACH POST FOUND BY THE AJAX CALL
+				      sel.append('<option value="' + data[i].ID + '">' + data[i].acf["short_description"] + '</option>'); // SET POSTS INTO HTML OPTIONS AND APPEND TO MODELS DROP DOWN
+				    }
+	              	
+		        },
+		        error: function(errorThrown){
+	            	alert('error');
+	            	console.log(errorThrown);
+	            }
+	        });   
+	    }
 }
 </script>
 

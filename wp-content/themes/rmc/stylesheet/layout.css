@@ -156,7 +156,8 @@ p {
               height: 40px;
               display: inherit;
               line-height: 38px;
-              z-index: 100; }
+              z-index: 100;
+              padding-left: 8%; }
               .menu-wrap .top-menu-wraper ul li:hover ul li:hover {
                 background: #4f91cd;
                 cursor: pointer; }
@@ -165,10 +166,12 @@ p {
               .menu-wrap .top-menu-wraper ul li:hover ul li a {
                 font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
                 font-size: 14px;
-                font-weight: 400;
+                font-weight: 600;
                 color: #707070;
                 text-transform: none;
                 padding-left: 8px; }
+            .menu-wrap .top-menu-wraper ul li:hover ul #menu-item-99 {
+              border-bottom: 1px solid #a5a5a5; }
         .menu-wrap .top-menu-wraper ul li a {
           text-decoration: none;
           text-transform: uppercase;
@@ -207,6 +210,27 @@ p {
   text-align: right;
   width: 55px;
   float: right; }
+
+.sb-slidebar {
+  text-align: center; }
+  .sb-slidebar ul {
+    list-style: none; }
+    .sb-slidebar ul li {
+      border-bottom: 1px solid #4782b8; }
+      .sb-slidebar ul li a {
+        text-decoration: none;
+        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 22px;
+        line-height: 40px;
+        color: #4f91cd; }
+      .sb-slidebar ul li:hover ul {
+        display: block; }
+        .sb-slidebar ul li:hover ul li a {
+          font-size: 16px;
+          line-height: 25px;
+          color: white; }
+    .sb-slidebar ul ul {
+      display: none; }
 
 /** 
     Search Form
@@ -288,7 +312,7 @@ p {
       font-family: 'GillSansStd-Bold';
       color: white;
       text-align: center;
-      padding: 0px 20%;
+      padding: 0px 18%;
       margin-top: 90px;
       letter-spacing: 0.5px;
       font-size: 53px; }

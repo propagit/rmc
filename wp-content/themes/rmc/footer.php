@@ -9,9 +9,9 @@
             <div class="social-media">
                 <p>JOIN US ON</p>
                 <div class="social-media-links">
-                    <a href="<?php echo the_field("facebook_link", "option"); ?>"><i class="fa fa-facebook"></i></a>
-                    <a href="<?php echo the_field("twitter_link", "option"); ?>"><i class="fa fa-twitter"></i></a>
-                    <a href="<?php echo the_field("youtube_link", "option"); ?>"><i class="fa fa-youtube"></i></a>
+                    <a href="<?php echo the_field("facebook_link", "option"); ?>" target="child"><i class="fa fa-facebook"></i></a>
+                    <a href="<?php echo the_field("twitter_link", "option"); ?>" target="child"><i class="fa fa-twitter"></i></a>
+                    <a href="<?php echo the_field("youtube_link", "option"); ?>" target="child"><i class="fa fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-menu hidden-sm hidden-xs">

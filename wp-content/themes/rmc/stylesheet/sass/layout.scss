@@ -156,6 +156,7 @@ $nav_height:65px;
                             display: inherit;
                             line-height: 38px;
                             z-index: 100;
+                            padding-left: 8%;
                             &:hover{
                                 background: $blue;
                                 cursor: pointer;
@@ -166,7 +167,7 @@ $nav_height:65px;
                             a{
                                 font-family: $font-arial;
                                 font-size: 14px;
-                                font-weight: 400;
+                                font-weight: 600;
                                 color: #707070;  
                                 text-transform: none;
                                 padding-left: 8px;
@@ -174,6 +175,9 @@ $nav_height:65px;
                             }
 
 
+                        }
+                        #menu-item-99{
+                            border-bottom: 1px solid #a5a5a5;
                         }
                     }
                 }
@@ -228,6 +232,37 @@ $nav_height:65px;
     text-align: right;
     width: 55px;
     float: right;
+}
+.sb-slidebar{
+    text-align: center;
+    ul{
+        list-style: none;
+        li{
+            border-bottom: 1px solid $dark-blue;
+            a{
+                text-decoration: none;
+                font-family: $font-arial;
+                font-size: 22px;
+                line-height: 40px;
+                color: $blue;
+            }
+            &:hover{
+                ul{
+                    display: block;
+                    li{
+                        a{
+                            font-size: 16px;
+                            line-height: 25px;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        ul{
+            display: none;
+        }
+    }
 }
 
 /** 
@@ -333,7 +368,7 @@ $nav_height:65px;
             font-family: 'GillSansStd-Bold';
             color: white;
             text-align:center;
-            padding:0px 20%;
+            padding:0px 18%;
             margin-top:90px;
             letter-spacing:0.5px;
             font-size:53px;

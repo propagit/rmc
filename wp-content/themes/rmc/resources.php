@@ -78,10 +78,10 @@ get_header();
                     while ($the_querry->have_posts()) {
                         $the_querry->the_post();
                         $name = get_the_title();
-                        if (get_field("brochure")) {
-                            $brochure = get_field("brochure");
-                            $type_file = "<i class=\"fa fa-file-pdf-o\"></i> PDF";
-                        }
+                        /* if (get_field("brochure")) {
+                          $brochure = get_field("brochure");
+                          $type_file = "<i class=\"fa fa-file-pdf-o\"></i> PDF";
+                          } */
                         if (get_field("video")) {
                             $video = get_field("video");
                             $type_file = "<i class=\"fa fa-file-video-o\"></i> VIDEO";
@@ -92,34 +92,41 @@ get_header();
                                 $category = $category_term->name;
                             }
                         }
-                        ?>
-                <tbody class="searchable">
-                        <tr>
-                            <td>
-                                <p><?php echo $name; ?></p>
-                            </td>
-                            <td>
-                                <p><?php echo $category; ?></p>
-                            </td>
-                            <td>
-                                <?php echo size_format(filesize(get_attached_file($brochure['ID']))); ?>
-                            </td>
-                            <td>
-        <?php echo $type_file; ?>
-                            </td>
-                            <td class="download">
-                                <a href="<?php if ($brochure) {
-            echo $brochure['url'];
-        } elseif ($video) {
-            echo $video['url'];
-        } ?>" download><i class="fa fa-download"></i></a>
-                            </td>
-                        </tr>
-    <?php
-    }
-}
-wp_reset_postdata();
-?>
+                        if (have_rows('brochures')):
+                            while (have_rows('brochures')):the_row();
+                                $brochure = get_sub_field('brochure_file');
+                                ?>
+                                <tbody class="searchable">
+                                    <tr>
+                                        <td>
+                                            <p><?php echo $name; ?></p>
+                                        </td>
+                                        <td>
+                                            <p><?php echo $category; ?></p>
+                                        </td>
+                                        <td>
+                                            <?php echo size_format(filesize(get_attached_file($brochure['ID']))); ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $type_file; ?>
+                                        </td>
+                                        <td class="download">
+                                            <a href="<?php
+                                            if ($brochure) {
+                                                echo $brochure['url'];
+                                            } elseif ($video) {
+                                                echo $video['url'];
+                                            }
+                                            ?>" download><i class="fa fa-download"></i></a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                endwhile;
+                            endif;
+                        }
+                    }
+                    wp_reset_postdata();
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -129,21 +136,21 @@ wp_reset_postdata();
 <script>
     $(document).ready(function () {
 
-    (function ($) {
+        (function ($) {
 
-        $('#filter').keyup(function () {
+            $('#filter').keyup(function () {
 
-            var rex = new RegExp($(this).val(), 'i');
-            $('.searchable tr').hide();
-            $('.searchable tr').filter(function () {
-                return rex.test($(this).text());
-            }).show();
+                var rex = new RegExp($(this).val(), 'i');
+                $('.searchable tr').hide();
+                $('.searchable tr').filter(function () {
+                    return rex.test($(this).text());
+                }).show();
 
-        })
+            })
 
-    }(jQuery));
+        }(jQuery));
 
-});
+    });
 </script>
 
 
