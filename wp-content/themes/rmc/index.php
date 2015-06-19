@@ -103,7 +103,7 @@ get_header();
 	<script>
 		$(function(){
 			$('#newsCarousel').carousel({
-			  interval: 2000
+			  interval: 5000
 			});
 			
 			var v_counter = 0;
