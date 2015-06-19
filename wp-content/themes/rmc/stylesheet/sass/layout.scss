@@ -10,6 +10,9 @@ $blue: #4f91cd;
 $dark-blue: #4782b8;
 $white: #fff;
 $color1:#b5b5b5;  /* light grey - footer copy info */
+$color2:#4a4a4a;  /* darker grey - news carousel indicators active bg*/
+$color3:#d9d9d9; /* grey - news carousel indicator bg*/
+$color4:#8a8a8a; /* grey - news carousel indicator heading span*/
 
 $font-awesome: 'FontAwesome';
 $font-arial: Arial,Helvetica Neue,Helvetica,sans-serif; 
@@ -844,7 +847,148 @@ $carousel_nav_dim:35px;
     }
 }
 
+/* Vertical carousel */
+$v_carousel_height:370px;
+.vertical-carousel{
+	
+	.carousel-content{
+		width:70%;
+		float:left;	
+	}
+	.carousel-inner{
+		height:$v_carousel_height;
+		background-color:$blue;	
+	
+		.item{
+			.caption{
+				padding:5px 35px;
+				p,
+				h1,
+				h4{
+					color:$white;
+					text-align:left;	
+				}
+				
+				h1{
+					font-size: 32px;
+					font-family: $font-arial;
+					font-weight: 600;
+  					padding-top: 5px;
+					padding-bottom:5px;
+  					margin-top: 0;
+  					line-height: 35px;	
+				}
+				
+				h4{
+					font-size:13px;
+					border-bottom:1px solid rgba(255,255,255,0.25);
+					letter-spacing: 1px;
+  					padding-bottom: 8px;
+  					font-weight: 500;
+				}
+				
+				p{
+					font-size: 12.5px;
+					font-weight: 100;
+					line-height: 22px;
+					font-family: $font-lato;
+					letter-spacing: 1px;
+				}
+			} /* caption*/
+			
+			img{
+				width:100%;
+				padding-top: 35px;
+  				padding-right: 26px;
+  				padding-bottom: 24px;	
+			}
+		}
+	}
+	.carousel-indicator-wrap{
+		height:$v_carousel_height;
+		background-color:$white;	
+		width:32%;
+		float:right;
+		margin-right:-2%;
+	}
+	.carousel-indicators{
+		position:relative;
+		left:0;
+		width:auto;
+		margin-left:0;
+		list-style:none;
+		bottom:0;
+		max-height:$v_carousel_height + 15px;
+		overflow:scroll;
+		background-color:$color3;
+		
+		
+		/*&::-webkit-scrollbar { 
+    		display: none; 
+		}*/
+		
+		li{
+			width:100%;
+			height:auto;
+			float:left;
+			text-indent:inherit;	
+			border-radius: 0;
+			border: none;
+			border-bottom: 1px solid rgba(255,255,255,0.25);
+			text-align: left;
+			padding: 15px;
+			margin:0;
+			
+			
+			
+			h4{
+				font-size:13px;
+				border-bottom:1px solid rgba(74,74,74,0.25);
+				letter-spacing: 1px;
+				padding-bottom: 8px;
+				font-weight: 500;
+				text-transform:uppercase;
+				color:$blue;
+				
+	
+				
+				span{
+					color:$color4;
+				}
+			}
+			
+			
+			&.active{
+				background-color:$color2;	
+				
+				h4{
+					border-bottom:1px solid rgba(255,255,255,0.25);
+					span{
+						color:rgba(255,255,255,0.8);	
+					}
+					
+					&:before{
+						content:"\f0da";
+						font-family:$font-awesome;
+						color:$blue;
+						margin-left:-15px;	
+						width:15px;
+						float:left;
+					}
+					
+				}
+				
+				p{
+					color:rgba(255,255,255,0.8);	
+				}
+			}
+		}
+	}
+	
+}
+
 /* Helpers */
+.xg,
 .x-gutters{
     padding-left:0;
     padding-right:0;	

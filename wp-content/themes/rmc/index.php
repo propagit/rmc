@@ -41,12 +41,97 @@ get_header();
         </div>
     </div>
 
-
+	<!-- news -->
     <div class="container">
-        <div class="col-xs-12 x-gutters v-slider">
-            <img src="<?php echo bloginfo('template_directory') . '/img/rmcPlaceholder.jpg'; ?>" />
+        <div class="col-sm-12 xg vertical-carousel">
+        	<div id="newsCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-content">
+                    <div class="carousel-inner">
+    
+                          <?php 
+                           $active = true;
+                           $indicators = '';
+                           $count = 0;
+                           $total_news_items = 0;
+                           if (have_rows('news', 'option')){
+                                while (have_rows('news', 'option')){ 
+                                the_row();
+                                $heading = get_sub_field('news_heading', 'option');
+                                $image = get_sub_field('news_image', 'option');
+                                $long_desc = get_sub_field('news_long_description', 'option');
+                                $short_desc = get_sub_field('news_short_description', 'option');
+                           ?>
+                                <div class="item <?php echo $active ? 'active' : '';?>">
+                                
+                                    <div class="caption col-sm-7 xg">
+                                        <h4><?php echo sprintf("%02d", $count + 1) . '.'; ?></h4>
+                                        <h1><?php echo $heading; ?></h1>
+                                        <p><?php echo $long_desc; ?></p>
+                                    </div>
+                                    <div class="col-sm-5 xg">
+                                        <img src="<?php echo $image['url']; ?>"/>
+                                    </div>
+                                </div>
+                           
+                           <?php 
+                                $indicators .= '<li data-target="#newsCarousel" data-slide-to="' . $count . '" ' . ( $active ? 'class="active"' : '' ) . '>
+                                                    <h4><span> ' . sprintf("%02d", $count + 1) . '. </span>' . $heading . '</h4>
+                                                    <p> ' . $short_desc . '</p>
+                                                </li>';
+                                $active = false;
+                                $count++;
+								$total_news_items++;
+                                } # while
+                           } # if have rows
+                           ?>
+                  
+                        
+                    </div>
+                </div>
+                <div class="carousel-indicator-wrap" id="news-carousel-indicators">
+                 	<ol class="carousel-indicators">
+                    	<?php echo $indicators; ?>
+                  	</ol>
+            	</div>
+
+            </div><!-- carousel-->
+            
+     		
         </div>
     </div>
+    <!-- news -->
+	<script>
+		$(function(){
+			$('#newsCarousel').carousel({
+			  interval: 2000
+			});
+			
+			var v_counter = 0;
+			var v_topOffset = 31;
+			$('#newsCarousel').on('slide.bs.carousel',function(){
+				var warp = $('#news-carousel-indicators .carousel-indicators');
+				var indi = $('#news-carousel-indicators .carousel-indicators li.active');	
+				var slideNo = indi.attr('data-slide-to');
+				var height = indi.height();
+				
+				// if end of file reached scroll top
+				if(slideNo == '<?=$total_news_items - 1;?>'){
+					warp.animate({ scrollTop: 0});
+					v_counter = -1;		
+				}
+				if(v_counter == 2){
+					v_counter = -1;
+					warp.animate({ scrollTop: (height * 3) + v_topOffset});	
+					
+				}
+	
+				v_counter++;
+				
+			});
+		}); //ready
+
+	</script>
+    
     <div class="container">
         <div class="jump-points-wrapper">
             <div class="jump-points-header">
