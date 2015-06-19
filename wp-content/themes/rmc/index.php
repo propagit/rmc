@@ -63,12 +63,12 @@ get_header();
                            ?>
                                 <div class="item <?php echo $active ? 'active' : '';?>">
                                 
-                                    <div class="caption col-sm-7 xg">
+                                    <div class="caption col-sm-7 col-xs-12 xg">
                                         <h4><?php echo sprintf("%02d", $count + 1) . '.'; ?></h4>
                                         <h1><?php echo $heading; ?></h1>
                                         <p><?php echo $long_desc; ?></p>
                                     </div>
-                                    <div class="col-sm-5 xg">
+                                    <div class="col-sm-5 col-xs-12 xg">
                                         <img src="<?php echo $image['url']; ?>"/>
                                     </div>
                                 </div>
@@ -88,12 +88,18 @@ get_header();
                         
                     </div>
                 </div>
-                <div class="carousel-indicator-wrap" id="news-carousel-indicators">
+                <div class="carousel-indicator-wrap visible-lg" id="news-carousel-indicators">
                  	<ol class="carousel-indicators">
                     	<?php echo $indicators; ?>
                   	</ol>
             	</div>
-
+			
+            <a class="left carousel-control hidden-lg" href="#newsCarousel" role="button" data-slide="prev">
+                <span class="slide-btn"><i class="fa fa-caret-left"></i></span>
+            </a>
+            <a class="right carousel-control hidden-lg" href="#newsCarousel" role="button" data-slide="next">
+                <span class="slide-btn"><i class="fa fa-caret-right"></i></span>
+            </a>
             </div><!-- carousel-->
             
      		

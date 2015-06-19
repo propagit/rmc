@@ -779,6 +779,11 @@ p {
     padding-right: 1% !important; }
     .product-brochures ul li img {
       width: 100%; } }
+@media (max-width: 1200px) {
+  .vertical-carousel .carousel-content {
+    width: 100%; }
+  .vertical-carousel .carousel-inner {
+    height: auto; } }
 @media (max-width: 990px) {
   .menu-wrap .top-menu-wraper ul li {
     font-size: 12px;
@@ -793,6 +798,10 @@ p {
     margin-bottom: 15px; }
     .search-left input, .search-left select, .search-right input, .search-right select {
       width: 100% !important; } }
+@media (max-width: 768px) {
+  .vertical-carousel .carousel-inner .item img {
+    padding-right: 0;
+    max-width: inherit; } }
 @media (max-width: 400px) {
   .header .logo img {
     width: 150%; } }
