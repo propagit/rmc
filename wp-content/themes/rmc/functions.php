@@ -95,3 +95,4 @@ function select_product(){
 add_action( 'wp_ajax_the_ajax_hook_2', 'select_product' );
 add_action( 'wp_ajax_nopriv_the_ajax_hook_2', 'select_product' );
 
+

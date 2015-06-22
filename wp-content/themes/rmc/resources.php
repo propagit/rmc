@@ -80,7 +80,7 @@ get_header();
                         $name = get_the_title();
                         /* if (get_field("brochure")) {
                           $brochure = get_field("brochure");
-                          $type_file = "<i class=\"fa fa-file-pdf-o\"></i> PDF";
+                          
                           } */
                         if (get_field("video")) {
                             $video = get_field("video");
@@ -93,6 +93,7 @@ get_header();
                             }
                         }
                         if (have_rows('brochures')):
+                            $type_file = "<i class=\"fa fa-file-pdf-o\"></i> PDF";
                             while (have_rows('brochures')):the_row();
                                 $brochure = get_sub_field('brochure_file');
                                 ?>

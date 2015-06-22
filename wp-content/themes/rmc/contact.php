@@ -28,7 +28,7 @@ get_header();
         </div>
         <div class="col-sm-5 contact-form-wrap">
             <div class="contact-form">
-                <form method="post" class="form-contact" id="contact" action="sendmail.php">
+                <form method="post" class="form-contact" id="contact" action="<?php echo bloginfo('template_directory').'/sendmail.php'?>">
                     <div class="form-group fields-group">
                         <input type="text" class="fields form-control" name="name" id="name" placeholder="your name..." required=""/>
                         <input type="text" class="fields form-control" name="company" id="company" placeholder="company name..." required=""/>
