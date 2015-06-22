@@ -952,12 +952,54 @@ $carousel_nav_dim:35px;
 }
 /* Where */
 .locations-wrap{
-    .locations-content{
+    .locations-content{ 
+        padding-top: 20px;
         text-align:center;
         .search-location{
             #select-location{
                 width: 30% !important;
                 padding-left: 10px;
+                margin-top: 40px;  
+            }
+            .fa{
+                margin-left: -20px;
+            }
+        }
+        .locations-details-wrap{
+            border: 1px solid #e2e2e2;
+            margin-top: 30px;
+            padding: 0;
+            h2{
+                font-family: 'GillSansStd-Bold';
+                font-size: 20px;
+                line-height: 19px;
+                font-weight: 600;
+
+            }
+            .locations-details-header{
+                border-bottom: 1px solid #e2e2e2;
+            }
+            .location-part{
+                text-align: left;
+                padding: 30px 6%;
+                p{
+                    font-size: 14px;
+                    line-height: 19px;
+                    font-weight: 600;
+                    margin-bottom: 0px;
+                }
+            }
+            .location-details-header-close{
+                background: #f7f7f7;
+                padding: 0;
+                border-top: 1px solid #e2e2e2;
+            }
+            .location-details-close{
+                background: #f7f7f7;
+                padding: 0;
+            }
+            .location-mark{
+                color: $blue;
             }
         }
     }

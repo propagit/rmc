@@ -63,7 +63,7 @@ get_header();
                                     <p><span style="padding-right: 30px;">Share</span> 
                                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>"><i class="fa fa-facebook-square"></i></a> 
                                         <a href="https://twitter.com/home?status=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>"><i class="fa fa-twitter-square"></i> </a>
-                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost/propagate/rmc/products/ball-valves-accessories/&title=Ball%20Valves%20%26%20Accessories&summary=&source="><i class="fa fa-linkedin-square"></i></a> 
+                                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>&title=<?php echo the_title();?>&summary=&source="><i class="fa fa-linkedin-square"></i></a> 
                                         <i class="fa fa-pinterest-square"></i> 
                                         <i class="fa fa-instagram"></i> 
                                         <i class="fa fa-envelope-square"></i></p>
