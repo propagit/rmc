@@ -31,7 +31,9 @@ get_header();
                                     <p><?php echo $brochure_name; ?></p>
                                 </li>
                             <?php endwhile; ?>
-                        <?php endif; ?>
+                        <?php endif; 
+                        wp_reset_postdata();?>
+                                
                     </ul>
                 </div>
             </div>
