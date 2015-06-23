@@ -84,7 +84,7 @@ get_header();
                             $video = get_field("video");
                             $type_file = "<i class=\"fa fa-file-video-o\"></i> VIDEO";
                         }
-                        $category_terms = get_the_terms(0, 'type_products');
+                        $category_terms = get_the_terms(1, 'type_products');
                         if ($category_terms) {
                             foreach ($category_terms as $category_term) {
                                 $category = $category_term->name;
