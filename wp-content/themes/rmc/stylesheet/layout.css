@@ -719,7 +719,8 @@ p {
       font-size: 14px;
       line-height: 19px; }
     .product-details-content .product-details-left-wrap .product-details-left .tab-content .product-details-brochure p {
-      padding-top: 0px; }
+      padding-top: 0px;
+      padding-left: 20px; }
       .product-details-content .product-details-left-wrap .product-details-left .tab-content .product-details-brochure p a {
         text-decoration: none;
         color: #4f91cd; }
