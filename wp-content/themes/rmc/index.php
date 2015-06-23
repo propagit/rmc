@@ -138,7 +138,7 @@ get_header();
 
 	</script>
     
-    <div class="container">
+    <div class="container hidden-xs">
         <div class="jump-points-wrapper">
             <div class="jump-points-header">
                 <h2>Browse Products By Category</h2>
@@ -153,7 +153,7 @@ get_header();
                             $jumppoint_text = get_sub_field('jump_point_text', 'option');
                             $category_link = get_sub_field('url_name','option');
                             ?>
-                            <li <?php echo $jp_first;?>>
+                        <li <?php echo $jp_first;?>>
                                 <a href="<?php echo site_url().'/type_products/'.$category_link.'/';?>">    
                                     <img src="<?php echo $jumppoint_image['url']; ?>"/></a>
                                 <p><?php echo $jumppoint_text; ?></p>

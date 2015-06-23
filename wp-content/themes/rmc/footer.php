@@ -40,6 +40,8 @@
 <script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/jquery.mobile.custom.min.js'; ?>"></script>
 <!--<script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/bootstrap.min.js'; ?>"></script>-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/jquery.fancybox.pack.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/jquery.fancybox-media.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/slidebars.min.js'; ?>"></script>
 <script>
     $('#top').on('click', function (e) {

@@ -10,9 +10,10 @@ get_header();
             <h1><?php echo the_title(); ?></h1>
         </div>
         <div class="col-sm-7">
-            <h3>Reliance Worldwide Corporation</h3>
+            
             <h2>Have a question about RMC products?</br>
                 Contact Our team by filling out the contact form</h2>
+            <h3>Reliance Worldwide Corporation</h3>
             <p><i class="fa fa-home"></i> 27-28 Chapman Place</br>
                 Eagle Farm, QLD 4009</br>
                 Australia</p>

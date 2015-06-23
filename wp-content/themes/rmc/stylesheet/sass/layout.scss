@@ -79,7 +79,7 @@ p{
 }
 .container{
     background: white;
-    box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 12px 0 15px -4px #a2a2a2, -12px 0 15px -4px #a2a2a2;
+    box-shadow: 0 9px 0px 0px white, 0 -20px 0px 0px white, 12px 0 15px -4px #a2a2a2, -12px 0 15px -4px #a2a2a2;
 }
 
 
@@ -374,11 +374,13 @@ $nav_height:65px;
             padding:0px 18%;
             margin-top:90px;
             letter-spacing:0.5px;
-            font-size:53px;
+            //font-size:53px;
+            font-size: 2.8vw;
         }
         h2{
             font-family: 'GillSansStd-Light';
-            font-size:39px;
+            //font-size:39px;
+            font-size: 2vw;
             color: white;
             letter-spacing:0;
             padding:0px 20%;
@@ -446,7 +448,7 @@ $carousel_nav_dim:35px;
     .jump-points-header{
         background: #e5e5e5;
         margin-top: 20px;
-        border: 1px solid #afafaf;
+        border: 1px solid #e9e9e9;
         height:46px;
         padding:14px 18px;
         h2{
@@ -469,7 +471,8 @@ $carousel_nav_dim:35px;
                 display: inline-block; 
                 border-right: 1px solid #e9e9e9;
                 border-bottom: 1px solid #e9e9e9;
-                width: 24.7%;
+                width: 25%;
+                margin-left: -3.9px;
                 img{
                     margin-top: 20px;
                     width: 163px;
@@ -481,9 +484,11 @@ $carousel_nav_dim:35px;
                 color: #707070;
                 font-family: $font-arial;
                 font-size: 16px;
+                line-height: 25px;
             }
             #jp-first{
                 border-left: 1px solid #e9e9e9;
+                margin-left: 0px;
             }
         }
     }
@@ -786,7 +791,7 @@ $carousel_nav_dim:35px;
                 -moz-border-radius: 3px;
                 -webkit-border-radius: 3px;
                 border-radius: 3px;
-                height: 95px;
+                //height: 95px;
                 h3{
                     font-size: 14px;
                     line-height: 24px;
@@ -886,8 +891,10 @@ $carousel_nav_dim:35px;
             .tab-content{
                 border: 1px solid #e2e2e2;
                 border-top: none;
+                .product-long-description{
+                    padding-left: 20px
+                }
                 p{
-                    padding-left: 20px;
                     padding-right: 10%;
                     padding-top: 15px;
                     font-size: 14px;
@@ -903,6 +910,7 @@ $carousel_nav_dim:35px;
                     }  
                 }
                 .share-links{
+                    padding-left: 20px;
                     margin-top: 20px;
                     p{
                         font-weight: 600;
@@ -1287,6 +1295,15 @@ $v_carousel_height:370px;
             height:auto;	
         }
     }
+    .menu-wrap{
+        .top-menu{
+            ul{
+                li{
+                    padding: 0px 2%;
+                }
+            }
+        }
+    }
 }
 
 @media(max-width: 990px){
@@ -1297,6 +1314,26 @@ $v_carousel_height:370px;
                     font-size: 12px;
                     padding: 0px 2%;
 
+                }
+            }
+        }
+    }
+    .item{
+        .item-text{
+            h1{
+                line-height: 35px;
+                margin-top: 40px;
+            }
+            h2{
+                line-height: 25px;
+            }
+        }
+    }
+    .menu-wrap{
+        .top-menu{
+            ul{
+                li{
+                    padding: 0px 1%;
                 }
             }
         }
@@ -1327,13 +1364,46 @@ $v_carousel_height:370px;
             }
         }
     }
+    .item{
+        .item-text{
+            h1{
+                font-size: 4vw;
+            }
+            h2{
+                font-size: 3vw;
+            }
+        }
+    }
 
+}
+@media(max-width: 590px){
+    .item{
+        height: 208px;
+        .item-text{
+            h2{
+                margin-top: 20px;
+            }
+        }
+        img{
+            height: 208px !important;
+        }
+    }
 }
 @media(max-width:400px){
     .header{
         .logo{
             img{
                 width: 150%;
+            }
+        }
+    }
+    .item{
+        .item-text{
+            h1{
+                line-height: 25px;
+            }
+            h2{
+                line-height: 18px;
             }
         }
     }

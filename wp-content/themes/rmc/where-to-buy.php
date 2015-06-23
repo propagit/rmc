@@ -22,7 +22,8 @@ get_header();
                     <p>143 - 153 Palmer Street,</br>
                         Richmond VIC 3121</br>
                         Australia</p>
-                    <p class="location-mark"><i class="fa fa-map-marker"></i> View Map</p>
+                    <p class="location-mark"><i class="fa fa-map-marker"></i>
+                        <a class="fancybox-media" href="<?php echo bloginfo('template_directory') . '/maps.php'; ?>"> View Map</a></p>
                 </div>
                 <div class="col-sm-4 location-part">
                     <h2>Richmond North</br> 
@@ -84,6 +85,18 @@ get_header();
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('.fancybox-media').fancybox({
+            'openEffect': 'none',
+            'closeEffect': 'none',
+            'type' : 'iframe',
+            helpers: {
+                media: {}
+            }
+        });
+    });
+</script>
 
 <?php
 get_footer();
