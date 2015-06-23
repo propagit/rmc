@@ -78,10 +78,6 @@ get_header();
                     while ($the_querry->have_posts()) {
                         $the_querry->the_post();
                         $name = get_the_title();
-                        /* if (get_field("brochure")) {
-                          $brochure = get_field("brochure");
-                          
-                          } */
                         if (get_field("video")) {
                             $video = get_field("video");
                             $type_file = "<i class=\"fa fa-file-video-o\"></i> VIDEO";

@@ -811,6 +811,7 @@ $carousel_nav_dim:35px;
     .product-list{
         margin-bottom: 25px;
         padding-right: 0;
+        height: 225px;
         .product-list-image{
             text-align: center;
             border: 1px solid #e2e2e2;
@@ -829,7 +830,7 @@ $carousel_nav_dim:35px;
             -moz-border-radius: 3px;
             -webkit-border-radius: 3px;
             border-radius: 3px;
-            height: 120px;
+            height: 140px;
             a{
                 text-decoration: none;
                 h3{
