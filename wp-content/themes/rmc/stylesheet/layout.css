@@ -481,7 +481,8 @@ p {
           font-weight: 600;
           color: #4f91cd; }
       .resources-wrap .resources-content .resources-top-part .resources-left-wrap .product-brochures {
-        border-right: 1px solid #e6e6e6; }
+        border-right: 1px solid #e6e6e6;
+        padding: 0; }
         .resources-wrap .resources-content .resources-top-part .resources-left-wrap .product-brochures ul {
           list-style: none;
           margin-top: 10px; }
@@ -626,8 +627,11 @@ p {
         -webkit-border-radius: 3px;
         border-radius: 3px; }
         .product-list-wrap ul li .product-list-image img {
-          max-height: 150px;
-          margin: 30px 0; }
+          margin: 30px 0;
+          width: auto;
+          height: auto;
+          max-height: 150%;
+          max-width: 100%; }
       .product-list-wrap ul li .product-list-content {
         margin-top: 8px;
         text-align: center;
