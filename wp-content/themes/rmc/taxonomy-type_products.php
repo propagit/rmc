@@ -51,7 +51,7 @@ get_header();
                     'orderby' => 'title',
                     'order' => 'ASC'
                 );
-                query_posts($query_string . '&orderby=title&order=ASC&post_per_page=50');
+                query_posts($query_string . '&post_per_page=50&orderby=title&order=ASC');
                if (have_posts()) {
                     ?>
                     
