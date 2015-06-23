@@ -724,8 +724,10 @@ p {
     margin-top: 66px;
     height: 515px; }
     .product-details-content .product-details-right-wrap .product-details-right img {
+      width: auto;
+      height: auto;
       max-height: 435px;
-      width: 100%;
+      max-width: 100%;
       margin-top: 10%; }
 
 .v-slider img {
