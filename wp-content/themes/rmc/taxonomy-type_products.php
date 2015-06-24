@@ -91,7 +91,7 @@ get_header();
 
             // RUN AN AJAX CALL
             jQuery.ajax({
-                url: 'http://localhost/propagate/rmc/wp-json/posts?type[]=products&filter[taxonomy]=type_products', // URL USING JSON REST API
+                url: '<?php echo home_url(); ?>/wp-json/posts?type[]=products&filter[taxonomy]=type_products', // URL USING JSON REST API
                 type: 'GET',
                 data: 'filter[term]=' + search_val, // PASS IN THE VALUE OF THE DROP DOWN AS A ID (CHECK AGAINST TERMS OF THE TAXONOMY 'MAKE')
                 dataType: 'JSON',
