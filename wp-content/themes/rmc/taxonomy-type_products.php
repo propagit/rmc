@@ -27,10 +27,11 @@ get_header();
                         'order' => 'ASC'
                     );
                     $sub_categories = get_categories($args);
+                    
                     if ($sub_categories) {
                         foreach ($sub_categories as $sub_category) {
                             ?>
-                            <option value="<?php echo $sub_category->cat_ID; ?>"><?php echo $sub_category->name; ?></option>          
+                            <option value="<?php echo $sub_category->slug; ?>"><?php echo $sub_category->name; ?></option>          
                             <?php
                         }
                     }
@@ -41,10 +42,7 @@ get_header();
                 <input type="text" id="search-product" name="search-product" placeholder="enter product name..."/>
             </div>
         </div>
-        <!-- <div id="models">
-            asdfasdf
-        </div> -->
-        <div class="product-list-wrap col-sm-12">
+        <div class="product-list-wrap col-sm-12" id="models">
                     <?php
                 $args = array(
                     'post_per_page' => -1,
@@ -93,7 +91,7 @@ get_header();
 
             // RUN AN AJAX CALL
             jQuery.ajax({
-                url: 'http://localhost/propagate/rmc/wp-json/posts?type[]=products&filter[terms]=type_products&filter[ID]=89', // URL USING JSON REST API
+                url: 'http://localhost/propagate/rmc/wp-json/posts?type[]=products&filter[taxonomy]=type_products', // URL USING JSON REST API
                 type: 'GET',
                 data: 'filter[term]=' + search_val, // PASS IN THE VALUE OF THE DROP DOWN AS A ID (CHECK AGAINST TERMS OF THE TAXONOMY 'MAKE')
                 dataType: 'JSON',
@@ -101,7 +99,19 @@ get_header();
                     var sel = $("#models"); // SELECT THE SECOND DROP DOWN WITH THE ID MODELS
                     sel.empty(); // JUST MAKE SURE ITS EMPTY
                     for (var i = 0; i < data.length; i++) { // LOOP THROUGH EACH POST FOUND BY THE AJAX CALL
-                        sel.append('<p>' + data[i]['title'] + '</p>'); // SET POSTS INTO HTML OPTIONS AND APPEND TO MODELS DROP DOWN
+                        sel.append(
+                                '<div class="col-sm-3 product-list">' +
+                        '<div class="product-list-image">' +
+                            '<a href="<?php the_permalink();?>"><img src="'+ data[i].acf["product_image"]["url"] + '"/></a>' +
+                        '</div>' +
+                        '<div class="product-list-content">' +
+                            '<a href="<?php the_permalink();?>"><h3>'+ data[i]['title'] + '</h3></a>' +
+                            '<p>' + data[i].acf['short_description'] + '</p>' +                            
+                        '</div>' +
+                    '</div>'
+            
+            
+            ); // SET POSTS INTO HTML OPTIONS AND APPEND TO MODELS DROP DOWN
                     }
 
 
