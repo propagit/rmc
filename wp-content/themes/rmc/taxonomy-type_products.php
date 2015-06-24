@@ -102,10 +102,10 @@ get_header();
                         sel.append(
                                 '<div class="col-sm-3 product-list">' +
                         '<div class="product-list-image">' +
-                            '<a href="<?php the_permalink();?>"><img src="'+ data[i].acf["product_image"]["url"] + '"/></a>' +
+                            '<a href="'+ data[i]['link'] +'"><img src="'+ data[i].acf["product_image"]["url"] + '"/></a>' +
                         '</div>' +
                         '<div class="product-list-content">' +
-                            '<a href="<?php the_permalink();?>"><h3>'+ data[i]['title'] + '</h3></a>' +
+                            '<a href="'+ data[i]['link'] +'"><h3>'+ data[i]['title'] + '</h3></a>' +
                             '<p>' + data[i].acf['short_description'] + '</p>' +                            
                         '</div>' +
                     '</div>'
