@@ -28,8 +28,8 @@ get_header();
             </div>
         </div>
         <div class="col-sm-5 contact-form-wrap">
-            <div class="contact-form">
-                <form method="post" class="form-contact" id="contact" action="<?php echo bloginfo('template_directory').'/sendmail.php'?>">
+            <div class="contact-form" id="contact-form">
+                <form method="post" class="form-contact" id="contact" action="javascript:send_mail();">
                     <div class="form-group fields-group">
                         <input type="text" class="fields form-control" name="name" id="name" placeholder="your name..." required=""/>
                         <input type="text" class="fields form-control" name="company" id="company" placeholder="company name..." required=""/>
@@ -45,7 +45,27 @@ get_header();
 
     </div>
 </div>
-
+<script>
+    function send_mail(){
+	$.ajax({
+		url:'<?php echo admin_url('admin-ajax.php'); ?>',
+		method:'POST',
+		data:{
+			action:'send_mail',
+			name:$('#name').val(),
+                        comapany:$('#company').val(),
+                        email:$('#email').val(),
+                        phone:$('#phone').val(),
+                        message:$('#message').val(),
+				
+		}
+	}).done(function(response){
+		var sel = $("#contact-form"); // SELECT THE SECOND DROP DOWN WITH THE ID MODELS
+                //sel.empty(); 
+		$('#contact-form').html(response);
+	})
+}
+</script>
 
 
 

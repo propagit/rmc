@@ -1,6 +1,4 @@
-
 <?php
-
 register_nav_menus ();
 
 /* Creating Option Section */
@@ -157,6 +155,13 @@ add_action( 'wp_ajax_nopriv_get_stores', 'get_stores' );
 add_action( 'wp_ajax_surrouding_stores', 'surrouding_stores' );
 add_action( 'wp_ajax_nopriv_surrouding_stores', 'surrouding_stores' );
 
+#products
+add_action( 'wp_ajax_get_products', 'get_products' );
+add_action( 'wp_ajax_nopriv_get_products', 'get_products' );
+
+#send mail
+add_action( 'wp_ajax_send_mail', 'send_mail' );
+add_action( 'wp_ajax_nopriv_send_mail', 'send_mail' );
 
 # db postocdes
 define('postcode_db','aus_postcodes');
@@ -166,7 +171,7 @@ define('postcode_pword','root');
 # db wordpress
 define('wp_db','rmc');
 define('wp_db_uname','root');
-define('wp_db_pword','');
+define('wp_db_pword','root');
 
 function get_locations(){
 	# uname, pword, db name
@@ -370,30 +375,82 @@ function surrouding_stores(){
 
 function get_products()
 {
-	$product_name = $_POST['product_name'];
+#echo  'test';exit;	
+    $product_name = $_POST['product_name'];
+    if(!$product_name){
+        $product_name=' ';
+    }
 	# uname, pword, db name
 	$wp_db = new wpdb(wp_db_uname,wp_db_pword,wp_db,'localhost');
 	$sql = "SELECT pm.ID 
-			FROM wp_posts pm
+                            FROM wp_posts pm
 			WHERE 
-				(pm.post_title = '$product_name')
-			GROUP BY pm.post_id";
+                            pm.post_title LIKE '" . $product_name . "%'
+                            AND pm.post_type = 'products'
+			GROUP BY pm.ID";
 	$rows = $wp_db->get_results($sql);
+        #print_r($sql);
+        #print_r($rows);
+	#exit;
 	$products = '';	
 	if($rows){
 		foreach($rows as $row){
 			$post_id = $row->ID;
 			$post = get_post($post_id);
-			$products .= '<div class="col-sm-4 location-part">
-							<h2>' . get_post_meta( $post_id, 'suburb', true ) . '</br> ' . $post->post_title . '</h2>
-							<p>' . get_post_meta( $post_id, 'address_1', true ) . ' ' . get_post_meta( $post_id, 'address_2', true ) . ',</br>
-								' . get_post_meta( $post_id, 'suburb', true ) . ' ' . get_post_meta( $post_id, 'state', true ) . ' ' . get_post_meta( $post_id, 'postcode', true ) . '</br>
-								Australia</p>
-							<p class="location-mark"><i class="fa fa-map-marker"></i>
-								<a class="fancybox-media" href="#"> View Map</a></p>
-						</div>';
+                        $image = get_post_meta( $post_id, 'product_image', true );
+                        $image_post = get_post($image);
+                        $image_name = $image_post->guid;
+                        #$products = print_r($post);
+			$products .= '<div class="col-sm-3 product-list">
+                            <div class="product-list-image">
+                            <a href="'. site_url() . '/'.$post->post_name.'"> '
+                                . '<img src="'. $image_name .'" /> </a></div>
+                                    <div class="product-list-content">
+                                    <a href="'. site_url() . '/'.$post->post_name.'"><h3>'.$post->post_title.'</h3></a>
+                                        <p>'.  get_post_meta($post_id, "short_description",true).'</p> </div> </div>';
 		}
 	}
-	echo $stores;
+	echo $products;
 	exit;
+}
+function alpha_sort_terms($terms) {
+  remove_filter('get_the_terms','alpha_sort_terms');
+  foreach ( $terms as $term ) {
+    $newterms[$term->term_id] = $term;
+  }
+  ksort($newterms);
+  return $newterms;
+}
+add_filter('get_the_terms','alpha_sort_terms');
+
+function send_mail(){
+    $to = 'zack@propagate.com.au';
+	#$to = 'kaushtuv@propagate.com.au';
+	$subject = 'Question about RMC product from '.$_POST['name'];
+	$headers = "From: " . strip_tags($_POST['email']) . "\r\n";
+	#$headers .= "Reply-To: ". strip_tags($_POST['email']) . "\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+	
+	
+	$message = '<html><body>';
+	$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+	$message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
+        $message .= "<tr><td><strong>Company:</strong> </td><td>" . strip_tags($_POST['company']) . "</td></tr>";
+	$message .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($_POST['email']) . "</td></tr>";
+	$message .= "<tr><td><strong>Phone:</strong> </td><td>" . strip_tags($_POST['phone']) . "</td></tr>";
+        $message .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($_POST['message']) . "</td></tr>";
+        
+        
+	
+	$message .= "</table>";
+	$message .= "</body></html>";
+	
+	mail($to, $subject, $message, $headers);
+	#wp_mail( $to, $subject, $message, $headers );
+	
+	$thank_you.= '<div class="contact-form" id="contact-form">'
+                . '<h2>Thank You</h2>';
+        echo $thank_you;
+        exit;
 }

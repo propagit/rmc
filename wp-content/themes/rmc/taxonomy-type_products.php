@@ -40,7 +40,7 @@ get_header();
                 </select>
             </div>
             <div class="search-right col-sm-6">
-                <input type="text" id="s" name="s" class="ui-autocomplete-input" autocomplete="off" placeholder="enter product name..."/>
+                <input type="text" id="search-product" name="search-product"  placeholder="enter product name..."/>
             </div>
         </div>
         <div class="product-list-wrap col-sm-12" id="models">
@@ -124,6 +124,37 @@ get_header();
             });
         }
     }
+</script>
+<script>
+    
+    $(function(){
+        $('#search-product').focus();
+        $('#search-product').keyup(function(){
+            get_products();
+    
+        });
+    
+    })
+    
+    function get_products(){
+	$.ajax({
+		url:'<?php echo admin_url('admin-ajax.php'); ?>',
+		method:'POST',
+		data:{
+			action:'get_products',
+			product_name:$('#search-product').val(),
+				
+		}
+	}).done(function(response){
+		var sel = $("#models"); // SELECT THE SECOND DROP DOWN WITH THE ID MODELS
+                //sel.empty(); 
+		$('#models').html(response);
+                if(!response){
+                location.reload();
+                
+    }
+	})
+}
 </script>
 
 

@@ -4,15 +4,11 @@ get_header();
 <div class="container-fluid product-details-wrapper">
     <div class="container product-details-content">
         <?php
-        $category_terms = get_the_terms(get_queried_object()->ID, 'type_products');
-        $category_product = $category_terms['1']->name;?>
+        $category_terms = get_the_terms(get_queried_object()->ID, 'type_products');?>
         <div class="product-breadcrumb">
             <p>
-                <span style="color: #4f91cd;">
-                <?php echo $category_product; ?></span>
-                <i class="fa fa-angle-right"></i>
         <?php foreach($category_terms as $category_term){?>
-        <span style="color: #4f91cd;"><?php echo $category_term->name;?></span>
+                <a href="<?php echo site_url().'/type_products/'. $category_term->slug; ?>"><span style="color: #4f91cd;"><?php echo $category_term->name;?></span></a>
                 <i class="fa fa-angle-right"></i>
             <?php
             } echo the_title(); ?></p>
@@ -65,9 +61,9 @@ get_header();
                                         <i class="fa fa-instagram"></i> 
                                         <i class="fa fa-envelope-square"></i></p>
                                 </div>
-                                <div class="product-enquire">
+                                <a href="<?php echo home_url().'/contact';?>"><div class="product-enquire">
                                     ENQUIRE ABOUT THIS PRODUCT
-                                </div>
+                                    </div></a>
                             </div>
                             <div role="tabpanel" class="tab-pane fade product-size" id="sizes">   
                                 <tr>
