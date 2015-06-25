@@ -89,10 +89,8 @@ function create_products_taxonomies() {
 
 /* end taxonomi Type Products Or Brochures from Products Or Brochures */
 
-function select_product(){
-    echo $_POST['option'];
-}
-add_action( 'wp_ajax_the_ajax_hook_2', 'select_product' );
-add_action( 'wp_ajax_nopriv_the_ajax_hook_2', 'select_product' );
+
+
+
 
 

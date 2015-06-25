@@ -4,21 +4,18 @@ get_header();
 <div class="container-fluid product-details-wrapper">
     <div class="container product-details-content">
         <?php
-        $category_terms = get_the_terms(0, 'type_products');
-        //print_r($category_terms);
-        if ($category_terms) {
-            foreach ($category_terms as $category_term) {
-                $category_name = $category_term->name;
-                $subcategory_name = $category_term->name;
-            }
-        }
-        ?>
+        $category_terms = get_the_terms(get_queried_object()->ID, 'type_products');
+        $category_product = $category_terms['1']->name;?>
         <div class="product-breadcrumb">
-            <p><span style="color: #4f91cd;"><?php echo $category_name; ?></span>
+            <p>
+                <span style="color: #4f91cd;">
+                <?php echo $category_product; ?></span>
                 <i class="fa fa-angle-right"></i>
-                <span style="color: #4f91cd;"><?php echo $subcategory_name; ?></span>
+        <?php foreach($category_terms as $category_term){?>
+        <span style="color: #4f91cd;"><?php echo $category_term->name;?></span>
                 <i class="fa fa-angle-right"></i>
-        <?php echo the_title(); ?></p>
+            <?php
+            } echo the_title(); ?></p>
         </div>
         <?php
         if (have_posts()) {
