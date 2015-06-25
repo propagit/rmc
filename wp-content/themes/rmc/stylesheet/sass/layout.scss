@@ -974,6 +974,36 @@ $carousel_nav_dim:35px;
                 color: $blue;
             }
         }
+		
+		
+		.location-results{
+			max-width:330px;
+			position:absolute;
+			left:0;
+			right:0;
+			background-color:$white;
+			z-index:100;
+			margin:auto;
+			
+			ul{
+				/*border:1px solid $color1;
+				border-bottom:none;	*/
+				list-style:none;
+				max-height:300px;
+				overflow:auto;
+				
+				li{
+					text-align:left;
+					padding:3px 10px;	
+					
+					&:hover{
+						background-color:$color1;
+						cursor:pointer;	
+					}
+				}
+			}
+		}
+		
     }
 }
 
