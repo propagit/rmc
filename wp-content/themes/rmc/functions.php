@@ -502,7 +502,7 @@ exit;
 					add_post_meta( $insert_id, '_edit_lock', time() . ':' . 1 );
 					add_post_meta( $insert_id, 'suburb', trim(ucwords(strtolower($data[4]))));
 					add_post_meta( $insert_id, '_suburb','field_558a44f7c014a'); # local field_558a44f7c014a # live field_558cab98e013a
-					add_post_meta( $insert_id, 'state', trim(ucwords(strtolower($data[5]))));
+					add_post_meta( $insert_id, 'state', trim(strtoupper($data[5])));
 					add_post_meta( $insert_id, '_state','field_558a4507c014b' ); # local field_558a4507c014b # live field_558cabaee013b
 					add_post_meta( $insert_id, 'postcode', trim(ucwords(strtolower($data[6]))));
 					add_post_meta( $insert_id, '_postcode','field_558a457ac014c'); # local field_558a457ac014c # live field_558cabe4e013c
