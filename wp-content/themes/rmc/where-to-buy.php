@@ -6,7 +6,7 @@ get_header();
 
 
 ?>
-<div class="container-fluid locations-wrap">
+<div class="container-fluid locations-wrap results">
     <div class="container locations-content">
         <h1>Where To Buy</h1>
         <h3>Find RMC products close to you</h3>

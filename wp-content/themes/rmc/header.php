@@ -21,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_directory') . '/stylesheet/jquery.fancybox.css'; ?>"/>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/jquery-1.11.2.min.js'; ?>"></script>
-    <?php wp_head(); ?>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<?php wp_head(); ?>
 </head>
 <body>
     <div id="sb-site">
@@ -50,7 +51,10 @@
                         <?php wp_nav_menu(array('menu' => 'Top Menu', 'theme_location' => 'primary')); ?>
                     </div>
                     <div class="header-search col-sm-3">
-                        <?php echo get_search_form(); ?>
+                        <input type="text" name="search" id="search" placeholder="search..."/>
+                    <input type="hidden" id="searchsubmit" /> 
+                    <i class="fa fa-search"></i> 
+                        <!-- <?php// get_search_form(); ?> -->
                     </div>
                 </div>
             </div>

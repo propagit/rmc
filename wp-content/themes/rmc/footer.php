@@ -38,6 +38,7 @@
 
 <script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/jquery-1.11.2.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/jquery.mobile.custom.min.js'; ?>"></script>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 <!--<script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/bootstrap.min.js'; ?>"></script>-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo bloginfo('template_directory') . '/js/jquery.fancybox.pack.js'; ?>"></script>
@@ -71,6 +72,36 @@
             $.slidebars();
         });
     })(jQuery);
+</script>
+<script>
+    
+    $(function(){
+        $('#search').keyup(function(){
+            header_search();
+    
+        });
+    
+    })
+    
+    function header_search(){
+	$.ajax({
+		url:'<?php echo admin_url('admin-ajax.php'); ?>',
+		method:'POST',
+		data:{
+			action:'header_search',
+			product_name:$('#search').val(),
+				
+		}
+	}).done(function(response){
+		var sel = $(".results"); // SELECT THE SECOND DROP DOWN WITH THE ID MODELS
+                //sel.empty(); 
+		$('.results').html(response);
+                if(!response){
+                location.reload();
+                
+    }
+	})
+}
 </script>
 
 </body>

@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-<div class="container-fluid">
+<div class="container-fluid results">
     <div class="container home-wrapper">
         <div id="slider" class="carousel slide" data-ride="carousel" data-interval="false">
             <div class="carousel-inner" role="listbox">

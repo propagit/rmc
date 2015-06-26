@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-<div class="container-fluid resources-wrap">
+<div class="container-fluid resources-wrap results">
     <div class="container resources-content">
         <h1>RMC Resources</h1>
         <h3>To find information on all RMC products use the data table below to search, sort and download</h3>
@@ -49,19 +49,17 @@ get_header();
             </div>
         </div>
         <div class="resources-table col-xs-12 table-responsive">
-            <table class="table">
+            <table class="display table" id="resources">
                 <thead>
                     <tr id="table-search-header">
-                        <th>
+                        <td>
                             <input id="filter" type="text" name="search" id="search" placeholder="search..."/>
-                        </th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
-                </thead>
-                <thead>
                     <tr>
                         <th>Resource Title</th>
                         <th>Category</th>
@@ -150,6 +148,25 @@ get_header();
         }(jQuery));
 
     });
+</script>
+<script>
+$(document).ready(function(){
+    $('#resources').dataTable({
+        aaSorting: [[2, 'asc']],
+        bPaginate: false,
+        bFilter: false,
+        bInfo: false,
+        bSortable: true,
+        bRetrieve: true,
+        aoColumnDefs: [
+            { "aTargets": [ 0 ], "bSortable": true },
+            { "aTargets": [ 1 ], "bSortable": true },
+            { "aTargets": [ 2 ], "bSortable": true },
+            { "aTargets": [ 3 ], "bSortable": true },
+            { "aTargets": [ 4 ], "bSortable": false }
+        ]
+    }); 
+});
 </script>
 
 

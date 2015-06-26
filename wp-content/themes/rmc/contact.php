@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-<div class="container-fluid">
+<div class="container-fluid results">
     <div class="container contact-wrap">
         <div class="col-sm-12">
             <h1><?php echo the_title(); ?></h1>
@@ -53,7 +53,7 @@ get_header();
 		data:{
 			action:'send_mail',
 			name:$('#name').val(),
-                        comapany:$('#company').val(),
+                        company:$('#company').val(),
                         email:$('#email').val(),
                         phone:$('#phone').val(),
                         message:$('#message').val(),

@@ -3,7 +3,7 @@ get_header();
 ?>
 
 
-<div class="container-fluid products-category-wrap">
+<div class="container-fluid products-category-wrap results">
     <div class="container products-category-content">
         <h1><?php echo get_queried_object()->name; ?></h1>
         <h3><?php echo get_queried_object()->description; ?></h3>

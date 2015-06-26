@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-<div class="container-fluid product-details-wrapper">
+<div class="container-fluid product-details-wrapper results">
     <div class="container product-details-content">
         <?php
         $category_terms = get_the_terms(get_queried_object()->ID, 'type_products');?>
