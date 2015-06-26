@@ -144,24 +144,38 @@ function codex_stores_init() {
 
 
 # locations
-add_action( 'wp_ajax_get_locations', 'get_locations' );
-add_action( 'wp_ajax_nopriv_get_locations', 'get_locations' );
+add_action('wp_ajax_get_locations', 'get_locations');
+add_action('wp_ajax_nopriv_get_locations', 'get_locations');
 
 # stores
-add_action( 'wp_ajax_get_stores', 'get_stores' );
-add_action( 'wp_ajax_nopriv_get_stores', 'get_stores' );
+add_action('wp_ajax_get_stores', 'get_stores');
+add_action('wp_ajax_nopriv_get_stores', 'get_stores');
 
 # surrounding stores
-add_action( 'wp_ajax_surrouding_stores', 'surrouding_stores' );
-add_action( 'wp_ajax_nopriv_surrouding_stores', 'surrouding_stores' );
+add_action('wp_ajax_surrouding_stores', 'surrouding_stores');
+add_action('wp_ajax_nopriv_surrouding_stores', 'surrouding_stores');
 
 #products
-add_action( 'wp_ajax_get_products', 'get_products' );
-add_action( 'wp_ajax_nopriv_get_products', 'get_products' );
+add_action('wp_ajax_get_products', 'get_products');
+add_action('wp_ajax_nopriv_get_products', 'get_products');
+
+#header search
+add_action('wp_ajax_header_search', 'header_search');
+add_action('wp_ajax_nopriv_header_search', 'header_search');
 
 #send mail
-add_action( 'wp_ajax_send_mail', 'send_mail' );
-add_action( 'wp_ajax_nopriv_send_mail', 'send_mail' );
+add_action('wp_ajax_send_mail', 'send_mail');
+add_action('wp_ajax_nopriv_send_mail', 'send_mail');
+
+# db postocdes
+define('postcode_db', 'aus_postcodes');
+define('postcode_uname', 'root');
+define('postcode_pword', 'root');
+
+# db wordpress
+define('wp_db', 'rmc');
+define('wp_db_uname', 'root');
+define('wp_db_pword', 'root');
 
 
 function get_locations(){
@@ -357,44 +371,51 @@ function surrouding_stores(){
 	exit;
 		
 }
-
-function get_products()
-{
-
+function get_products() {
+#echo  'test';exit;	
     $product_name = $_POST['product_name'];
-    if(!$product_name){
-        $product_name=' ';
-    }
-	# uname, pword, db name
-	$wp_db = new wpdb(DB_USER,DB_PASSWORD,DB_NAME,'localhost');
-	$sql = "SELECT pm.ID 
+    # uname, pword, db name
+    $wp_db = new wpdb(wp_db_uname, wp_db_pword, wp_db, 'localhost');
+    $sql = "SELECT pm.ID 
                             FROM wp_posts pm
 			WHERE 
                             pm.post_title LIKE '" . $product_name . "%'
                             AND pm.post_type = 'products'
 			GROUP BY pm.ID";
-	$rows = $wp_db->get_results($sql);
+    $rows = $wp_db->get_results($sql);
 
-	$products = '';	
-	if($rows){
-		foreach($rows as $row){
-			$post_id = $row->ID;
-			$post = get_post($post_id);
-                        $image = get_post_meta( $post_id, 'product_image', true );
-                        $image_post = get_post($image);
-                        $image_name = $image_post->guid;
-                        #$products = print_r($post);
-			$products .= '<div class="col-sm-3 product-list">
+    #print_r($sql);
+    #print_r($rows);
+    #exit;
+    $products = '';
+    if (isset($product_name)) {
+        if ($rows) {
+            foreach ($rows as $row) {
+                $post_id = $row->ID;
+                $post = get_post($post_id);
+                $image = get_post_meta($post_id, 'product_image', true);
+                $image_post = get_post($image);
+                $image_name = $image_post->guid;
+                #$products = print_r($post);
+                $products .= '<div class="col-sm-3 product-list">
                             <div class="product-list-image">
-                            <a href="'. site_url() . '/'.$post->post_name.'"> '
-                                . '<img src="'. $image_name .'" /> </a></div>
+                            <a href="' . site_url() . '/' . $post->post_name . '"> '
+                        . '<img src="' . $image_name . '" /> </a></div>
                                     <div class="product-list-content">
-                                    <a href="'. site_url() . '/'.$post->post_name.'"><h3>'.$post->post_title.'</h3></a>
-                                        <p>'.  get_post_meta($post_id, "short_description",true).'</p> </div> </div>';
-		}
-	}
-	echo $products;
-	exit;
+                                    <a href="' . site_url() . '/' . $post->post_name . '"><h3>' . $post->post_title . '</h3></a>
+                                        <p>' . get_post_meta($post_id, "short_description", true) . '</p> </div> </div>';
+            }
+        } else {
+            echo '<h3 style="text-align: center;"> There is/are no product/s with that name. Try again. </h3>';
+            exit;
+        }
+        echo $products;
+    exit;
+    }else{
+    return '';
+    exit;
+    }
+    
 }
 
 function header_search() {	
@@ -456,36 +477,37 @@ function alpha_sort_terms($terms) {
 
 add_filter('get_the_terms','alpha_sort_terms');
 
-function send_mail(){
+function send_mail() {
     $to = 'zack@propagate.com.au';
-	#$to = 'kaushtuv@propagate.com.au';
-	$subject = 'Question about RMC product from '.$_POST['name'];
-	$headers = "From: " . strip_tags($_POST['email']) . "\r\n";
-	#$headers .= "Reply-To: ". strip_tags($_POST['email']) . "\r\n";
-	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-	
-	
-	$message = '<html><body>';
-	$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-	$message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
-        $message .= "<tr><td><strong>Company:</strong> </td><td>" . strip_tags($_POST['company']) . "</td></tr>";
-	$message .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($_POST['email']) . "</td></tr>";
-	$message .= "<tr><td><strong>Phone:</strong> </td><td>" . strip_tags($_POST['phone']) . "</td></tr>";
-        $message .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($_POST['message']) . "</td></tr>";
-        
-        
-	
-	$message .= "</table>";
-	$message .= "</body></html>";
-	
-	mail($to, $subject, $message, $headers);
-	#wp_mail( $to, $subject, $message, $headers );
-	
-	$thank_you.= '<div class="contact-form" id="contact-form">'
-                . '<h2>Thank You</h2>';
-        echo $thank_you;
-        exit;
+    #$to = 'kaushtuv@propagate.com.au';
+    $subject = 'Question about RMC product from ' . $_POST['name'];
+    $headers = "From: " . strip_tags($_POST['email']) . "\r\n";
+    #$headers .= "Reply-To: ". strip_tags($_POST['email']) . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+
+    $message = '<html><body>';
+    $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+    $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
+    $message .= "<tr><td><strong>Company:</strong> </td><td>" . strip_tags($_POST['company']) . "</td></tr>";
+    $message .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($_POST['email']) . "</td></tr>";
+    $message .= "<tr><td><strong>Phone:</strong> </td><td>" . strip_tags($_POST['phone']) . "</td></tr>";
+    $message .= "<tr><td><strong>Message:</strong> </td><td>" . strip_tags($_POST['message']) . "</td></tr>";
+
+
+
+    $message .= "</table>";
+    $message .= "</body></html>";
+
+    mail($to, $subject, $message, $headers);
+    #wp_mail( $to, $subject, $message, $headers );
+
+    $thank_you.= '<div class="contact-form" id="contact-form">'
+            . '<h2>Your Message was send successfully.</br>'
+            . 'We will reply you shortly.</h2>';
+    echo $thank_you;
+    exit;
 }
 
 function import_stores()
