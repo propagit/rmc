@@ -754,7 +754,8 @@ p {
       border-bottom: 1px solid #e2e2e2; }
     .locations-wrap .locations-content .locations-details-wrap .location-part {
       text-align: left;
-      padding: 30px 6%; }
+      padding: 30px 6%;
+      min-height: 250px; }
       .locations-wrap .locations-content .locations-details-wrap .location-part p {
         font-size: 14px;
         line-height: 19px;

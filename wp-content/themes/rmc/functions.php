@@ -277,9 +277,9 @@ function surrouding_stores(){
 	
 	$mydb = new wpdb(postcode_uname,postcode_pword,postcode_db,'localhost');
 	
-	# 20 km
+	
 	# radius is in miles
-	$radius = 12.5;
+	$radius = 3.125;
 	
 	$formula = "
 				(
@@ -364,5 +364,92 @@ function surrouding_stores(){
 	}
 	echo $surrounding;
 	exit;
+		
+}
+
+function import_stores()
+{
+	
+/* import stores */
+
+
+		
+		# 0 - Desc
+		# 1 - Name
+		# 2 - Address 1
+		# 3 - Address 2
+		# 4 - Suburb
+		# 5 - State
+		# 6 - Postcode
+	
+		
+		
+		# incase the csv all comes as one big array
+		# - open document as UTF 8 in text editor and save that should fix that
+		#$wpdb = new wpdb(wp_db_uname,wp_db_pword,wp_db,'localhost');
+		$file = get_theme_root().'/rmc/csv/rmc_stores.csv';
+		/*if (($handle = fopen($file, "r")) !== FALSE) {
+   			 while (($data = fgetcsv($handle, 5000, ",")) !== FALSE) {
+				#echo '<pre>'.print_r($data,true).'</pre><br>';	 
+			 }
+		}*/
+		$count = 0;
+		#if(0){
+		if (($handle = fopen($file, "r")) !== FALSE) {
+   			 while (($data = fgetcsv($handle, 5000, ",")) !== FALSE) {
+        		
+				#echo '<pre>'.print_r($data,true).'</pre><br>';	
+				
+				$store = array(								   
+								   'post_author' => 1,
+								   'post_date' => date('Y-m-d H:i:s'),
+								   'post_date_gmt' => date('Y-m-d H:i:s'),
+								   'post_content' => trim(ucwords(strtolower($data[0]))),
+								   'post_title' => trim($data[1]),
+								   'post_status' => 'publish',
+								   'comment_status' => 'closed',
+								   'ping_status' => 'closed',
+								   'post_name' => str_replace('-',' ',strtolower($data[1])),
+								   'post_modified' => date('Y-m-d H:i:s'),
+								   'post_modified_gmt' => date('Y-m-d H:i:s')
+								);
+				
+				# add post
+				$insert_id = wp_insert_post( $store );
+				
+				#if(0){
+				if($insert_id){
+					
+					# update guid
+					$update = array('ID' => $insert_id, 'guid' => 'http://localhost/rmc/?post_type=stores&#038;p=' . $insert_id);
+					wp_update_post( $update );
+					
+					# add meta
+					#$attributes = array('_edit_last','_edit_lock','address','_address','suburb','_suburb','state','_state','postcode','_postcode','address_1','_address_1','address_2','_address_2');
+					add_post_meta( $insert_id, '_edit_last', 1 );
+					add_post_meta( $insert_id, '_edit_lock', time() . ':' . 1 );
+					add_post_meta( $insert_id, 'suburb', trim(ucwords(strtolower($data[4]))));
+					add_post_meta( $insert_id, '_suburb','field_558a44f7c014a');
+					add_post_meta( $insert_id, 'state', trim(ucwords(strtolower($data[5]))));
+					add_post_meta( $insert_id, '_state','field_558a4507c014b' );
+					add_post_meta( $insert_id, 'postcode', trim(ucwords(strtolower($data[6]))));
+					add_post_meta( $insert_id, '_postcode','field_558a457ac014c');
+					add_post_meta( $insert_id, 'address_1',trim(ucwords(strtolower($data[2]))));
+					add_post_meta( $insert_id, '_address_1', 'field_558a44dac0149' );
+					add_post_meta( $insert_id, 'address_2', trim(ucwords(strtolower($data[3]))));
+					
+					add_post_meta( $insert_id, '_address_2','field_558b9c3887f55');
+				
+				} # if insert id
+
+						
+				
+				
+        		$count++;
+    		}
+   		 fclose($handle);
+		}
+		echo $count . ' - Records added';
+		
 		
 }
