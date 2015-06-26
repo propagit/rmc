@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid results">
     <div class="container about-wrapper">
         <div class="about-content-wrap">
             <h1><?php echo the_title(); ?></h1>

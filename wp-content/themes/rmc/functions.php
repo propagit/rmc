@@ -167,15 +167,6 @@ add_action('wp_ajax_nopriv_header_search', 'header_search');
 add_action('wp_ajax_send_mail', 'send_mail');
 add_action('wp_ajax_nopriv_send_mail', 'send_mail');
 
-# db postocdes
-define('postcode_db', 'aus_postcodes');
-define('postcode_uname', 'root');
-define('postcode_pword', 'root');
-
-# db wordpress
-define('wp_db', 'rmc');
-define('wp_db_uname', 'root');
-define('wp_db_pword', 'root');
 
 
 function get_locations(){
@@ -375,7 +366,7 @@ function get_products() {
 #echo  'test';exit;	
     $product_name = $_POST['product_name'];
     # uname, pword, db name
-    $wp_db = new wpdb(wp_db_uname, wp_db_pword, wp_db, 'localhost');
+    $wp_db = new wpdb(DB_USER,DB_PASSWORD,DB_NAME, 'localhost');
     $sql = "SELECT pm.ID 
                             FROM wp_posts pm
 			WHERE 
@@ -421,7 +412,7 @@ function get_products() {
 function header_search() {	
     $product_name = $_POST['product_name'];
     # uname, pword, db name
-    $wp_db = new wpdb(wp_db_uname, wp_db_pword, wp_db, 'localhost');
+    $wp_db = new wpdb(DB_USER,DB_PASSWORD,DB_NAME, 'localhost');
     $sql = "SELECT pm.ID 
                             FROM wp_posts pm
 			WHERE 
