@@ -27,7 +27,7 @@ get_header();
      
             </div>
             <div class="locations-details" id="stores">
-                
+               <h2>Enter your suburb or postcode above to find a store near you</h2> 
             </div>
 			
             
