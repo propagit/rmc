@@ -50,6 +50,8 @@ $(document).ready(function () {
 		'openEffect': 'none',
 		'closeEffect': 'none',
 		'type' : 'iframe',
+		maxHeight: 466,
+		width:600,
 		helpers: {
 			media: {}
 		}

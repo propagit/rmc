@@ -220,13 +220,26 @@ function get_stores()
 		foreach($rows as $row){
 			$post_id = $row->post_id;
 			$post = get_post($post_id);
+			$subrb = get_post_meta( $post_id, 'suburb', true ); 
+			$address1 = get_post_meta( $post_id, 'address_1', true ); 
+			$address2 = get_post_meta( $post_id, 'address_2', true ); 
+			$pcode = get_post_meta( $post_id, 'postcode', true );
+			$state = get_post_meta( $post_id, 'state', true );
+			
+			$map_address = str_replace(' ','+',$address1) . '+' .
+							($address2 ? str_replace(' ','+',$address2) . '+' : '') .
+							str_replace(' ','+',$subrb) . '+' . 
+							str_replace(' ','+',$state) . '+' . 
+							str_replace(' ','+',$pcode) . '+' . 
+							'Australia'; 
+			
 			$stores .= '<div class="col-sm-4 location-part">
-							<h2>' . get_post_meta( $post_id, 'suburb', true ) . '</br> ' . $post->post_title . '</h2>
-							<p>' . get_post_meta( $post_id, 'address_1', true ) . ' ' . get_post_meta( $post_id, 'address_2', true ) . ',</br>
-								' . get_post_meta( $post_id, 'suburb', true ) . ' ' . get_post_meta( $post_id, 'state', true ) . ' ' . get_post_meta( $post_id, 'postcode', true ) . '</br>
+							<h2>' . $subrb . '</br> ' . $post->post_title . '</h2>
+							<p>' . $address1 . ' ' . $address2 . ',</br>
+								' . $subrb. ' ' . $state . ' ' . $pcode . '</br>
 								Australia</p>
 							<p class="location-mark"><i class="fa fa-map-marker"></i>
-								<a class="fancybox-media" href="#"> View Map</a></p>
+								<a class="fancybox-media" href="' . site_url().'/map?a=' . $map_address . '"> View Map</a></p>
 						</div>';
 		}
 	}else{
@@ -315,14 +328,27 @@ function surrouding_stores(){
 		foreach($surrounding_stores as $row){
 			$post_id = $row->post_id;
 			$post = get_post($post_id);
+			$subrb = get_post_meta( $post_id, 'suburb', true ); 
+			$address1 = get_post_meta( $post_id, 'address_1', true ); 
+			$address2 = get_post_meta( $post_id, 'address_2', true ); 
+			$pcode = get_post_meta( $post_id, 'postcode', true );
+			$state = get_post_meta( $post_id, 'state', true );
+			
+			$map_address = str_replace(' ','+',$address1) . '+' .
+							($address2 ? str_replace(' ','+',$address2) . '+' : '') .
+							str_replace(' ','+',$subrb) . '+' . 
+							str_replace(' ','+',$state) . '+' . 
+							str_replace(' ','+',$pcode) . '+' . 
+							'Australia'; 
+			
 			$surrounding .= '<div class="col-sm-4 location-part">
-							<h2>' . get_post_meta( $post_id, 'suburb', true ) . '</br> ' . $post->post_title . '</h2>
-							<p>' . get_post_meta( $post_id, 'address_1', true ) . ' ' . get_post_meta( $post_id, 'address_2', true ) . ',</br>
-								' . get_post_meta( $post_id, 'suburb', true ) . ' ' . get_post_meta( $post_id, 'state', true ) . ' ' . get_post_meta( $post_id, 'postcode', true ) . '</br>
-								Australia</p>
-							<p class="location-mark"><i class="fa fa-map-marker"></i>
-								<a class="fancybox-media" href="#"> View Map</a></p>
-						</div>';
+								<h2>' . $subrb . '</br> ' . $post->post_title . '</h2>
+								<p>' . $address1 . ' ' . $address2 . ',</br>
+									' . $subrb. ' ' . $state . ' ' . $pcode . '</br>
+									Australia</p>
+								<p class="location-mark"><i class="fa fa-map-marker"></i>
+									<a class="fancybox-media" href="' . site_url().'/map?a=' . $map_address . '"> View Map</a></p>
+							</div>';
 		}
 	}else{
 		$surrounding = '<div class="col-sm-12"><h2>No Records Found</h2></div>';			
