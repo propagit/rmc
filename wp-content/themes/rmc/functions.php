@@ -163,15 +163,6 @@ add_action( 'wp_ajax_nopriv_get_products', 'get_products' );
 add_action( 'wp_ajax_send_mail', 'send_mail' );
 add_action( 'wp_ajax_nopriv_send_mail', 'send_mail' );
 
-# db postocdes
-define('postcode_db','aus_postcodes');
-define('postcode_uname','root');
-define('postcode_pword','root');
-
-# db wordpress
-define('wp_db','rmc');
-define('wp_db_uname','root');
-define('wp_db_pword','root');
 
 function get_locations(){
 	# uname, pword, db name
@@ -215,7 +206,7 @@ function get_stores()
 	$postcode = $_POST['postcode'];
 	$suburb = $_POST['suburb'];
 	# uname, pword, db name
-	$wp_db = new wpdb(wp_db_uname,wp_db_pword,wp_db,'localhost');
+	$wp_db = new wpdb(DB_USER,DB_PASSWORD,DB_NAME,'localhost');
 	$sql = "SELECT pm.post_id 
 			FROM wp_postmeta pm
 			WHERE 
@@ -286,7 +277,7 @@ function surrouding_stores(){
 	}
 	
 	# uname, pword, db name
-	$wp_db = new wpdb(wp_db_uname,wp_db_pword,wp_db,'localhost');
+	$wp_db = new wpdb(DB_USER,DB_PASSWORD,DB_NAME,'localhost');
 	
 	# already found stores
 	$sql = "SELECT pm.post_id 
@@ -345,7 +336,7 @@ function get_products()
         $product_name=' ';
     }
 	# uname, pword, db name
-	$wp_db = new wpdb(wp_db_uname,wp_db_pword,wp_db,'localhost');
+	$wp_db = new wpdb(DB_USER,DB_PASSWORD,DB_NAME,'localhost');
 	$sql = "SELECT pm.ID 
                             FROM wp_posts pm
 			WHERE 
@@ -481,16 +472,15 @@ function import_stores()
 					add_post_meta( $insert_id, '_edit_last', 1 );
 					add_post_meta( $insert_id, '_edit_lock', time() . ':' . 1 );
 					add_post_meta( $insert_id, 'suburb', trim(ucwords(strtolower($data[4]))));
-					add_post_meta( $insert_id, '_suburb','field_558a44f7c014a');
+					add_post_meta( $insert_id, '_suburb','field_558cab98e013a'); # local field_558a44f7c014a
 					add_post_meta( $insert_id, 'state', trim(ucwords(strtolower($data[5]))));
-					add_post_meta( $insert_id, '_state','field_558a4507c014b' );
+					add_post_meta( $insert_id, '_state','field_558cabaee013b' ); # local field_558a4507c014b
 					add_post_meta( $insert_id, 'postcode', trim(ucwords(strtolower($data[6]))));
-					add_post_meta( $insert_id, '_postcode','field_558a457ac014c');
+					add_post_meta( $insert_id, '_postcode','field_558cabe4e013c'); # local field_558a457ac014c
 					add_post_meta( $insert_id, 'address_1',trim(ucwords(strtolower($data[2]))));
-					add_post_meta( $insert_id, '_address_1', 'field_558a44dac0149' );
+					add_post_meta( $insert_id, '_address_1', 'field_558cab74e0138' ); # local field_558a44dac0149
 					add_post_meta( $insert_id, 'address_2', trim(ucwords(strtolower($data[3]))));
-					
-					add_post_meta( $insert_id, '_address_2','field_558b9c3887f55');
+					add_post_meta( $insert_id, '_address_2','field_558cab90e0139'); # local field_558b9c3887f55
 				
 				} # if insert id
 

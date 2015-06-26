@@ -3,7 +3,7 @@
  * Template Name: Where To Buy
  */
 get_header();
-#import_stores();
+import_stores();
 ?>
 <div class="container-fluid locations-wrap">
     <div class="container locations-content">
