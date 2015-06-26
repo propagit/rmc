@@ -3,8 +3,6 @@
  * Template Name: Where To Buy
  */
 get_header();
-
-
 ?>
 <div class="container-fluid locations-wrap results">
     <div class="container locations-content">
@@ -20,7 +18,7 @@ get_header();
             <i class="fa fa-search location-search-icon"></i>
             <div class="location-results">
             	<ul id="search-results" class="hide">
-           
+           			
                 </ul>
             </div>
         </div>
@@ -29,30 +27,7 @@ get_header();
      
             </div>
             <div class="locations-details" id="stores">
-                <!--<div class="col-sm-4 location-part">
-                    <h2>Richmond</br> Mitre 10</h2>
-                    <p>143 - 153 Palmer Street,</br>
-                        Richmond VIC 3121</br>
-                        Australia</p>
-                    <p class="location-mark"><i class="fa fa-map-marker"></i>
-                        <a class="fancybox-media" href="<?php echo bloginfo('template_directory') . '/maps.php'; ?>"> View Map</a></p>
-                </div>
-                <div class="col-sm-4 location-part">
-                    <h2>Richmond North</br> 
-                        Martin's Mitre 10 Handy</h2>
-                    <p>38 Victoria Street,</br>
-                        Richmond North VIC 3121</br>
-                        Australia</p>
-                    <p class="location-mark"><i class="fa fa-map-marker"></i> View Map</p>
-                </div>
-                <div class="col-sm-4 location-part">
-                    <h2>Richmond South</br>
-                        Reece</h2>
-                    <p>380 Victoria Street</br>
-                        Richmond VIC 3121</br>
-                        Australia</p>
-                    <p class="location-mark"><i class="fa fa-map-marker"></i> View Map</p>
-                </div>-->
+               <h2>Enter your suburb or postcode above to find a store near you</h2> 
             </div>
 			
             
@@ -63,59 +38,27 @@ get_header();
             <div class="locations-details location-details-close col-xs-12" id="surrounding-stores">
 
             </div>
-
-			<!--
-            <div class="locations-details-header location-details-header-close col-xs-12">
-                <h2>Where to buy in - Richmond VIC 3181</h2>
-            </div>
-            <div class="locations-details location-details-close col-xs-12">
-                <div class="col-sm-4 location-part">
-                    <h2>Hawthorn</br>
-                        Bunnings</h2>
-                    <p>230 Burwood Rd</br>
-                        Hawthorn VIC 3122</br>
-                        Australia</p>
-                    <p class="location-mark"><i class="fa fa-map-marker"></i> View Map</p>
-                </div>
-                <div class="col-sm-4 location-part">
-                    <h2>Hawthorn East</br>
-                        Masters</h2>
-                    <p>742 Toorak Road</br>
-                        Hawthorn East VIC 3123</br>
-                        Australia</p>
-                    <p class="location-mark"><i class="fa fa-map-marker"></i> View Map</p>
-                </div>
-                <div class="col-sm-4 location-part">
-                    <h2>Prahran</br>
-                        Chapel Street Hardware</h2>
-                    <p>183 High Street</br>
-                        Prahran VIC 3181</br>
-                        Australia</p>
-                    <p class="location-mark"><i class="fa fa-map-marker"></i> View Map</p>
-                </div>
-                <div class="col-sm-4 location-part">
-                    <h2>Albert Park</br>
-                        Bisbas Hardware</h2>
-                    <p>196 Bridport St</br>
-                        Albert Park VIC 3206</br>
-                        Australia</p>
-                    <p class="location-mark"><i class="fa fa-map-marker"></i> View Map</p>
-                </div>
-            </div>-->
         </div>
     </div>
 </div>
+
+<div id="loading" class="hide"><div class="loading"><i class="fa fa-cog fa-spin"></i></div></div>
+
 <script>
-    $(document).ready(function () {
-        $('.fancybox-media').fancybox({
-            'openEffect': 'none',
-            'closeEffect': 'none',
-            'type' : 'iframe',
-            helpers: {
-                media: {}
-            }
-        });
-    });
+$(document).ready(function () {
+	$('.fancybox-media').fancybox({
+		'openEffect': 'none',
+		'closeEffect': 'none',
+		'type' : 'iframe',
+		maxHeight: 466,
+		width:600,
+		helpers: {
+			media: {}
+		}
+	});
+});
+
+var loading = $('#loading').html();
 	
 $(function(){
 	$('#select-location').keyup(function(){
@@ -143,6 +86,7 @@ $(function(){
 
 function get_locations(keyword){
 	if(keyword.length >= 3){
+		$('#search-results').html('<li>' + loading + '</li>').removeClass('hide');
 		$.ajax({
 			url:'<?php echo admin_url('admin-ajax.php'); ?>',
 			method:'POST',
@@ -174,6 +118,8 @@ function populate_surrounding_location_bar(){
 }
 
 function get_stores(){
+	$('#stores').html(loading);
+	$('#selected-location-bar').addClass('hide');
 	$.ajax({
 		url:'<?php echo admin_url('admin-ajax.php'); ?>',
 		method:'POST',
@@ -190,6 +136,8 @@ function get_stores(){
 }
 
 function get_surrounding_stores(){
+	$('#surrounding-stores').html(loading);
+	$('#surrounding-location-bar').addClass('hide');
 	$.ajax({
 		url:'<?php echo admin_url('admin-ajax.php'); ?>',
 		method:'POST',

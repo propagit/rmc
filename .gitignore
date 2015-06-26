@@ -2,3 +2,4 @@ wp-content/uploads
 db/rmc.sql
 wp-config.php
 .sass-cache
+.htaccess

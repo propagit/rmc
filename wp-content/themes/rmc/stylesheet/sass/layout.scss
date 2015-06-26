@@ -957,6 +957,7 @@ $carousel_nav_dim:35px;
             .location-part{
                 text-align: left;
                 padding: 30px 6%;
+				min-height:250px;
                 p{
                     font-size: 14px;
                     line-height: 19px;
@@ -1267,6 +1268,14 @@ $v_carousel_height:370px;
 .x-gutters{
     padding-left:0;
     padding-right:0;	
+}
+.loading{
+	float: left;
+	width: 100%;
+	text-align: center;
+	opacity: 0.5;
+	font-size: 24px;
+	padding: 5px;	
 }
 
 

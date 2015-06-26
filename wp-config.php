@@ -33,6 +33,16 @@ define('DB_CHARSET', 'utf8mb4');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+
+/** Postcodes DB Info */
+define('postcode_db','aus_postcodes');
+define('postcode_uname','root');
+define('postcode_pword','root');
+
+/** Google API Key */
+define('GOOGLE_API_KEY','AIzaSyCV10XdJrY0xgH97cHmfZuKdddElZLeRFU');
+
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
