@@ -412,8 +412,8 @@ function send_mail(){
 
 function import_stores()
 {
-	/*die();
-	exit;*/	
+	die();
+	exit;	
 /* import stores */
 
 
