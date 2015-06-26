@@ -412,8 +412,8 @@ function send_mail(){
 
 function import_stores()
 {
-	die();
-	exit;	
+	/*die();
+	exit;*/	
 /* import stores */
 
 
@@ -434,9 +434,10 @@ function import_stores()
 		$file = get_theme_root().'/rmc/csv/rmc_stores.csv';
 		/*if (($handle = fopen($file, "r")) !== FALSE) {
    			 while (($data = fgetcsv($handle, 5000, ",")) !== FALSE) {
-				#echo '<pre>'.print_r($data,true).'</pre><br>';	 
+				echo '<pre>'.print_r($data,true).'</pre><br>';	 
 			 }
 		}*/
+		$post_ID_auto_increment = 365;
 		$count = 0;
 		#if(0){
 		if (($handle = fopen($file, "r")) !== FALSE) {
@@ -455,7 +456,9 @@ function import_stores()
 								   'ping_status' => 'closed',
 								   'post_name' => str_replace('-',' ',strtolower($data[1])),
 								   'post_modified' => date('Y-m-d H:i:s'),
-								   'post_modified_gmt' => date('Y-m-d H:i:s')
+								   'post_modified_gmt' => date('Y-m-d H:i:s'),
+								   'post_type' => 'stores',
+								   'guid' => site_url() . '/?post_type=stores&#038;p=' . ($count + $post_ID_auto_increment)
 								);
 				
 				# add post
@@ -463,11 +466,6 @@ function import_stores()
 				
 				#if(0){
 				if($insert_id){
-					
-					# update guid
-					$update = array('ID' => $insert_id, 'guid' => 'http://localhost/rmc/?post_type=stores&#038;p=' . $insert_id);
-					wp_update_post( $update );
-					
 					# add meta
 					#$attributes = array('_edit_last','_edit_lock','address','_address','suburb','_suburb','state','_state','postcode','_postcode','address_1','_address_1','address_2','_address_2');
 					add_post_meta( $insert_id, '_edit_last', 1 );
