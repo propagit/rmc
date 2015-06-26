@@ -83,7 +83,7 @@ p {
   color: #707070; }
 
 #sb-site {
-  background: #c0c0c0 !important; }
+  background: silver !important; }
 
 .container {
   background: white;
@@ -349,7 +349,7 @@ p {
     transition: all 0.5s ease; }
     .carousel .slide-btn .fa {
       font-size: 14px;
-      color: #fff;
+      color: white;
       text-shadow: none; }
   .carousel:hover a.left .slide-btn {
     left: 0; }
@@ -777,7 +777,7 @@ p {
     position: absolute;
     left: 0;
     right: 0;
-    background-color: #fff;
+    background-color: white;
     z-index: 100;
     margin: auto; }
     .locations-wrap .locations-content .location-results ul {
@@ -891,7 +891,7 @@ p {
       .vertical-carousel .carousel-inner .item .caption p,
       .vertical-carousel .carousel-inner .item .caption h1,
       .vertical-carousel .carousel-inner .item .caption h4 {
-        color: #fff;
+        color: white;
         text-align: left; }
       .vertical-carousel .carousel-inner .item .caption h1 {
         font-size: 32px;
@@ -920,7 +920,7 @@ p {
       padding-bottom: 24px; }
 .vertical-carousel .carousel-indicator-wrap {
   height: 370px;
-  background-color: #fff;
+  background-color: white;
   width: 32%;
   float: right;
   margin-right: -2%; }
@@ -979,6 +979,14 @@ p {
 .x-gutters {
   padding-left: 0;
   padding-right: 0; }
+
+.loading {
+  float: left;
+  width: 100%;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 24px;
+  padding: 5px; }
 
 @media (max-width: 1400px) {
   .product-brochures ul li {
@@ -1040,5 +1048,3 @@ p {
     line-height: 25px; }
   .item .item-text h2 {
     line-height: 18px; } }
-
-/*# sourceMappingURL=layout.css.map */

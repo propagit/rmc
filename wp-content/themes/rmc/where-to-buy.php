@@ -18,7 +18,7 @@ get_header();
             <i class="fa fa-search location-search-icon"></i>
             <div class="location-results">
             	<ul id="search-results" class="hide">
-           
+           			
                 </ul>
             </div>
         </div>
@@ -41,17 +41,22 @@ get_header();
         </div>
     </div>
 </div>
+
+<div id="loading" class="hide"><div class="loading"><i class="fa fa-cog fa-spin"></i></div></div>
+
 <script>
-    $(document).ready(function () {
-        $('.fancybox-media').fancybox({
-            'openEffect': 'none',
-            'closeEffect': 'none',
-            'type' : 'iframe',
-            helpers: {
-                media: {}
-            }
-        });
-    });
+$(document).ready(function () {
+	$('.fancybox-media').fancybox({
+		'openEffect': 'none',
+		'closeEffect': 'none',
+		'type' : 'iframe',
+		helpers: {
+			media: {}
+		}
+	});
+});
+
+var loading = $('#loading').html();
 	
 $(function(){
 	$('#select-location').keyup(function(){
@@ -79,6 +84,7 @@ $(function(){
 
 function get_locations(keyword){
 	if(keyword.length >= 3){
+		$('#search-results').html('<li>' + loading + '</li>').removeClass('hide');
 		$.ajax({
 			url:'<?php echo admin_url('admin-ajax.php'); ?>',
 			method:'POST',
@@ -110,6 +116,8 @@ function populate_surrounding_location_bar(){
 }
 
 function get_stores(){
+	$('#stores').html(loading);
+	$('#selected-location-bar').addClass('hide');
 	$.ajax({
 		url:'<?php echo admin_url('admin-ajax.php'); ?>',
 		method:'POST',
@@ -126,6 +134,8 @@ function get_stores(){
 }
 
 function get_surrounding_stores(){
+	$('#surrounding-stores').html(loading);
+	$('#surrounding-location-bar').addClass('hide');
 	$.ajax({
 		url:'<?php echo admin_url('admin-ajax.php'); ?>',
 		method:'POST',

@@ -229,6 +229,8 @@ function get_stores()
 								<a class="fancybox-media" href="#"> View Map</a></p>
 						</div>';
 		}
+	}else{
+		$stores = '<div class="col-sm-12"><h2>No Records Found</h2></div>';		
 	}
 	echo $stores;
 	exit;
@@ -322,6 +324,8 @@ function surrouding_stores(){
 								<a class="fancybox-media" href="#"> View Map</a></p>
 						</div>';
 		}
+	}else{
+		$surrounding = '<div class="col-sm-12"><h2>No Records Found</h2></div>';			
 	}
 	echo $surrounding;
 	exit;
@@ -412,8 +416,8 @@ function send_mail(){
 
 function import_stores()
 {
-	die();
-	exit;	
+die();
+exit;	
 /* import stores */
 
 
@@ -439,8 +443,8 @@ function import_stores()
 		}*/
 		$post_ID_auto_increment = 365;
 		$count = 0;
-		#if(0){
-		if (($handle = fopen($file, "r")) !== FALSE) {
+		if(0){
+		#if (($handle = fopen($file, "r")) !== FALSE) {
    			 while (($data = fgetcsv($handle, 5000, ",")) !== FALSE) {
         		
 				#echo '<pre>'.print_r($data,true).'</pre><br>';	
@@ -471,15 +475,15 @@ function import_stores()
 					add_post_meta( $insert_id, '_edit_last', 1 );
 					add_post_meta( $insert_id, '_edit_lock', time() . ':' . 1 );
 					add_post_meta( $insert_id, 'suburb', trim(ucwords(strtolower($data[4]))));
-					add_post_meta( $insert_id, '_suburb','field_558cab98e013a'); # local field_558a44f7c014a
+					add_post_meta( $insert_id, '_suburb','field_558a44f7c014a'); # local field_558a44f7c014a # live field_558cab98e013a
 					add_post_meta( $insert_id, 'state', trim(ucwords(strtolower($data[5]))));
-					add_post_meta( $insert_id, '_state','field_558cabaee013b' ); # local field_558a4507c014b
+					add_post_meta( $insert_id, '_state','field_558a4507c014b' ); # local field_558a4507c014b # live field_558cabaee013b
 					add_post_meta( $insert_id, 'postcode', trim(ucwords(strtolower($data[6]))));
-					add_post_meta( $insert_id, '_postcode','field_558cabe4e013c'); # local field_558a457ac014c
+					add_post_meta( $insert_id, '_postcode','field_558a457ac014c'); # local field_558a457ac014c # live field_558cabe4e013c
 					add_post_meta( $insert_id, 'address_1',trim(ucwords(strtolower($data[2]))));
-					add_post_meta( $insert_id, '_address_1', 'field_558cab74e0138' ); # local field_558a44dac0149
+					add_post_meta( $insert_id, '_address_1', 'field_558a44dac0149' ); # local field_558a44dac0149 # field_558cab74e0138
 					add_post_meta( $insert_id, 'address_2', trim(ucwords(strtolower($data[3]))));
-					add_post_meta( $insert_id, '_address_2','field_558cab90e0139'); # local field_558b9c3887f55
+					add_post_meta( $insert_id, '_address_2','field_558b9c3887f55'); # local field_558b9c3887f55 # field_558cab90e0139
 				
 				} # if insert id
 
