@@ -148,7 +148,8 @@ p {
             display: block;
             position: absolute;
             top: 100%;
-            margin-left: -2.5%; }
+            margin-left: -2.5%;
+            width: 21%; }
             .menu-wrap .top-menu-wraper ul li:hover ul li {
               float: none;
               position: relative;
@@ -427,6 +428,13 @@ p {
 /**
     Contact Page
 */
+.contact-wrap #contact-question {
+  font-size: 26px;
+  line-height: 0px; }
+.contact-wrap #contact-filling {
+  font-size: 28px;
+  padding-right: 40%;
+  line-height: 35px; }
 .contact-wrap p {
   padding-left: 3%; }
   .contact-wrap p .fa {
@@ -991,7 +999,13 @@ p {
   .product-brochures ul li {
     padding-right: 1% !important; }
     .product-brochures ul li img {
-      width: 100%; } }
+      width: 100%; }
+
+  .contact-wrap #contact-question {
+    font-size: 2vw; }
+  .contact-wrap #contact-filling {
+    font-size: 2vw;
+    padding-right: 0; } }
 @media (max-width: 1200px) {
   .vertical-carousel .carousel-content {
     width: 100%; }
@@ -1031,7 +1045,13 @@ p {
   .item .item-text h1 {
     font-size: 4vw; }
   .item .item-text h2 {
-    font-size: 3vw; } }
+    font-size: 3vw; }
+
+  .contact-wrap #contact-question {
+    font-size: 2vw; }
+  .contact-wrap #contact-filling {
+    font-size: 2vw;
+    padding-right: 0; } }
 @media (max-width: 590px) {
   .item {
     height: 208px; }

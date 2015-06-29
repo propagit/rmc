@@ -11,8 +11,8 @@ get_header();
         </div>
         <div class="col-sm-7">
             
-            <h2>Have a question about RMC products?</br>
-                Contact Our team by filling out the contact form</h2>
+            <h2 id="contact-question">Have a question about RMC products?</h2>
+            <h2 id="contact-filling">Contact Our team by filling out the contact form</h2>
             <h3>Reliance Worldwide Corporation</h3>
             <p><i class="fa fa-home"></i> 27-28 Chapman Place</br>
                 Eagle Farm, QLD 4009</br>

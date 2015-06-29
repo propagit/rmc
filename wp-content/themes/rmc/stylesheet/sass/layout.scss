@@ -147,6 +147,7 @@ $nav_height:65px;
                         position: absolute;
                         top: 100%;
                         margin-left: -2.5%;
+                        width: 21%;
 
                         li{
                             float: none;
@@ -525,6 +526,15 @@ $carousel_nav_dim:35px;
 */
 
 .contact-wrap{
+    #contact-question{
+        font-size: 26px;
+        line-height: 0px;
+    }
+    #contact-filling{
+        font-size: 28px;
+        padding-right: 40%;
+        line-height: 35px;
+    }
     p{
         padding-left: 3%;
         .fa{
@@ -956,7 +966,7 @@ $carousel_nav_dim:35px;
             .location-part{
                 text-align: left;
                 padding: 30px 6%;
-				min-height:250px;
+                min-height:250px;
                 p{
                     font-size: 14px;
                     line-height: 19px;
@@ -1269,12 +1279,12 @@ $v_carousel_height:370px;
     padding-right:0;	
 }
 .loading{
-	float: left;
-	width: 100%;
-	text-align: center;
-	opacity: 0.5;
-	font-size: 24px;
-	padding: 5px;	
+    float: left;
+    width: 100%;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 24px;
+    padding: 5px;	
 }
 
 
@@ -1287,6 +1297,15 @@ $v_carousel_height:370px;
                     width: 100%;
                 }
             }
+        }
+    }
+    .contact-wrap{
+        #contact-question{
+            font-size: 2vw;
+        }
+        #contact-filling{
+            font-size: 2vw;
+            padding-right: 0;
         }
     }
 }
@@ -1377,6 +1396,15 @@ $v_carousel_height:370px;
             h2{
                 font-size: 3vw;
             }
+        }
+    }
+    .contact-wrap{
+        #contact-question{
+            font-size: 2vw;
+        }
+        #contact-filling{
+            font-size: 2vw;
+            padding-right: 0;
         }
     }
 
