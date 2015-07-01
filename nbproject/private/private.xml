@@ -4,11 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/functions.php</file>
-            <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/contact.php</file>
+            <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/taxonomy-type_products.php</file>
             <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/header.php</file>
             <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/stylesheet/sass/layout.scss</file>
-            <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/searchform.php</file>
-            <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/footer.php</file>
+            <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-config.php</file>
         </group>
     </open-files>
 </project-private>

@@ -43,6 +43,10 @@ define('postcode_pword','root');
 define('GOOGLE_API_KEY','AIzaSyCV10XdJrY0xgH97cHmfZuKdddElZLeRFU');
 
 
+/* Disable Auto Draft Post */
+define('WP_POST_REVISIONS', false);
+
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *

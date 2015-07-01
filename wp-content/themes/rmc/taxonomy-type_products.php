@@ -28,7 +28,7 @@ get_header();
                         'order' => 'ASC'
                     );
                     $sub_categories = get_categories($args);
-                    
+
                     if ($sub_categories) {
                         foreach ($sub_categories as $sub_category) {
                             ?>
@@ -44,38 +44,39 @@ get_header();
             </div>
         </div>
         <div class="product-list-wrap col-sm-12" id="models">
-                    <?php
-                $args = array(
-                    'post_per_page' => -1,
-                    'orderby' => 'title',
-                    'order' => 'ASC'
-                );
-                query_posts($query_string . '&orderby=title&order=ASC&posts_per_page=-1');
-               if (have_posts()) {
-                    ?>
-                    
-                    <?php
-                    while (have_posts()) {
-                        the_post();
-                        $product_title = get_the_title();
-                        $short_description = get_field('short_description');
-                        $product_image = get_field('product_image');
-                        ?>
+            <?php
+            $args = array(
+                'post_per_page' => -1,
+                'orderby' => 'title',
+                'order' => 'ASC',
+                'post_status' => 'publish'
+            );
+            query_posts($query_string . '&post_status=publish&orderby=title&order=ASC&posts_per_page=-1');
+            if (have_posts()) {
+                ?>
+
+                <?php
+                while (have_posts()) {
+                    the_post();
+                    $product_title = get_the_title();
+                    $short_description = get_field('short_description');
+                    $product_image = get_field('product_image');?>
                     <div class="col-sm-3 product-list">
                         <div class="product-list-image">
-                            <a href="<?php the_permalink();?>"><img src="<?php echo $product_image['url']; ?>"/></a>
+                            <a href="<?php the_permalink(); ?>"><img src="<?php echo $product_image['url']; ?>"/></a>
                         </div>
                         <div class="product-list-content">
-                            <a href="<?php the_permalink();?>"><h3><?php echo $product_title; ?></h3></a>
+                            <a href="<?php the_permalink(); ?>"><h3><?php echo $product_title; ?></h3></a>
                             <p><?php echo $short_description; ?></p>                            
                         </div>
-                    
+
                     </div>
-                        <?php
-                        } ?>
-                    
-                <?php    }
-                 wp_reset_postdata();   ?>
+                    <?php }
+                ?>
+
+            <?php }
+            wp_reset_postdata();
+            ?>
         </div>
 
     </div>
@@ -100,19 +101,20 @@ get_header();
                     var sel = $("#models"); // SELECT THE SECOND DROP DOWN WITH THE ID MODELS
                     sel.empty(); // JUST MAKE SURE ITS EMPTY
                     for (var i = 0; i < data.length; i++) { // LOOP THROUGH EACH POST FOUND BY THE AJAX CALL
-                        sel.append(
-                                '<div class="col-sm-3 product-list">' +
-                        '<div class="product-list-image">' +
-                            '<a href="'+ data[i]['link'] +'"><img src="'+ data[i].acf["product_image"]["url"] + '"/></a>' +
-                        '</div>' +
-                        '<div class="product-list-content">' +
-                            '<a href="'+ data[i]['link'] +'"><h3>'+ data[i]['title'] + '</h3></a>' +
-                            '<p>' + data[i].acf['short_description'] + '</p>' +                            
-                        '</div>' +
-                    '</div>'
-            
-            
-            ); // SET POSTS INTO HTML OPTIONS AND APPEND TO MODELS DROP DOWN
+                            sel.append(
+                                    '<div class="col-sm-3 product-list">' +
+                                    '<div class="product-list-image">' +
+                                    '<a href="' + data[i]['link'] + '"><img src="' + data[i].acf["product_image"]["url"] + '"/></a>' +
+                                    '</div>' +
+                                    '<div class="product-list-content">' +
+                                    '<a href="' + data[i]['link'] + '"><h3>' + data[i]['title'] + '</h3></a>' +
+                                    '<p>' + data[i].acf['short_description'] + '</p>' +
+                                    '</div>' +
+                                    '</div>'
+
+
+
+                                    ); // SET POSTS INTO HTML OPTIONS AND APPEND TO MODELS DROP DOWN
                     }
 
 
@@ -126,35 +128,34 @@ get_header();
     }
 </script>
 <script>
-    
-    $(function(){
+
+    $(function () {
         $('#search-product').focus();
-        $('#search-product').keyup(function(){
+        $('#search-product').keyup(function () {
             get_products();
-    
+
         });
-    
+
     })
-    
-    function get_products(){
-	$.ajax({
-		url:'<?php echo admin_url('admin-ajax.php'); ?>',
-		method:'POST',
-		data:{
-			action:'get_products',
-			product_name:$('#search-product').val(),
-				
-		}
-	}).done(function(response){
-		var sel = $("#models"); // SELECT THE SECOND DROP DOWN WITH THE ID MODELS
-                //sel.empty(); 
-		$('#models').html(response);
-                if(!response){
+
+    function get_products() {
+        $.ajax({
+            url: '<?php echo admin_url('admin-ajax.php'); ?>',
+            method: 'POST',
+            data: {
+                action: 'get_products',
+                product_name: $('#search-product').val(),
+            }
+        }).done(function (response) {
+            var sel = $("#models"); // SELECT THE SECOND DROP DOWN WITH THE ID MODELS
+            //sel.empty(); 
+            $('#models').html(response);
+            if (!response) {
                 location.reload();
-                
+
+            }
+        })
     }
-	})
-}
 </script>
 
 
