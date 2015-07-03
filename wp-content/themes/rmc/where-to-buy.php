@@ -30,7 +30,7 @@ get_header();
         </div> 
         
         <hr>
-        <div class="store-wrap bg-prim">
+        <div class="store-wrap bg-25">
             <h1 style="margin-top:60px;">Where To Buy</h1>
             <h3>Find RMC products close to you</h3>
             
@@ -163,7 +163,7 @@ function get_stores(){
 	}).done(function(response){
 		populate_location_bar();
 		$('#stores').html(response);
-		$('.store-wrap').addClass('bg-25').removeClass('bg-prim');
+		//$('.store-wrap').addClass('bg-25').removeClass('bg-50');
 	})
 }
 

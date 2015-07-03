@@ -813,7 +813,8 @@ p {
   width: 100%;
   background-repeat: no-repeat;
   float: left;
-  background-position: top center; }
+  background-position: top center;
+  background-size: 428px; }
   .locations-wrap .store-wrap.bg-prim {
     background-image: url("../img/aus-store-map.png"); }
   .locations-wrap .store-wrap.bg-25 {
