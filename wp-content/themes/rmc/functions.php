@@ -212,11 +212,16 @@ function get_stores()
 	$suburb = $_POST['suburb'];
 	# uname, pword, db name
 	$wp_db = new wpdb(DB_USER,DB_PASSWORD,DB_NAME,'localhost');
-	$sql = "SELECT pm.post_id 
+	/*$sql = "SELECT pm.post_id 
 			FROM wp_postmeta pm
 			WHERE 
 				(pm.meta_key = 'suburb' AND pm.meta_value = '$suburb')
 			OR
+				(pm.meta_key = 'postcode' AND pm.meta_value = " . $postcode . ")
+			GROUP BY pm.post_id";*/
+	$sql = "SELECT pm.post_id 
+			FROM wp_postmeta pm
+			WHERE 
 				(pm.meta_key = 'postcode' AND pm.meta_value = " . $postcode . ")
 			GROUP BY pm.post_id";
 	$rows = $wp_db->get_results($sql);
