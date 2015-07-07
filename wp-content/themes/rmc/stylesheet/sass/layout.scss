@@ -251,8 +251,9 @@ $nav_height:65px;
                 font-size: 22px;
                 line-height: 40px;
                 color: $blue;
+                padding-right: 10px;
             }
-            &:hover{
+            &:hover, &:focus{
                 ul{
                     display: block;
                     li{
@@ -1107,11 +1108,11 @@ $carousel_nav_dim:35px;
         width: 80%;
         margin: 15px auto;
         margin-bottom: 0;
-        -moz-box-shadow:    inset 0 0 8px #2b5ea5;
-        -webkit-box-shadow: inset 0 0 8px #2b5ea5;
-        box-shadow:         inset 0 0 8px #2b5ea5;
-        border: 1px solid white;
-        border-bottom: none;
+        //-moz-box-shadow:    inset 0 0 8px #2b5ea5;
+        //-webkit-box-shadow: inset 0 0 8px #2b5ea5;
+        //box-shadow:         inset 0 0 8px #2b5ea5;
+        //border: 1px solid white;
+        //border-bottom: none;
         .footer-logo{
             img{
                 margin: 5px auto;
@@ -1426,6 +1427,8 @@ $v_carousel_height:370px;
 }
 @media(max-width:400px){
     .header{
+        padding-top: 20px;
+        padding-bottom: 15px;
         .logo{
             img{
                 width: 150%;
@@ -1436,9 +1439,13 @@ $v_carousel_height:370px;
         .item-text{
             h1{
                 line-height: 25px;
+                font-size: 20px;
+                padding: 0px 10%;
             }
             h2{
                 line-height: 18px;
+                font-size: 18px;
+                padding: 0px 10%;
             }
         }
     }
@@ -1477,10 +1484,8 @@ $v_carousel_height:370px;
                             width: 90%;
                         } 
                     }
-                }
-                
-            }
-            
+                } 
+            } 
         }    
     }
     .locations-wrap{
