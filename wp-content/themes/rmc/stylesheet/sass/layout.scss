@@ -948,7 +948,8 @@ $carousel_nav_dim:35px;
         text-align:center;
         .search-location{
             #select-location{
-                width: 30% !important;
+                /*width: 30% !important;*/
+				width:332px;
                 padding-left: 10px;
                 margin-top: 40px;  
 				height:40px;
@@ -1031,13 +1032,22 @@ $carousel_nav_dim:35px;
 
     }
 	.store-wrap{
-		min-height: 440px;
+		min-height: 390px;
 		width: 100%;
 		background-repeat: no-repeat;
 		float: left;
 		background-position: top center;	
-		background-size: 428px;
-		
+		/*background-size: 428px;*/
+		background-size:contain;
+	
+		&.bg-aus-map{
+			background-image:url('../img/Australian_Maps_clip_art_hight.png');	
+			
+			.overlay{
+				background-color:rgba(255,255,255,0.8);
+			}	
+		}
+
 		&.bg-prim{
 			background-image:url('../img/aus-store-map.png');	
 		}
@@ -1049,6 +1059,8 @@ $carousel_nav_dim:35px;
 		&.bg-50{
 			background-image:url('../img/aus-store-map-50.png');
 		}
+		
+		
 	}
 	
 } /* location wrap*/
@@ -1183,7 +1195,7 @@ hr{
             font-weight: 400;
             /*padding: 0px 34%;*/
             padding-bottom: 60px;
-
+			
             p{
                 color:$color1;	
                 font-size:12px;
@@ -1349,7 +1361,15 @@ $v_carousel_height:370px;
 .x-border{
 	border:none !important;	
 }
-
+.fw{
+	width:100%;	
+}
+.push{
+	float:left;	
+}
+.pull{
+	float:right;	
+}
 
 @media(max-width: 1400px){
     .product-brochures{
@@ -1451,6 +1471,7 @@ $v_carousel_height:370px;
                 img{
                     padding-right:0;
                     max-width:inherit;	
+					height:auto !important;
                 }
             }
         }
@@ -1474,6 +1495,33 @@ $v_carousel_height:370px;
             padding-right: 0;
         }
     }
+	
+	.suppliers{
+		.f-logo{
+			width:20%;
+			
+			img{
+				width:80%;
+				margin-bottom:20px;
+			}
+		}
+			
+	}
+	.locations-wrap{
+		
+		
+		.locations-content{ 
+			
+			.locations-details-wrap{
+				
+				.location-part{
+					padding:15px;
+					min-height:inherit;
+				}
+			}
+		}
+		
+	} /* location wrap*/
 
 }
 @media(max-width: 590px){
@@ -1488,6 +1536,42 @@ $v_carousel_height:370px;
             height: 208px !important;
         }
     }
+}
+@media (max-width:480px){
+	.suppliers{
+		.f-logo{
+			width:48%;
+			min-height:58px;
+			img{
+				width:100%;
+			}
+		}
+			
+	}
+	
+	.locations-wrap{
+        .locations-content{
+            .search-location{
+                #select-location{
+                    width: 90% !important;
+                }
+            }
+			
+			.location-results{
+				ul{
+					width:79%;
+					margin-left:10%;
+	
+					li{
+						padding-left:15px;
+						padding-right:15px;
+					}
+				}
+			}
+			
+        } /* locations-content */
+		
+    } /* locations-wrap */	
 }
 @media(max-width:400px){
     .header{
@@ -1550,16 +1634,7 @@ $v_carousel_height:370px;
             } 
         }    
     }
-    .locations-wrap{
-        .locations-content{
-            .search-location{
-                #select-location{
-                    width: 85% !important;
-                }
-            }
-        }
-		
-    }
+  
     .contact-wrap{
         #contact-question{
             font-size: 14px;

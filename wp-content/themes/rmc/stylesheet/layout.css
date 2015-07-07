@@ -83,7 +83,7 @@ p {
   color: #707070; }
 
 #sb-site {
-  background: #c0c0c0 !important; }
+  background: silver !important; }
 
 .container {
   background: white;
@@ -352,7 +352,7 @@ p {
     transition: all 0.5s ease; }
     .carousel .slide-btn .fa {
       font-size: 14px;
-      color: #fff;
+      color: white;
       text-shadow: none; }
   .carousel:hover a.left .slide-btn {
     left: 0; }
@@ -749,7 +749,8 @@ p {
   padding-top: 20px;
   text-align: center; }
   .locations-wrap .locations-content .search-location #select-location {
-    width: 30% !important;
+    /*width: 30% !important;*/
+    width: 332px;
     padding-left: 10px;
     margin-top: 40px;
     height: 40px;
@@ -804,18 +805,23 @@ p {
       .locations-wrap .locations-content .location-results ul li {
         text-align: left;
         padding: 3px 10px;
-        background-color: #fff;
+        background-color: white;
         margin-left: 1px; }
         .locations-wrap .locations-content .location-results ul li:hover {
           background-color: #b5b5b5;
           cursor: pointer; }
 .locations-wrap .store-wrap {
-  min-height: 440px;
+  min-height: 390px;
   width: 100%;
   background-repeat: no-repeat;
   float: left;
   background-position: top center;
-  background-size: 428px; }
+  /*background-size: 428px;*/
+  background-size: contain; }
+  .locations-wrap .store-wrap.bg-aus-map {
+    background-image: url("../img/Australian_Maps_clip_art_hight.png"); }
+    .locations-wrap .store-wrap.bg-aus-map .overlay {
+      background-color: rgba(255, 255, 255, 0.8); }
   .locations-wrap .store-wrap.bg-prim {
     background-image: url("../img/aus-store-map.png"); }
   .locations-wrap .store-wrap.bg-25 {
@@ -937,7 +943,7 @@ hr {
       .vertical-carousel .carousel-inner .item .caption p,
       .vertical-carousel .carousel-inner .item .caption h1,
       .vertical-carousel .carousel-inner .item .caption h4 {
-        color: #fff;
+        color: white;
         text-align: left; }
       .vertical-carousel .carousel-inner .item .caption h1 {
         font-size: 32px;
@@ -966,7 +972,7 @@ hr {
       padding-bottom: 24px; }
 .vertical-carousel .carousel-indicator-wrap {
   height: 370px;
-  background-color: #fff;
+  background-color: white;
   width: 32%;
   float: right;
   margin-right: -2%; }
@@ -1037,6 +1043,15 @@ hr {
 .x-border {
   border: none !important; }
 
+.fw {
+  width: 100%; }
+
+.push {
+  float: left; }
+
+.pull {
+  float: right; }
+
 @media (max-width: 1400px) {
   .product-brochures ul li {
     padding-right: 1% !important; }
@@ -1086,7 +1101,8 @@ hr {
 
   .vertical-carousel .carousel-inner .item img {
     padding-right: 0;
-    max-width: inherit; }
+    max-width: inherit;
+    height: auto !important; }
 
   .item .item-text h1 {
     font-size: 4vw; }
@@ -1097,7 +1113,19 @@ hr {
     font-size: 2vw; }
   .contact-wrap #contact-filling {
     font-size: 2vw;
-    padding-right: 0; } }
+    padding-right: 0; }
+
+  .suppliers .f-logo {
+    width: 20%; }
+    .suppliers .f-logo img {
+      width: 80%;
+      margin-bottom: 20px; }
+
+  .locations-wrap .locations-content .locations-details-wrap .location-part {
+    padding: 15px;
+    min-height: inherit; }
+
+  /* location wrap*/ }
 @media (max-width: 590px) {
   .item {
     height: 208px; }
@@ -1105,6 +1133,25 @@ hr {
       margin-top: 20px; }
     .item img {
       height: 208px !important; } }
+@media (max-width: 480px) {
+  .suppliers .f-logo {
+    width: 48%;
+    min-height: 58px; }
+    .suppliers .f-logo img {
+      width: 100%; }
+
+  .locations-wrap {
+    /* locations-content */ }
+    .locations-wrap .locations-content .search-location #select-location {
+      width: 90% !important; }
+    .locations-wrap .locations-content .location-results ul {
+      width: 79%;
+      margin-left: 10%; }
+      .locations-wrap .locations-content .location-results ul li {
+        padding-left: 15px;
+        padding-right: 15px; }
+
+  /* locations-wrap */ }
 @media (max-width: 400px) {
   .header .logo img {
     width: 150%; }
@@ -1134,12 +1181,7 @@ hr {
   .product-details-content .product-details-left-wrap .product-details-left .tab-content a .product-enquire {
     width: 90%; }
 
-  .locations-wrap .locations-content .search-location #select-location {
-    width: 85% !important; }
-
   .contact-wrap #contact-question {
     font-size: 14px; }
   .contact-wrap #contact-filling {
     font-size: 14px; } }
-
-/*# sourceMappingURL=layout.css.map */
