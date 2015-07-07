@@ -30,43 +30,45 @@ get_header();
         </div> 
         
         <hr>
-        <div class="store-wrap bg-25">
-            <h1 style="margin-top:60px;">Where To Buy</h1>
-            <h3>Find RMC products close to you</h3>
-            
-            <div class="search-location col-sm-12">
-                <input type="text" id="select-location" name="keyword" placeholder="enter your suburb or postcode..."/>
-                <input type="hidden" id="selected-postcode">
-                <input type="hidden" id="selected-suburb">
-                <input type="hidden" id="selected-state">
-                <input type="hidden" id="selected-lat">
-                <input type="hidden" id="selected-lon">
-                <i class="fa fa-search location-search-icon"></i>
-                <div class="location-results">
-                    <ul id="search-results" class="hide">
+        <div class="store-wrap bg-aus-map">
+            <div class="overlay push fw">
+                <h1 style="margin-top:60px;">Where To Buy</h1>
+                <h3>Find RMC products close to you</h3>
+                
+                <div class="search-location col-sm-12">
+                    <input type="text" id="select-location" name="keyword" placeholder="enter your postcode..."/>
+                    <input type="hidden" id="selected-postcode">
+                    <input type="hidden" id="selected-suburb">
+                    <input type="hidden" id="selected-state">
+                    <input type="hidden" id="selected-lat">
+                    <input type="hidden" id="selected-lon">
+                    <i class="fa fa-search location-search-icon"></i>
+                    <div class="location-results">
+                        <ul id="search-results" class="hide">
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="locations-details-wrap col-xs-12 x-border">
+                    <div class="locations-details-header col-xs-12 hide" id="selected-location-bar">
+             
+                    </div>
+                    <div class="locations-details col-xs-12" id="stores">
+                       <h2 class="hide">Enter your suburb or postcode above to find a store near you</h2> 
+                    </div>
+                    
+                    
+                    <div class="locations-details-header location-details-header-close col-xs-12 hide" id="surrounding-location-bar">
+                            
+                    </div>
+                    
+                    <div class="locations-details location-details-close col-xs-12" id="surrounding-stores">
                         
-                    </ul>
-                </div>
-            </div>
-            <div class="locations-details-wrap col-xs-12 x-border">
-                <div class="locations-details-header col-xs-12 hide" id="selected-location-bar">
-         
-                </div>
-                <div class="locations-details" id="stores">
-                   <h2 class="hide">Enter your suburb or postcode above to find a store near you</h2> 
-                </div>
-                
-                
-                <div class="locations-details-header location-details-header-close col-xs-12 hide" id="surrounding-location-bar">
-                        
-                </div>
-                
-                <div class="locations-details location-details-close col-xs-12" id="surrounding-stores">
+                    </div>
+                    
                     
                 </div>
-                
-                
-            </div>
+            </div><!--overlay-->
         </div>
        
     </div>
