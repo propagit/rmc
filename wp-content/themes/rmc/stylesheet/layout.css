@@ -889,7 +889,8 @@ hr {
       border: 0.1px solid rgba(255, 255, 255, 0.1);
       width: 80%;
       margin: auto;
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      float: none; }
     .footer-wrapper .footer-menu ul {
       list-style: none; }
       .footer-wrapper .footer-menu ul li {
@@ -1079,6 +1080,10 @@ hr {
     .search-left input, .search-left select, .search-right input, .search-right select {
       width: 100% !important; } }
 @media (max-width: 768px) {
+  .header {
+    padding-top: 20px;
+    padding-bottom: 15px; }
+
   .vertical-carousel .carousel-inner .item img {
     padding-right: 0;
     max-width: inherit; }
@@ -1101,11 +1106,8 @@ hr {
     .item img {
       height: 208px !important; } }
 @media (max-width: 400px) {
-  .header {
-    padding-top: 20px;
-    padding-bottom: 15px; }
-    .header .logo img {
-      width: 150%; }
+  .header .logo img {
+    width: 150%; }
 
   .item .item-text h1 {
     line-height: 25px;

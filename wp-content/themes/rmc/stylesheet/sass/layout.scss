@@ -1137,6 +1137,7 @@ hr{
             width: 80%;
             margin: auto;
             margin-bottom: 15px;
+            float: none;
         }
         ul{
             list-style: none;
@@ -1439,6 +1440,10 @@ $v_carousel_height:370px;
     }
 }
 @media (max-width:768px){
+    .header{
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
     .vertical-carousel{
         .carousel-inner{
 
@@ -1486,8 +1491,6 @@ $v_carousel_height:370px;
 }
 @media(max-width:400px){
     .header{
-        padding-top: 20px;
-        padding-bottom: 15px;
         .logo{
             img{
                 width: 150%;
