@@ -1494,10 +1494,29 @@ $v_carousel_height:370px;
 	.suppliers{
 		.f-logo{
 			width:20%;
+			
+			img{
+				width:80%;
+				margin-bottom:20px;
+			}
 		}
 			
 	}
-
+	.locations-wrap{
+		
+		
+		.locations-content{ 
+			
+			.locations-details-wrap{
+				
+				.location-part{
+					padding:15px;
+					min-height:inherit;
+				}
+			}
+		}
+		
+	} /* location wrap*/
 
 }
 @media(max-width: 590px){
@@ -1518,6 +1537,9 @@ $v_carousel_height:370px;
 		.f-logo{
 			width:48%;
 			min-height:58px;
+			img{
+				width:100%;
+			}
 		}
 			
 	}
