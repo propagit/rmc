@@ -1189,6 +1189,7 @@ hr {
   .contact-wrap #contact-question {
     font-size: 14px; }
   .contact-wrap #contact-filling {
-    font-size: 14px; } }
+    font-size: 20px;
+    line-height: 25px; } }
 
 /*# sourceMappingURL=layout.css.map */
