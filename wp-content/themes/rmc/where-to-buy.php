@@ -6,39 +6,69 @@ get_header();
 ?>
 <div class="container-fluid locations-wrap results">
     <div class="container locations-content">
-        <h1>Where To Buy</h1>
-        <h3>Find RMC products close to you</h3>
-        <div class="search-location col-sm-12">
-            <input type="text" id="select-location" name="keyword" placeholder="enter your suburb or postcode..."/>
-            <input type="hidden" id="selected-postcode">
-            <input type="hidden" id="selected-suburb">
-            <input type="hidden" id="selected-state">
-            <input type="hidden" id="selected-lat">
-            <input type="hidden" id="selected-lon">
-            <i class="fa fa-search location-search-icon"></i>
-            <div class="location-results">
-            	<ul id="search-results" class="hide">
-           			
-                </ul>
-            </div>
-        </div>
-        <div class="locations-details-wrap col-xs-12">
-            <div class="locations-details-header col-xs-12 hide" id="selected-location-bar">
-     
-            </div>
-            <div class="locations-details" id="stores">
-               <h2>Enter your suburb or postcode above to find a store near you</h2> 
-            </div>
+        <h1>RMC Suppliers</h1>
+        <h3>Find RMC products at a store near you</h3>
+        
+        <div class="suppliers">
+        <?php
+			if (have_rows('suppliers', 'option')){
+				  while (have_rows('suppliers', 'option')){ 
+				  the_row();
+				  #$name = get_sub_field('franchise_name', 'option');
+				  $image = get_sub_field('supplier_logo', 'option');
+				  #$desc = get_sub_field('description', 'option');
+		?>
+        		<span class="f-logo">
+                	<img src="<?php echo $image['url']; ?>"/>
+                </span>
+        <?php
+				} # while
 			
+			} # if
+		?>
+        
+        </div> 
+        
+        <hr>
+        <div class="store-wrap bg-25">
+            <h1 style="margin-top:60px;">Where To Buy</h1>
+            <h3>Find RMC products close to you</h3>
             
-            <div class="locations-details-header location-details-header-close col-xs-12 hide" id="surrounding-location-bar">
-     
+            <div class="search-location col-sm-12">
+                <input type="text" id="select-location" name="keyword" placeholder="enter your suburb or postcode..."/>
+                <input type="hidden" id="selected-postcode">
+                <input type="hidden" id="selected-suburb">
+                <input type="hidden" id="selected-state">
+                <input type="hidden" id="selected-lat">
+                <input type="hidden" id="selected-lon">
+                <i class="fa fa-search location-search-icon"></i>
+                <div class="location-results">
+                    <ul id="search-results" class="hide">
+                        
+                    </ul>
+                </div>
             </div>
-            
-            <div class="locations-details location-details-close col-xs-12" id="surrounding-stores">
-
+            <div class="locations-details-wrap col-xs-12 x-border">
+                <div class="locations-details-header col-xs-12 hide" id="selected-location-bar">
+         
+                </div>
+                <div class="locations-details" id="stores">
+                   <h2 class="hide">Enter your suburb or postcode above to find a store near you</h2> 
+                </div>
+                
+                
+                <div class="locations-details-header location-details-header-close col-xs-12 hide" id="surrounding-location-bar">
+                        
+                </div>
+                
+                <div class="locations-details location-details-close col-xs-12" id="surrounding-stores">
+                    
+                </div>
+                
+                
             </div>
         </div>
+       
     </div>
 </div>
 
@@ -70,6 +100,7 @@ $(function(){
 	
 	$(document).on('click','#search-results li',function(){
 		var $this = $(this);
+		$('.locations-details-wrap').removeClass('x-border');
 		//console.log($this.html());
 		$('#select-location').val($this.html());
 		$('#selected-postcode').val($this.attr('data-postcode'));
@@ -132,6 +163,7 @@ function get_stores(){
 	}).done(function(response){
 		populate_location_bar();
 		$('#stores').html(response);
+		//$('.store-wrap').addClass('bg-25').removeClass('bg-50');
 	})
 }
 

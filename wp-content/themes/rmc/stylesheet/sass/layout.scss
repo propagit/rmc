@@ -939,6 +939,10 @@ $carousel_nav_dim:35px;
 }
 /* Where */
 .locations-wrap{
+	hr{
+		/*margin-bottom:60px;	*/
+	}
+	
     .locations-content{ 
         padding-top: 20px;
         text-align:center;
@@ -947,15 +951,18 @@ $carousel_nav_dim:35px;
                 width: 30% !important;
                 padding-left: 10px;
                 margin-top: 40px;  
+				height:40px;
+				outline:none !important;
             }
             .fa{
-                margin-left: -20px;
+                margin-left: -35px;
             }
         }
         .locations-details-wrap{
             border: 1px solid #e2e2e2;
             margin-top: 30px;
             padding: 0;
+			min-height:140px;
             h2{
                 font-family: 'GillSansStd-Bold';
                 font-size: 20px;
@@ -983,7 +990,7 @@ $carousel_nav_dim:35px;
                 border-top: 1px solid #e2e2e2;
             }
             .location-details-close{
-                background: #f7f7f7;
+                /*background: #f7f7f7;*/
                 padding: 0;
             }
             .location-mark{
@@ -993,11 +1000,11 @@ $carousel_nav_dim:35px;
 
 
         .location-results{
-            max-width:330px;
+            max-width:315px;
             position:absolute;
             left:0;
             right:0;
-            background-color:$white;
+            /*background-color:$white;*/
             z-index:100;
             margin:auto;
 
@@ -1007,11 +1014,13 @@ $carousel_nav_dim:35px;
                 list-style:none;
                 max-height:300px;
                 overflow:auto;
+				width:332px;
 
                 li{
                     text-align:left;
                     padding:3px 10px;	
-
+					background-color:$white;
+					margin-left:1px;
                     &:hover{
                         background-color:$color1;
                         cursor:pointer;	
@@ -1021,6 +1030,53 @@ $carousel_nav_dim:35px;
         }
 
     }
+	.store-wrap{
+		min-height: 440px;
+		width: 100%;
+		background-repeat: no-repeat;
+		float: left;
+		background-position: top center;	
+		background-size: 428px;
+		
+		&.bg-prim{
+			background-image:url('../img/aus-store-map.png');	
+		}
+		
+		&.bg-25{
+			background-image:url('../img/aus-store-map-25.png');
+		}
+		
+		&.bg-50{
+			background-image:url('../img/aus-store-map-50.png');
+		}
+	}
+	
+} /* location wrap*/
+
+hr{
+	float: left;
+  	border-top: 1px solid #ccc;
+  	width: 100%;
+}
+
+.suppliers{
+	float:left;
+	padding-top:40px;
+	padding-bottom:40px;
+	
+	.f-logo{
+		/*float:left;	*/
+		display:inline-block;
+		width:12.474576%;
+		padding:0 15px;
+		text-align:center;
+		min-height:96px;
+		
+		img{
+			width:100%;
+		}
+	}
+		
 }
 
 /**
@@ -1289,6 +1345,9 @@ $v_carousel_height:370px;
     font-size: 24px;
     padding: 5px;	
 }
+.x-border{
+	border:none !important;	
+}
 
 
 @media(max-width: 1400px){
@@ -1496,6 +1555,7 @@ $v_carousel_height:370px;
                 }
             }
         }
+		
     }
     .contact-wrap{
         #contact-question{

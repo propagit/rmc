@@ -83,7 +83,7 @@ p {
   color: #707070; }
 
 #sb-site {
-  background: #c0c0c0 !important; }
+  background: silver !important; }
 
 .container {
   background: white;
@@ -352,7 +352,7 @@ p {
     transition: all 0.5s ease; }
     .carousel .slide-btn .fa {
       font-size: 14px;
-      color: #fff;
+      color: white;
       text-shadow: none; }
   .carousel:hover a.left .slide-btn {
     left: 0; }
@@ -743,19 +743,24 @@ p {
   width: 100%; }
 
 /* Where */
+.locations-wrap hr {
+  /*margin-bottom:60px;	*/ }
 .locations-wrap .locations-content {
   padding-top: 20px;
   text-align: center; }
   .locations-wrap .locations-content .search-location #select-location {
     width: 30% !important;
     padding-left: 10px;
-    margin-top: 40px; }
+    margin-top: 40px;
+    height: 40px;
+    outline: none !important; }
   .locations-wrap .locations-content .search-location .fa {
-    margin-left: -20px; }
+    margin-left: -35px; }
   .locations-wrap .locations-content .locations-details-wrap {
     border: 1px solid #e2e2e2;
     margin-top: 30px;
-    padding: 0; }
+    padding: 0;
+    min-height: 140px; }
     .locations-wrap .locations-content .locations-details-wrap h2 {
       font-family: 'GillSansStd-Bold';
       font-size: 20px;
@@ -777,16 +782,16 @@ p {
       padding: 0;
       border-top: 1px solid #e2e2e2; }
     .locations-wrap .locations-content .locations-details-wrap .location-details-close {
-      background: #f7f7f7;
+      /*background: #f7f7f7;*/
       padding: 0; }
     .locations-wrap .locations-content .locations-details-wrap .location-mark {
       color: #4f91cd; }
   .locations-wrap .locations-content .location-results {
-    max-width: 330px;
+    max-width: 315px;
     position: absolute;
     left: 0;
     right: 0;
-    background-color: #fff;
+    /*background-color:$white;*/
     z-index: 100;
     margin: auto; }
     .locations-wrap .locations-content .location-results ul {
@@ -794,13 +799,49 @@ p {
       border-bottom:none;	*/
       list-style: none;
       max-height: 300px;
-      overflow: auto; }
+      overflow: auto;
+      width: 332px; }
       .locations-wrap .locations-content .location-results ul li {
         text-align: left;
-        padding: 3px 10px; }
+        padding: 3px 10px;
+        background-color: white;
+        margin-left: 1px; }
         .locations-wrap .locations-content .location-results ul li:hover {
           background-color: #b5b5b5;
           cursor: pointer; }
+.locations-wrap .store-wrap {
+  min-height: 440px;
+  width: 100%;
+  background-repeat: no-repeat;
+  float: left;
+  background-position: top center;
+  background-size: 428px; }
+  .locations-wrap .store-wrap.bg-prim {
+    background-image: url("../img/aus-store-map.png"); }
+  .locations-wrap .store-wrap.bg-25 {
+    background-image: url("../img/aus-store-map-25.png"); }
+  .locations-wrap .store-wrap.bg-50 {
+    background-image: url("../img/aus-store-map-50.png"); }
+
+/* location wrap*/
+hr {
+  float: left;
+  border-top: 1px solid #ccc;
+  width: 100%; }
+
+.suppliers {
+  float: left;
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .suppliers .f-logo {
+    /*float:left;	*/
+    display: inline-block;
+    width: 12.474576%;
+    padding: 0 15px;
+    text-align: center;
+    min-height: 96px; }
+    .suppliers .f-logo img {
+      width: 100%; }
 
 /**
     Footer Part
@@ -895,7 +936,7 @@ p {
       .vertical-carousel .carousel-inner .item .caption p,
       .vertical-carousel .carousel-inner .item .caption h1,
       .vertical-carousel .carousel-inner .item .caption h4 {
-        color: #fff;
+        color: white;
         text-align: left; }
       .vertical-carousel .carousel-inner .item .caption h1 {
         font-size: 32px;
@@ -924,7 +965,7 @@ p {
       padding-bottom: 24px; }
 .vertical-carousel .carousel-indicator-wrap {
   height: 370px;
-  background-color: #fff;
+  background-color: white;
   width: 32%;
   float: right;
   margin-right: -2%; }
@@ -991,6 +1032,9 @@ p {
   opacity: 0.5;
   font-size: 24px;
   padding: 5px; }
+
+.x-border {
+  border: none !important; }
 
 @media (max-width: 1400px) {
   .product-brochures ul li {
@@ -1095,5 +1139,3 @@ p {
     font-size: 14px; }
   .contact-wrap #contact-filling {
     font-size: 14px; } }
-
-/*# sourceMappingURL=layout.css.map */
