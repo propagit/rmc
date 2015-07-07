@@ -259,7 +259,7 @@ $nav_height:65px;
                     li{
                         a{
                             font-size: 16px;
-                            line-height: 25px;
+                            line-height: 32px;
                             color: #707070;
                         }
                     }
@@ -1508,8 +1508,6 @@ $v_carousel_height:370px;
 			
 	}
 	.locations-wrap{
-		
-		
 		.locations-content{ 
 			
 			.locations-details-wrap{
@@ -1522,7 +1520,13 @@ $v_carousel_height:370px;
 		}
 		
 	} /* location wrap*/
-
+        .products-category-content{
+            .search-product{
+                .search-left, .search-right{
+                    padding-right: 0;
+                }
+            }
+        }
 }
 @media(max-width: 590px){
     .item{
