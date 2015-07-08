@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="container">
         <div class="footer-wrapper">
-        	<div class="scrop-top-wrap">
+            <div class="scrop-top-wrap">
                 <div class="scroll-to-top">
                     <img src="<?php echo bloginfo('template_directory') . '/img/back-to-top.jpg'; ?>" id="top"/>
                 </div>
@@ -74,34 +74,36 @@
     })(jQuery);
 </script>
 <script>
-    
-    $(function(){
-        $('#search').keyup(function(){
-            header_search();
-    
-        });
-    
-    })
-    
-    function header_search(){
-	$.ajax({
-		url:'<?php echo admin_url('admin-ajax.php'); ?>',
-		method:'POST',
-		data:{
-			action:'header_search',
-			product_name:$('#search').val(),
-				
-		}
-	}).done(function(response){
-		var sel = $(".results"); // SELECT THE SECOND DROP DOWN WITH THE ID MODELS
-                //sel.empty(); 
-		$('.results').html(response);
-                if(!response){
-                location.reload();
-                
-    }
-	})
-}
-</script>
 
+    $(function () {
+        $('#search').keyup(function () {
+            header_search();
+
+        });
+        
+        $('.menu-item-has-children').click(function(){
+            $(this).children('ul').toggle();
+        })
+
+    })
+
+    function header_search() {
+        $.ajax({
+            url: '<?php echo admin_url('admin-ajax.php'); ?>',
+            method: 'POST',
+            data: {
+                action: 'header_search',
+                product_name: $('#search').val(),
+            }
+        }).done(function (response) {
+            var sel = $(".results"); // SELECT THE SECOND DROP DOWN WITH THE ID MODELS
+            //sel.empty(); 
+            $('.results').html(response);
+            if (!response) {
+                location.reload();
+
+            }
+        })
+    }
+</script>
 </body>

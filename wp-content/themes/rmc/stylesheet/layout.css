@@ -233,7 +233,7 @@ p {
         display: block; }
         .sb-slidebar ul li:hover ul li a, .sb-slidebar ul li:focus ul li a {
           font-size: 16px;
-          line-height: 25px;
+          line-height: 32px;
           color: #707070; }
     .sb-slidebar ul ul {
       display: none; }
@@ -767,6 +767,12 @@ p {
       font-size: 20px;
       line-height: 19px;
       font-weight: 600; }
+    .locations-wrap .locations-content .locations-details-wrap h3 {
+      font-family: 'GillSansStd-Bold';
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 600;
+      margin-top: 20px; }
     .locations-wrap .locations-content .locations-details-wrap .locations-details-header {
       border-bottom: 1px solid #e2e2e2; }
     .locations-wrap .locations-content .locations-details-wrap .location-part {
@@ -895,7 +901,8 @@ hr {
       border: 0.1px solid rgba(255, 255, 255, 0.1);
       width: 80%;
       margin: auto;
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      float: none; }
     .footer-wrapper .footer-menu ul {
       list-style: none; }
       .footer-wrapper .footer-menu ul li {
@@ -1094,6 +1101,10 @@ hr {
     .search-left input, .search-left select, .search-right input, .search-right select {
       width: 100% !important; } }
 @media (max-width: 768px) {
+  .header {
+    padding-top: 20px;
+    padding-bottom: 15px; }
+
   .vertical-carousel .carousel-inner .item img {
     padding-right: 0;
     max-width: inherit;
@@ -1120,7 +1131,9 @@ hr {
     padding: 15px;
     min-height: inherit; }
 
-  /* location wrap*/ }
+  /* location wrap*/
+  .products-category-content .search-product .search-left, .products-category-content .search-product .search-right {
+    padding-right: 0; } }
 @media (max-width: 590px) {
   .item {
     height: 208px; }
@@ -1150,11 +1163,11 @@ hr {
 
   /* locations-wrap */ }
 @media (max-width: 400px) {
-  .header {
-    padding-top: 20px;
-    padding-bottom: 15px; }
-    .header .logo img {
-      width: 150%; }
+  h1 {
+    font-size: 40px; }
+
+  .header .logo img {
+    width: 150%; }
 
   .item .item-text h1 {
     line-height: 25px;
@@ -1168,7 +1181,8 @@ hr {
   .footer-wrapper .footer-logo-wrap .footer-logo img {
     max-height: 200px; }
   .footer-wrapper .footer-logo-wrap .footer-bottom-text p {
-    padding: 0px 1%; }
+    padding: 0px 2%;
+    font-size: 10px; }
 
   .about-content-wrap {
     width: 90%; }
@@ -1184,4 +1198,5 @@ hr {
   .contact-wrap #contact-question {
     font-size: 14px; }
   .contact-wrap #contact-filling {
-    font-size: 14px; } }
+    font-size: 20px;
+    line-height: 25px; } }
