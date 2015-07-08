@@ -1179,7 +1179,8 @@ hr {
   .footer-wrapper .footer-logo-wrap .footer-logo img {
     max-height: 200px; }
   .footer-wrapper .footer-logo-wrap .footer-bottom-text p {
-    padding: 0px 2%; }
+    padding: 0px 2%;
+    font-size: 11px; }
 
   .about-content-wrap {
     width: 90%; }
