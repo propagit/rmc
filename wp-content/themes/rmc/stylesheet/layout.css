@@ -767,6 +767,11 @@ p {
       font-size: 20px;
       line-height: 19px;
       font-weight: 600; }
+    .locations-wrap .locations-content .locations-details-wrap h3 {
+      font-family: 'GillSansStd-Bold';
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 600; }
     .locations-wrap .locations-content .locations-details-wrap .locations-details-header {
       border-bottom: 1px solid #e2e2e2; }
     .locations-wrap .locations-content .locations-details-wrap .location-part {
@@ -1173,7 +1178,7 @@ hr {
   .footer-wrapper .footer-logo-wrap .footer-logo img {
     max-height: 200px; }
   .footer-wrapper .footer-logo-wrap .footer-bottom-text p {
-    padding: 0px 1%; }
+    padding: 0px 2%; }
 
   .about-content-wrap {
     width: 90%; }

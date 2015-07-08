@@ -253,7 +253,7 @@ function get_stores()
 						</div>';
 		}
 	}else{
-		$stores = '<div class="col-sm-12"><h2>No Records Found</h2></div>';		
+		$stores = '<div class="col-sm-12"><h3>No Records Found</h3></div>';		
 	}
 	echo $stores;
 	exit;
