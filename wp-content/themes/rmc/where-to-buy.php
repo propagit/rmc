@@ -97,7 +97,7 @@ $(function(){
 		get_locations($(this).val());
 	});
 	$('.location-search-icon').click(function(){
-		get_locations($('#selected-location').val());
+		get_locations($('#selected-postcode').val());
 	});
 	
 	$(document).on('click','#search-results li',function(){

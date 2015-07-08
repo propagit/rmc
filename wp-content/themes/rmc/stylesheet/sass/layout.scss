@@ -1037,8 +1037,8 @@ $carousel_nav_dim:35px;
 		background-repeat: no-repeat;
 		float: left;
 		background-position: top center;	
-		/*background-size: 428px;*/
-		background-size:contain;
+		background-size: 428px;
+		/*background-size:contain;*/
 	
 		&.bg-aus-map{
 			background-image:url('../img/Australian_Maps_clip_art_hight.png');	
@@ -1565,6 +1565,10 @@ $v_carousel_height:370px;
 			}
 			
         } /* locations-content */
+		
+		.store-wrap{
+			background-size:contain;
+		}
 		
     } /* locations-wrap */	
 }

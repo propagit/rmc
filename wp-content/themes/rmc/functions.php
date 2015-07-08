@@ -308,10 +308,9 @@ function surrouding_stores(){
 	$sql = "SELECT pm.post_id 
 			FROM wp_postmeta pm
 			WHERE 
-				(pm.meta_key = 'suburb' AND pm.meta_value = '$suburb')
-			OR
 				(pm.meta_key = 'postcode' AND pm.meta_value = " . $postcode . ")
 			GROUP BY pm.post_id";
+			
 	$rows_stores = $wp_db->get_results($sql);
 	$stores = array();
 	$s = 0;
@@ -328,10 +327,16 @@ function surrouding_stores(){
 			WHERE 
 				pm.meta_key = 'postcode' 
 			AND 
-				pm.meta_value IN (" . implode(',',$postcodes) . ")
-			AND pm.post_id NOT IN (" . implode(',',$stores) . ")
-			GROUP BY pm.post_id";
+				pm.meta_value IN (" . implode(',',$postcodes) . ")";
+				
+	if(count($stores)){
+		$sql .= "AND pm.post_id NOT IN (" . implode(',',$stores) . ")";	
+	}
+			
+	$sql .= "GROUP BY pm.post_id";
+	
 	$surrounding_stores = $wp_db->get_results($sql);
+
 	
 	$surrounding = '';	
 	if($surrounding_stores){

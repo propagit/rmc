@@ -816,8 +816,8 @@ p {
   background-repeat: no-repeat;
   float: left;
   background-position: top center;
-  /*background-size: 428px;*/
-  background-size: contain; }
+  background-size: 428px;
+  /*background-size:contain;*/ }
   .locations-wrap .store-wrap.bg-aus-map {
     background-image: url("../img/Australian_Maps_clip_art_hight.png"); }
     .locations-wrap .store-wrap.bg-aus-map .overlay {
@@ -1145,6 +1145,8 @@ hr {
       .locations-wrap .locations-content .location-results ul li {
         padding-left: 15px;
         padding-right: 15px; }
+    .locations-wrap .store-wrap {
+      background-size: contain; }
 
   /* locations-wrap */ }
 @media (max-width: 400px) {
