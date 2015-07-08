@@ -771,7 +771,8 @@ p {
       font-family: 'GillSansStd-Bold';
       font-size: 16px;
       line-height: 19px;
-      font-weight: 600; }
+      font-weight: 600;
+      margin-top: 20px; }
     .locations-wrap .locations-content .locations-details-wrap .locations-details-header {
       border-bottom: 1px solid #e2e2e2; }
     .locations-wrap .locations-content .locations-details-wrap .location-part {

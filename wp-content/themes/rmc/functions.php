@@ -361,7 +361,7 @@ function surrouding_stores(){
 							</div>';
 		}
 	}else{
-		$surrounding = '<div class="col-sm-12"><h2>No Records Found</h2></div>';			
+		$surrounding = '<div class="col-sm-12"><h3>No Records Found</h3></div>';			
 	}
 	echo $surrounding;
 	exit;
