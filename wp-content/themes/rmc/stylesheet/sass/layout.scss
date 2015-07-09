@@ -1040,37 +1040,39 @@ $carousel_nav_dim:35px;
         }
 
     }
-    .store-wrap{
-        min-height: 390px;
-        width: 100%;
-        background-repeat: no-repeat;
-        float: left;
-        background-position: top center;	
-        /*background-size: 428px;*/
-        background-size:contain;
 
-        &.bg-aus-map{
-            background-image:url('../img/Australian_Maps_clip_art_hight.png');	
+	.store-wrap{
+		min-height: 390px;
+		width: 100%;
+		background-repeat: no-repeat;
+		float: left;
+		background-position: top center;	
+		background-size: 428px;
+		/*background-size:contain;*/
+	
+		&.bg-aus-map{
+			background-image:url('../img/Australian_Maps_clip_art_hight.png');	
+			
+			.overlay{
+				background-color:rgba(255,255,255,0.8);
+			}	
+		}
 
-            .overlay{
-                background-color:rgba(255,255,255,0.8);
-            }	
-        }
-
-        &.bg-prim{
-            background-image:url('../img/aus-store-map.png');	
-        }
-
-        &.bg-25{
-            background-image:url('../img/aus-store-map-25.png');
-        }
-
-        &.bg-50{
-            background-image:url('../img/aus-store-map-50.png');
-        }
-
-
-    }
+		&.bg-prim{
+			background-image:url('../img/aus-store-map.png');	
+		}
+		
+		&.bg-25{
+			background-image:url('../img/aus-store-map-25.png');
+		}
+		
+		&.bg-50{
+			background-image:url('../img/aus-store-map-50.png');
+		}
+		
+		
+	}
+	
 
 } /* location wrap*/
 
@@ -1601,6 +1603,11 @@ $v_carousel_height:370px;
 
         } /* locations-content */
 
+		
+		.store-wrap{
+			background-size:contain;
+		}
+	
     } /* locations-wrap */	
 }
 @media(max-width:400px){

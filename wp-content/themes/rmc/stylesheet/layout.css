@@ -83,7 +83,7 @@ p {
   color: #707070; }
 
 #sb-site {
-  background: #c0c0c0 !important; }
+  background: silver !important; }
 
 .container {
   background: white;
@@ -352,7 +352,7 @@ p {
     transition: all 0.5s ease; }
     .carousel .slide-btn .fa {
       font-size: 14px;
-      color: #fff;
+      color: white;
       text-shadow: none; }
   .carousel:hover a.left .slide-btn {
     left: 0; }
@@ -812,7 +812,7 @@ p {
       .locations-wrap .locations-content .location-results ul li {
         text-align: left;
         padding: 3px 10px;
-        background-color: #fff;
+        background-color: white;
         margin-left: 1px; }
         .locations-wrap .locations-content .location-results ul li:hover {
           background-color: #b5b5b5;
@@ -823,8 +823,8 @@ p {
   background-repeat: no-repeat;
   float: left;
   background-position: top center;
-  /*background-size: 428px;*/
-  background-size: contain; }
+  background-size: 428px;
+  /*background-size:contain;*/ }
   .locations-wrap .store-wrap.bg-aus-map {
     background-image: url("../img/Australian_Maps_clip_art_hight.png"); }
     .locations-wrap .store-wrap.bg-aus-map .overlay {
@@ -950,7 +950,7 @@ hr {
       .vertical-carousel .carousel-inner .item .caption p,
       .vertical-carousel .carousel-inner .item .caption h1,
       .vertical-carousel .carousel-inner .item .caption h4 {
-        color: #fff;
+        color: white;
         text-align: left; }
       .vertical-carousel .carousel-inner .item .caption h1 {
         font-size: 32px;
@@ -979,7 +979,7 @@ hr {
       padding-bottom: 24px; }
 .vertical-carousel .carousel-indicator-wrap {
   height: 370px;
-  background-color: #fff;
+  background-color: white;
   width: 32%;
   float: right;
   margin-right: -2%; }
@@ -1170,6 +1170,8 @@ hr {
       .locations-wrap .locations-content .location-results ul li {
         padding-left: 15px;
         padding-right: 15px; }
+    .locations-wrap .store-wrap {
+      background-size: contain; }
 
   /* locations-wrap */ }
 @media (max-width: 400px) {
@@ -1211,5 +1213,3 @@ hr {
   .contact-wrap #contact-filling {
     font-size: 20px;
     line-height: 25px; } }
-
-/*# sourceMappingURL=layout.css.map */
