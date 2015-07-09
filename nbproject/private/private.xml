@@ -2,6 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/functions.php</file>
+            <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/stylesheet/sass/layout.scss</file>
+            <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/footer.php</file>
+            <file>file:/Applications/MAMP/htdocs/propagate/rmc/wp-content/themes/rmc/where-to-buy.php</file>
+        </group>
     </open-files>
 </project-private>

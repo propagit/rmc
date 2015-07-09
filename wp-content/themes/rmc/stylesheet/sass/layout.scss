@@ -53,7 +53,8 @@ h1{
 }
 h3{
     font-family: $font-arial;
-    font-size: 14px;
+    //font-size: 14px;
+    font-size: 16px;
     line-height: 19px;
     font-weight: 400;
     color: #707070;
@@ -378,13 +379,13 @@ $nav_height:65px;
             padding:0px 18%;
             margin-top:90px;
             letter-spacing:0.5px;
-            //font-size:53px;
-            font-size: 2.8vw;
+            font-size:53px;
+            //font-size: 2.8vw;
         }
         h2{
             font-family: 'GillSansStd-Light';
-            //font-size:39px;
-            font-size: 2vw;
+            font-size:38px;
+            //font-size: 2vw;
             color: white;
             letter-spacing:0;
             padding:0px 20%;
@@ -728,6 +729,7 @@ $carousel_nav_dim:35px;
     padding-left: 0;
     h3{
         padding: 0px 13%;
+        font-size: 14px;
     }
     p{
         font-family: $font-arial;
@@ -1398,6 +1400,16 @@ $v_carousel_height:370px;
             padding-right: 0;
         }
     }
+    .item{
+        .item-text{
+            h1{
+                font-size: 3.7vw;
+            }
+            h2{
+                font-size: 3vw;
+            }
+        }
+    }
 }
 @media(max-width: 1200px){
     .vertical-carousel{
@@ -1420,7 +1432,7 @@ $v_carousel_height:370px;
     }
 }
 
-@media(max-width: 990px){
+@media(max-width: 991px){
     .menu-wrap{
         .top-menu-wraper{ 
             ul{
@@ -1435,11 +1447,14 @@ $v_carousel_height:370px;
     .item{
         .item-text{
             h1{
+                font-size: 3.4vw;
                 line-height: 35px;
-                margin-top: 40px;
+                margin-top: 60px;
             }
             h2{
-                line-height: 25px;
+                line-height: 28px;
+                margin-top: 20px;
+                font-size: 2.8vw
             }
         }
     }
@@ -1539,8 +1554,12 @@ $v_carousel_height:370px;
     .item{
         height: 208px;
         .item-text{
+            h1{
+                line-height: 25px;
+            }
             h2{
                 margin-top: 20px;
+                line-height: 18px;
             }
         }
         img{
@@ -1601,6 +1620,7 @@ $v_carousel_height:370px;
                 line-height: 25px;
                 font-size: 20px;
                 padding: 0px 7%;
+                margin-top: 55px;
             }
             h2{
                 line-height: 18px;

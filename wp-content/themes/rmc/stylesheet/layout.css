@@ -61,7 +61,7 @@ h1 {
 
 h3 {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 19px;
   font-weight: 400;
   color: #707070;
@@ -321,10 +321,10 @@ p {
       padding: 0px 18%;
       margin-top: 90px;
       letter-spacing: 0.5px;
-      font-size: 2.8vw; }
+      font-size: 53px; }
     .item .item-text h2 {
       font-family: 'GillSansStd-Light';
-      font-size: 2vw;
+      font-size: 38px;
       color: white;
       letter-spacing: 0;
       padding: 0px 20%;
@@ -581,7 +581,8 @@ p {
   text-align: center;
   padding-left: 0; }
   .products-category-content h3 {
-    padding: 0px 13%; }
+    padding: 0px 13%;
+    font-size: 14px; }
   .products-category-content p {
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
@@ -1068,7 +1069,12 @@ hr {
     font-size: 2vw; }
   .contact-wrap #contact-filling {
     font-size: 2vw;
-    padding-right: 0; } }
+    padding-right: 0; }
+
+  .item .item-text h1 {
+    font-size: 3.7vw; }
+  .item .item-text h2 {
+    font-size: 3vw; } }
 @media (max-width: 1200px) {
   .vertical-carousel .carousel-content {
     width: 100%; }
@@ -1077,16 +1083,19 @@ hr {
 
   .menu-wrap .top-menu ul li {
     padding: 0px 2%; } }
-@media (max-width: 990px) {
+@media (max-width: 991px) {
   .menu-wrap .top-menu-wraper ul li {
     font-size: 12px;
     padding: 0px 2%; }
 
   .item .item-text h1 {
+    font-size: 3.4vw;
     line-height: 35px;
-    margin-top: 40px; }
+    margin-top: 60px; }
   .item .item-text h2 {
-    line-height: 25px; }
+    line-height: 28px;
+    margin-top: 20px;
+    font-size: 2.8vw; }
 
   .menu-wrap .top-menu ul li {
     padding: 0px 1%; } }
@@ -1137,8 +1146,11 @@ hr {
 @media (max-width: 590px) {
   .item {
     height: 208px; }
+    .item .item-text h1 {
+      line-height: 25px; }
     .item .item-text h2 {
-      margin-top: 20px; }
+      margin-top: 20px;
+      line-height: 18px; }
     .item img {
       height: 208px !important; } }
 @media (max-width: 480px) {
@@ -1170,7 +1182,8 @@ hr {
   .item .item-text h1 {
     line-height: 25px;
     font-size: 20px;
-    padding: 0px 7%; }
+    padding: 0px 7%;
+    margin-top: 55px; }
   .item .item-text h2 {
     line-height: 18px;
     font-size: 18px;
