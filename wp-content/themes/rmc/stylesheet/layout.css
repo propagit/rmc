@@ -83,7 +83,7 @@ p {
   color: #707070; }
 
 #sb-site {
-  background: silver !important; }
+  background: #c0c0c0 !important; }
 
 .container {
   background: white;
@@ -352,7 +352,7 @@ p {
     transition: all 0.5s ease; }
     .carousel .slide-btn .fa {
       font-size: 14px;
-      color: white;
+      color: #fff;
       text-shadow: none; }
   .carousel:hover a.left .slide-btn {
     left: 0; }
@@ -812,7 +812,7 @@ p {
       .locations-wrap .locations-content .location-results ul li {
         text-align: left;
         padding: 3px 10px;
-        background-color: white;
+        background-color: #fff;
         margin-left: 1px; }
         .locations-wrap .locations-content .location-results ul li:hover {
           background-color: #b5b5b5;
@@ -950,7 +950,7 @@ hr {
       .vertical-carousel .carousel-inner .item .caption p,
       .vertical-carousel .carousel-inner .item .caption h1,
       .vertical-carousel .carousel-inner .item .caption h4 {
-        color: white;
+        color: #fff;
         text-align: left; }
       .vertical-carousel .carousel-inner .item .caption h1 {
         font-size: 32px;
@@ -979,7 +979,7 @@ hr {
       padding-bottom: 24px; }
 .vertical-carousel .carousel-indicator-wrap {
   height: 370px;
-  background-color: white;
+  background-color: #fff;
   width: 32%;
   float: right;
   margin-right: -2%; }
@@ -1072,7 +1072,7 @@ hr {
     padding-right: 0; }
 
   .item .item-text h1 {
-    font-size: 3.7vw; }
+    font-size: 3.6vw; }
   .item .item-text h2 {
     font-size: 3vw; } }
 @media (max-width: 1200px) {
@@ -1089,7 +1089,7 @@ hr {
     padding: 0px 2%; }
 
   .item .item-text h1 {
-    font-size: 3.4vw;
+    font-size: 3.3vw;
     line-height: 35px;
     margin-top: 60px; }
   .item .item-text h2 {
@@ -1213,3 +1213,5 @@ hr {
   .contact-wrap #contact-filling {
     font-size: 20px;
     line-height: 25px; } }
+
+/*# sourceMappingURL=layout.css.map */
