@@ -1687,3 +1687,15 @@ $v_carousel_height:370px;
         }
     }
 }
+@media(max-width: 320px){
+    .item{
+        .item-text{
+            h1{
+                font-size: 18px;
+            }
+            h2{
+                font-size: 16px;
+            }
+        }
+    }
+}

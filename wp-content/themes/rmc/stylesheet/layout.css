@@ -1213,5 +1213,10 @@ hr {
   .contact-wrap #contact-filling {
     font-size: 20px;
     line-height: 25px; } }
+@media (max-width: 320px) {
+  .item .item-text h1 {
+    font-size: 18px; }
+  .item .item-text h2 {
+    font-size: 16px; } }
 
 /*# sourceMappingURL=layout.css.map */
