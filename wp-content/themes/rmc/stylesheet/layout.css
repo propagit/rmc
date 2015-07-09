@@ -83,7 +83,7 @@ p {
   color: #707070; }
 
 #sb-site {
-  background: silver !important; }
+  background: #c0c0c0 !important; }
 
 .container {
   background: white;
@@ -352,7 +352,7 @@ p {
     transition: all 0.5s ease; }
     .carousel .slide-btn .fa {
       font-size: 14px;
-      color: white;
+      color: #fff;
       text-shadow: none; }
   .carousel:hover a.left .slide-btn {
     left: 0; }
@@ -430,26 +430,28 @@ p {
 /**
     Contact Page
 */
-.contact-wrap #contact-question {
-  font-size: 26px;
-  line-height: 0px; }
-.contact-wrap #contact-filling {
-  font-size: 28px;
-  padding-right: 40%;
-  line-height: 35px; }
-.contact-wrap p {
-  padding-left: 3%; }
-  .contact-wrap p .fa {
-    margin-left: -3%;
-    padding-right: 3px; }
-.contact-wrap .contact-social-links {
-  margin-bottom: 80px; }
-  .contact-wrap .contact-social-links p {
-    padding: 0; }
-  .contact-wrap .contact-social-links .fa {
-    color: #4f91cd;
-    font-size: 20px;
-    padding-right: 15px; }
+.contact-wrap {
+  padding-top: 20px; }
+  .contact-wrap #contact-question {
+    font-size: 26px;
+    line-height: 0px; }
+  .contact-wrap #contact-filling {
+    font-size: 28px;
+    padding-right: 40%;
+    line-height: 35px; }
+  .contact-wrap p {
+    padding-left: 3%; }
+    .contact-wrap p .fa {
+      margin-left: -3%;
+      padding-right: 3px; }
+  .contact-wrap .contact-social-links {
+    margin-bottom: 80px; }
+    .contact-wrap .contact-social-links p {
+      padding: 0; }
+    .contact-wrap .contact-social-links .fa {
+      color: #4f91cd;
+      font-size: 20px;
+      padding-right: 15px; }
 
 .contact-form-wrap {
   background: #f6f6f6;
@@ -473,7 +475,8 @@ p {
     Resources Page
 */
 .resources-wrap {
-  text-align: center; }
+  text-align: center;
+  padding-top: 20px; }
   .resources-wrap .resources-content .resources-top-part {
     border: 2px solid #e6e6e6;
     padding: 0px; }
@@ -579,7 +582,8 @@ p {
 */
 .products-category-content {
   text-align: center;
-  padding-left: 0; }
+  padding-left: 0;
+  padding-top: 20px; }
   .products-category-content h3 {
     padding: 0px 13%;
     font-size: 14px; }
@@ -812,7 +816,7 @@ p {
       .locations-wrap .locations-content .location-results ul li {
         text-align: left;
         padding: 3px 10px;
-        background-color: white;
+        background-color: #fff;
         margin-left: 1px; }
         .locations-wrap .locations-content .location-results ul li:hover {
           background-color: #b5b5b5;
@@ -951,7 +955,7 @@ hr {
       .vertical-carousel .carousel-inner .item .caption p,
       .vertical-carousel .carousel-inner .item .caption h1,
       .vertical-carousel .carousel-inner .item .caption h4 {
-        color: white;
+        color: #fff;
         text-align: left; }
       .vertical-carousel .carousel-inner .item .caption h1 {
         font-size: 32px;
@@ -980,7 +984,7 @@ hr {
       padding-bottom: 24px; }
 .vertical-carousel .carousel-indicator-wrap {
   height: 370px;
-  background-color: white;
+  background-color: #fff;
   width: 32%;
   float: right;
   margin-right: -2%; }
@@ -1061,7 +1065,7 @@ hr {
   float: right; }
 
 .hide-hr {
-  border-color: white; }
+  border-color: #fff; }
 
 @media (max-width: 1400px) {
   .product-brochures ul li {
@@ -1224,3 +1228,5 @@ hr {
     font-size: 18px; }
   .item .item-text h2 {
     font-size: 16px; } }
+
+/*# sourceMappingURL=layout.css.map */
