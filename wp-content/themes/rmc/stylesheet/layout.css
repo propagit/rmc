@@ -83,7 +83,7 @@ p {
   color: #707070; }
 
 #sb-site {
-  background: #c0c0c0 !important; }
+  background: silver !important; }
 
 .container {
   background: white;
@@ -352,7 +352,7 @@ p {
     transition: all 0.5s ease; }
     .carousel .slide-btn .fa {
       font-size: 14px;
-      color: #fff;
+      color: white;
       text-shadow: none; }
   .carousel:hover a.left .slide-btn {
     left: 0; }
@@ -762,7 +762,7 @@ p {
     border: 1px solid #e2e2e2;
     margin-top: 30px;
     padding: 0;
-    min-height: 140px; }
+    min-height: 240px; }
     .locations-wrap .locations-content .locations-details-wrap h2 {
       font-family: 'GillSansStd-Bold';
       font-size: 20px;
@@ -812,7 +812,7 @@ p {
       .locations-wrap .locations-content .location-results ul li {
         text-align: left;
         padding: 3px 10px;
-        background-color: #fff;
+        background-color: white;
         margin-left: 1px; }
         .locations-wrap .locations-content .location-results ul li:hover {
           background-color: #b5b5b5;
@@ -828,7 +828,8 @@ p {
   .locations-wrap .store-wrap.bg-aus-map {
     background-image: url("../img/Australian_Maps_clip_art_hight.png"); }
     .locations-wrap .store-wrap.bg-aus-map .overlay {
-      background-color: rgba(255, 255, 255, 0.8); }
+      background-color: rgba(255, 255, 255, 0.95);
+      min-height: 400px; }
   .locations-wrap .store-wrap.bg-prim {
     background-image: url("../img/aus-store-map.png"); }
   .locations-wrap .store-wrap.bg-25 {
@@ -950,7 +951,7 @@ hr {
       .vertical-carousel .carousel-inner .item .caption p,
       .vertical-carousel .carousel-inner .item .caption h1,
       .vertical-carousel .carousel-inner .item .caption h4 {
-        color: #fff;
+        color: white;
         text-align: left; }
       .vertical-carousel .carousel-inner .item .caption h1 {
         font-size: 32px;
@@ -979,7 +980,7 @@ hr {
       padding-bottom: 24px; }
 .vertical-carousel .carousel-indicator-wrap {
   height: 370px;
-  background-color: #fff;
+  background-color: white;
   width: 32%;
   float: right;
   margin-right: -2%; }
@@ -1058,6 +1059,9 @@ hr {
 
 .pull {
   float: right; }
+
+.hide-hr {
+  border-color: white; }
 
 @media (max-width: 1400px) {
   .product-brochures ul li {
@@ -1154,11 +1158,13 @@ hr {
     .item img {
       height: 208px !important; } }
 @media (max-width: 480px) {
-  .suppliers .f-logo {
-    width: 48%;
-    min-height: 58px; }
-    .suppliers .f-logo img {
-      width: 100%; }
+  .suppliers {
+    text-align: left; }
+    .suppliers .f-logo {
+      width: 48%;
+      min-height: 58px; }
+      .suppliers .f-logo img {
+        width: 100%; }
 
   .locations-wrap {
     /* locations-content */ }
@@ -1218,5 +1224,3 @@ hr {
     font-size: 18px; }
   .item .item-text h2 {
     font-size: 16px; } }
-
-/*# sourceMappingURL=layout.css.map */

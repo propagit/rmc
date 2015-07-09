@@ -6,33 +6,11 @@ get_header();
 ?>
 <div class="container-fluid locations-wrap results">
     <div class="container locations-content">
-        <h1>RMC Suppliers</h1>
-        <h3>Find RMC products at a store near you</h3>
+       
         
-        <div class="suppliers">
-        <?php
-			if (have_rows('suppliers', 'option')){
-				  while (have_rows('suppliers', 'option')){ 
-				  the_row();
-				  #$name = get_sub_field('franchise_name', 'option');
-				  $image = get_sub_field('supplier_logo', 'option');
-				  #$desc = get_sub_field('description', 'option');
-		?>
-        		<span class="f-logo">
-                	<img src="<?php echo $image['url']; ?>"/>
-                </span>
-        <?php
-				} # while
-			
-			} # if
-		?>
-        
-        </div> 
-        
-        <hr>
         <div class="store-wrap bg-aus-map">
             <div class="overlay push fw">
-                <h1 style="margin-top:60px;">Where To Buy</h1>
+                <h1>Where To Buy</h1>
                 <h3>Find RMC products close to you</h3>
                 
                 <div class="search-location col-sm-12">
@@ -70,7 +48,31 @@ get_header();
                 </div>
             </div><!--overlay-->
         </div>
-       
+       	<hr id="supplier-hr">
+        
+        <h1 class="push fw" style="margin-top:60px;">RMC Suppliers</h1>
+        <h3>Find RMC products at a store near you</h3>
+        
+        <div class="suppliers">
+        <?php
+			if (have_rows('suppliers', 'option')){
+				  while (have_rows('suppliers', 'option')){ 
+				  the_row();
+				  #$name = get_sub_field('franchise_name', 'option');
+				  $image = get_sub_field('supplier_logo', 'option');
+				  #$desc = get_sub_field('description', 'option');
+		?>
+        		<span class="f-logo">
+                	<img src="<?php echo $image['url']; ?>"/>
+                </span>
+        <?php
+				} # while
+			
+			} # if
+		?>
+        
+        </div> 
+        
     </div>
 </div>
 
@@ -103,6 +105,7 @@ $(function(){
 	$(document).on('click','#search-results li',function(){
 		var $this = $(this);
 		$('.locations-details-wrap').removeClass('x-border');
+		$('#supplier-hr').addClass('hide-hr');
 		//console.log($this.html());
 		$('#select-location').val($this.html());
 		$('#selected-postcode').val($this.attr('data-postcode'));
@@ -165,7 +168,7 @@ function get_stores(){
 	}).done(function(response){
 		populate_location_bar();
 		$('#stores').html(response);
-		//$('.store-wrap').addClass('bg-25').removeClass('bg-50');
+		$('.store-wrap').addClass('bg-25').removeClass('bg-50');
 	})
 }
 
