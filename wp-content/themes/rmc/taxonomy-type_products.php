@@ -5,7 +5,16 @@ get_header();
 
 <div class="container-fluid products-category-wrap results">
     <div class="container products-category-content">
-        <h1><?php echo get_queried_object()->name; ?></h1>
+        <h1><?php echo get_queried_object()->name; ?>
+        <?php if(get_queried_object()->slug === "tubefit"){?>
+        <img class="product-logo" src="<?php echo bloginfo('template_directory').'/img/tubefitindustrial.jpg';?>"/>
+        <?php } ?>
+        <?php if(get_queried_object()->slug === "matthews-fire-alarm"){?>
+        <img class="product-logo" id="matthews-firealarm" src="<?php echo bloginfo('template_directory').'/img/matthews_firealarm.jpg';?>"/>
+        <?php } ?>
+        <?php if(get_queried_object()->slug === "other-fittings"){?>
+        <img class="product-logo" src="<?php echo bloginfo('template_directory').'/img/ryemetal.jpg';?>"/>
+        <?php } ?></h1>
         <h3><?php echo get_queried_object()->description; ?></h3>
         <p>Filter Products</p>
         <div class="search-product">

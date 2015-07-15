@@ -14,7 +14,7 @@ get_header();
                 <h3>Find RMC products close to you</h3>
                 
                 <div class="search-location col-sm-12">
-                    <input type="text" id="select-location" name="keyword" placeholder="enter your postcode..."/>
+                    <input type="text" id="select-location" name="keyword" placeholder="enter your suburb or postcode..."/>
                     <input type="hidden" id="selected-postcode">
                     <input type="hidden" id="selected-suburb">
                     <input type="hidden" id="selected-state">

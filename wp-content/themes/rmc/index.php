@@ -148,6 +148,7 @@ get_header();
                     <ul>
                         <?php
                         $jp_first="id='jp-first'";
+                        $second_photo ="<img src=<?php echo bloginfo('template_directory').'/img/valves_plumbing.jpg';?>/>";
                         while (have_rows('jump_points', 'option')): the_row();
                             $jumppoint_image = get_sub_field('jump_point_image', 'option');
                             $jumppoint_text = get_sub_field('jump_point_text', 'option');
@@ -155,7 +156,9 @@ get_header();
                             ?>
                         <li <?php echo $jp_first;?>>
                                 <a href="<?php echo site_url().'/type_products/'.$category_link.'/';?>">    
-                                    <img src="<?php echo $jumppoint_image['url']; ?>"/></a>
+                                    <img src="<?php echo $jumppoint_image['url']; ?>"/>
+                                   <!-- <?php if($jp_first){?><img src="<?php echo bloginfo('template_directory').'/img/valves_plumbing.jpg';?>"/>  <?php }  ?> -->
+                                </a>
                                 <p><?php echo $jumppoint_text; ?></p>
                             </li>
 
