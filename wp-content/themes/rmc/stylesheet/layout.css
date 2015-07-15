@@ -590,6 +590,10 @@ p {
     max-width: 225px; }
   .products-category-content #matthews-firealarm {
     max-height: 120px; }
+  .products-category-content #matthews-firealarm-mobile {
+    display: none; }
+  .products-category-content .product-logo-mobile {
+    display: none; }
   .products-category-content h3 {
     padding: 0px 13%;
     font-size: 14px; }
@@ -886,8 +890,7 @@ hr {
     .footer-wrapper .scrop-top-wrap .scroll-to-top:hover {
       cursor: pointer; }
   .footer-wrapper .social-media {
-    margin-top: 5px;
-    padding-left: 8px; }
+    margin-top: 5px; }
     .footer-wrapper .social-media p {
       font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
       font-size: 12px;
@@ -1160,7 +1163,20 @@ hr {
 
   /* location wrap*/
   .products-category-content .search-product .search-left, .products-category-content .search-product .search-right {
-    padding-right: 0; } }
+    padding-right: 0; }
+
+  #matthews-firealarm {
+    display: none; }
+
+  #matthews-firealarm-mobile {
+    display: initial !important;
+    max-height: 120px; }
+
+  .product-logo {
+    display: none; }
+
+  .product-logo-mobile {
+    display: initial !important; } }
 @media (max-width: 590px) {
   .item {
     height: 208px; }
@@ -1196,7 +1212,7 @@ hr {
   /* locations-wrap */ }
 @media (max-width: 400px) {
   h1 {
-    font-size: 36px; }
+    font-size: 32px; }
 
   .header .logo img {
     width: 150%; }
