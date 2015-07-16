@@ -6,23 +6,15 @@ get_header();
 <div class="container-fluid products-category-wrap results">
     <div class="container products-category-content">
         <h1><?php echo get_queried_object()->name; ?>
-        <?php if(get_queried_object()->slug === "tubefit"){?>
-        <img class="product-logo" src="<?php echo bloginfo('template_directory').'/img/tubefitindustrial.jpg';?>"/>
-        <?php } ?>
+        </h1>
         <?php if(get_queried_object()->slug === "matthews-fire-alarm"){?>
         <img class="product-logo" id="matthews-firealarm" src="<?php echo bloginfo('template_directory').'/img/matthews_firealarm.jpg';?>"/>
         <?php } ?>
         <?php if(get_queried_object()->slug === "other-fittings"){?>
         <img class="product-logo" src="<?php echo bloginfo('template_directory').'/img/ryemetal.jpg';?>"/>
-        <?php } ?></h1>
-        <?php if(get_queried_object()->slug === "matthews-fire-alarm"){?>
-        <img class="product-logo" id="matthews-firealarm-mobile" src="<?php echo bloginfo('template_directory').'/img/matthews_firealarm.jpg';?>"/>
-        <?php } ?>
-        <?php if(get_queried_object()->slug === "other-fittings"){?>
-        <img class="product-logo product-logo-mobile" src="<?php echo bloginfo('template_directory').'/img/ryemetal.jpg';?>"/>
         <?php } ?>
         <?php if(get_queried_object()->slug === "tubefit"){?>
-        <img class="product-logo product-logo-mobile" src="<?php echo bloginfo('template_directory').'/img/tubefitindustrial.jpg';?>"/>
+        <img class="product-logo" src="<?php echo bloginfo('template_directory').'/img/tubefitindustrial.jpg';?>"/>
         <?php } ?>
         <h3><?php echo get_queried_object()->description; ?></h3>
         <p>Filter Products</p>

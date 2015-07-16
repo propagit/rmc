@@ -10,6 +10,12 @@
 /* grey - news carousel indicator bg*/
 /* grey - news carousel indicator heading span*/
 @font-face {
+  font-family: 'swiss_721black';
+  src: url("../fonts/swiss_721_black-webfont.eot");
+  src: url("../fonts/swiss_721_black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/swiss_721_black-webfont.woff2") format("woff2"), url("../fonts/swiss_721_black-webfont.woff") format("woff"), url("../fonts/swiss_721_black-webfont.ttf") format("truetype"), url("../fonts/swiss_721_black-webfont.svg#swiss_721black") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
   font-family: GillSansStd-Bold;
   src: url("../fonts/GillSansStd-Bold.otf"); }
 @font-face {
@@ -52,7 +58,7 @@
     Text headers configuration
 */
 h1 {
-  font-family: 'GillSansStd-Bold';
+  font-family: 'swiss_721black', 'Arial Black', 'Arial Bold', sans-serif;
   font-size: 50px;
   line-height: 55px;
   font-weight: 600;
@@ -586,14 +592,10 @@ p {
   padding-top: 20px; }
   .products-category-content .product-logo {
     max-height: 40px;
-    padding-left: 15px;
+    margin: 10px 0;
     max-width: 225px; }
   .products-category-content #matthews-firealarm {
     max-height: 120px; }
-  .products-category-content #matthews-firealarm-mobile {
-    display: none; }
-  .products-category-content .product-logo-mobile {
-    display: none; }
   .products-category-content h3 {
     padding: 0px 13%;
     font-size: 14px; }
@@ -1163,20 +1165,7 @@ hr {
 
   /* location wrap*/
   .products-category-content .search-product .search-left, .products-category-content .search-product .search-right {
-    padding-right: 0; }
-
-  #matthews-firealarm {
-    display: none; }
-
-  #matthews-firealarm-mobile {
-    display: initial !important;
-    max-height: 120px; }
-
-  .product-logo {
-    display: none; }
-
-  .product-logo-mobile {
-    display: initial !important; } }
+    padding-right: 0; } }
 @media (max-width: 590px) {
   .item {
     height: 208px; }

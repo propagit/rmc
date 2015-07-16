@@ -68,6 +68,7 @@ get_header();
                         <th class="download">Download</th>
                     </tr>
                 </thead>
+                <tbody class="searchable">
                 <?php
                 $args = array(
                     'post_type' => 'products',
@@ -93,7 +94,7 @@ get_header();
                             while (have_rows('brochures')):the_row();
                                 $brochure = get_sub_field('brochure_file');
                                 ?>
-                                <tbody class="searchable">
+                                
                                     <tr>
                                         <td>
                                             <p><?php echo $name; ?></p>
@@ -150,7 +151,7 @@ get_header();
     });
 </script>
 <script>
-$(document).ready(function(){
+/* $(document).ready(function(){
     $('#resources').dataTable({
         aaSorting: [[2, 'asc']],
         bPaginate: false,
@@ -166,7 +167,14 @@ $(document).ready(function(){
             { "aTargets": [ 4 ], "bSortable": false }
         ]
     }); 
-});
+}); */
+$(document).ready(function() {
+    $('#resources').dataTable( {
+        ordering: true,
+        order: [[ 1, "desc" ]]
+        
+    } );
+} );
 </script>
 
 
