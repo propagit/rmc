@@ -333,7 +333,7 @@ p {
       font-size: 38px;
       color: white;
       letter-spacing: 0;
-      padding: 0px 20%;
+      padding: 0px 15%;
       margin-top: 40px; }
 
 .carousel {
@@ -1223,13 +1223,13 @@ hr {
 
   .item .item-text h1 {
     line-height: 25px;
-    font-size: 20px;
-    padding: 0px 7%;
+    font-size: 18px;
+    padding: 0px 3%;
     margin-top: 55px; }
   .item .item-text h2 {
     line-height: 18px;
-    font-size: 18px;
-    padding: 0px 10%; }
+    font-size: 16px;
+    padding: 0px 4%; }
 
   .footer-wrapper .footer-logo-wrap .footer-logo img {
     max-height: 200px; }
