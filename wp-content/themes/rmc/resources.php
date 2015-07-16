@@ -171,7 +171,9 @@ get_header();
 $(document).ready(function() {
     $('#resources').dataTable( {
         ordering: true,
-        order: [[ 1, "desc" ]]
+        order: [[ 1, "desc" ]],
+        bLengthChange: false,
+        bPaginate: false
         
     } );
 } );

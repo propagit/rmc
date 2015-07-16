@@ -387,17 +387,19 @@ $nav_height:65px;
         }
 
         h1{
-            font-family: 'GillSansStd-Bold';
+            //font-family: 'GillSansStd-Bold';
+            font-family: 'swiss_721black', 'Arial Black', 'Arial Bold', sans-serif;
             color: white;
             text-align:center;
-            padding:0px 18%;
+            padding:0px 10%;
             margin-top:90px;
             letter-spacing:0.5px;
             font-size:53px;
             //font-size: 2.8vw;
         }
         h2{
-            font-family: 'GillSansStd-Light';
+            //font-family: 'GillSansStd-Light';
+            font-family: $font-arial;
             font-size:38px;
             //font-size: 2vw;
             color: white;
@@ -751,7 +753,8 @@ $carousel_nav_dim:35px;
     padding-top: 20px;
     .product-logo{
         max-height: 40px;
-        margin: 10px 0;
+        margin-top: 30px;
+        margin-bottom: 10px;
         max-width: 225px;
     }
     #matthews-firealarm{
