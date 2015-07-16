@@ -526,6 +526,8 @@ p {
         height: 100%; }
       .resources-wrap .resources-content .resources-top-part .resources-right-wrap .resources-video p {
         margin-top: 2%; }
+  .resources-wrap .resources-content .dataTables_filter {
+    display: none !important; }
   .resources-wrap .resources-content .resources-table {
     margin-top: 10px;
     margin-bottom: 10px;
