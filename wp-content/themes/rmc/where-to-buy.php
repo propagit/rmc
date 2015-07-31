@@ -194,6 +194,5 @@ get_header();
 </script>
 
 <?php
-            import_stores();
 get_footer();
 ?>

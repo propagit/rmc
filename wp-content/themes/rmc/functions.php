@@ -513,8 +513,8 @@ function send_mail() {
 
 function import_stores()
 {
-//die();
-//exit;	
+die();
+exit;	
 /* import stores */
 
 
@@ -542,8 +542,8 @@ function import_stores()
 		//$post_ID_auto_increment = 365;
                 $post_ID_auto_increment = 2141;
 		$count = 0;
-		#if(0){
-		if (($handle = fopen($file, "r")) !== FALSE) {
+		if(0){
+		#if (($handle = fopen($file, "r")) !== FALSE) {
    			 while (($data = fgetcsv($handle, 5000, ",")) !== FALSE) {
         		
 				#echo '<pre>'.print_r($data,true).'</pre><br>';	
