@@ -513,8 +513,8 @@ function send_mail() {
 
 function import_stores()
 {
-die();
-exit;	
+//die();
+//exit;	
 /* import stores */
 
 
@@ -532,16 +532,18 @@ exit;
 		# incase the csv all comes as one big array
 		# - open document as UTF 8 in text editor and save that should fix that
 		#$wpdb = new wpdb(wp_db_uname,wp_db_pword,wp_db,'localhost');
-		$file = get_theme_root().'/rmc/csv/rmc_stores.csv';
+		$file = get_theme_root().'/rmc/csv/rmc_stores_new.csv';
 		/*if (($handle = fopen($file, "r")) !== FALSE) {
    			 while (($data = fgetcsv($handle, 5000, ",")) !== FALSE) {
 				echo '<pre>'.print_r($data,true).'</pre><br>';	 
 			 }
 		}*/
-		$post_ID_auto_increment = 365;
+                
+		//$post_ID_auto_increment = 365;
+                $post_ID_auto_increment = 2141;
 		$count = 0;
-		if(0){
-		#if (($handle = fopen($file, "r")) !== FALSE) {
+		#if(0){
+		if (($handle = fopen($file, "r")) !== FALSE) {
    			 while (($data = fgetcsv($handle, 5000, ",")) !== FALSE) {
         		
 				#echo '<pre>'.print_r($data,true).'</pre><br>';	
@@ -572,15 +574,15 @@ exit;
 					add_post_meta( $insert_id, '_edit_last', 1 );
 					add_post_meta( $insert_id, '_edit_lock', time() . ':' . 1 );
 					add_post_meta( $insert_id, 'suburb', trim(ucwords(strtolower($data[4]))));
-					add_post_meta( $insert_id, '_suburb','field_558a44f7c014a'); # local field_558a44f7c014a # live field_558cab98e013a
+					add_post_meta( $insert_id, '_suburb','field_558cab98e013a'); # zack field_558d0229fee0b # local field_558a44f7c014a # live field_558cab98e013a
 					add_post_meta( $insert_id, 'state', trim(strtoupper($data[5])));
-					add_post_meta( $insert_id, '_state','field_558a4507c014b' ); # local field_558a4507c014b # live field_558cabaee013b
+					add_post_meta( $insert_id, '_state','field_558cabaee013b' ); # zack field_558d023dfee0c # local field_558a4507c014b # live field_558cabaee013b
 					add_post_meta( $insert_id, 'postcode', trim(ucwords(strtolower($data[6]))));
-					add_post_meta( $insert_id, '_postcode','field_558a457ac014c'); # local field_558a457ac014c # live field_558cabe4e013c
+					add_post_meta( $insert_id, '_postcode','field_558cabe4e013c'); # zack field_558d025dfee0d # local field_558a457ac014c # live field_558cabe4e013c
 					add_post_meta( $insert_id, 'address_1',trim(ucwords(strtolower($data[2]))));
-					add_post_meta( $insert_id, '_address_1', 'field_558a44dac0149' ); # local field_558a44dac0149 # field_558cab74e0138
+					add_post_meta( $insert_id, '_address_1', 'field_558cab74e0138' ); # zack field_558d01f4fee09 # local field_558a44dac0149 # field_558cab74e0138
 					add_post_meta( $insert_id, 'address_2', trim(ucwords(strtolower($data[3]))));
-					add_post_meta( $insert_id, '_address_2','field_558b9c3887f55'); # local field_558b9c3887f55 # field_558cab90e0139
+					add_post_meta( $insert_id, '_address_2','field_558cab90e0139'); # zack field_558d021afee0a # local field_558b9c3887f55 # field_558cab90e0139
 				
 				} # if insert id
 
