@@ -66,6 +66,7 @@ get_header();
                     <span class="f-logo">
                         <img <?php if ($i == 6) {?>class="custom-image"<?php } ?> src="<?php echo $image['url']; ?>"/>
                     </span>
+                    $i++;
                     <?php
                 } # while
             } # if
