@@ -55,6 +55,7 @@ get_header();
 
         <div class="suppliers">
             <?php
+            $i = 0;
             if (have_rows('suppliers', 'option')) {
                 while (have_rows('suppliers', 'option')) {
                     the_row();
@@ -63,7 +64,7 @@ get_header();
                     #$desc = get_sub_field('description', 'option');
                     ?>
                     <span class="f-logo">
-                        <img src="<?php echo $image['url']; ?>"/>
+                        <img <?php if ($i == 6) {?>class="custom-image"<?php } ?> src="<?php echo $image['url']; ?>"/>
                     </span>
                     <?php
                 } # while
