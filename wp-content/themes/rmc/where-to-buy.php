@@ -64,7 +64,7 @@ get_header();
                     #$desc = get_sub_field('description', 'option');
                     ?>
                     <span class="f-logo">
-                        <img <?php if ($i == 6) {?>class="custom-image"<?php } ?> src="<?php echo $image['url']; ?>"/>
+                        <img <?php if ($i == 5) {?>class="custom-image"<?php } ?> src="<?php echo $image['url']; ?>"/>
                     </span>
                     
                     <?php
