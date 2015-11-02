@@ -1503,6 +1503,15 @@ $v_carousel_height:370px;
             }
         }
     }
+    .jump-points-wrapper{
+        .jump-points{
+            ul{
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
 }
 
 @media(max-width: 991px){
@@ -1536,6 +1545,15 @@ $v_carousel_height:370px;
             ul{
                 li{
                     padding: 0px 1%;
+                }
+            }
+        }
+    }
+    .jump-points-wrapper{
+        .jump-points{
+            ul{
+                p{
+                    font-size: 11px;
                 }
             }
         }
