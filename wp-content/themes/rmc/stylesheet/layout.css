@@ -392,25 +392,36 @@ p {
   text-align: center; }
   .jump-points-wrapper .jump-points ul {
     list-style: none;
+    border-left: 1px solid #e9e9e9;
     width: 100%; }
     .jump-points-wrapper .jump-points ul li {
       display: inline-block;
       border-right: 1px solid #e9e9e9;
+      border-left: 1px solid #e9e9e9;
       border-bottom: 1px solid #e9e9e9;
       width: 24.99%;
       margin-left: -3.9px; }
       .jump-points-wrapper .jump-points ul li img {
         margin-top: 20px;
-        max-height: 89px; }
+        max-height: 53px; }
     .jump-points-wrapper .jump-points ul p {
       color: #707070;
       font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
       font-size: 16px;
-      line-height: 25px; }
+      line-height: 25px;
+      padding-top: 10px; }
     .jump-points-wrapper .jump-points ul #jp-first {
       border-left: 1px solid #e9e9e9;
       margin-left: 0px;
-      text-align: center; }
+      text-align: center;
+      border-right: none; }
+      .jump-points-wrapper .jump-points ul #jp-first img {
+        width: 80%; }
+    .jump-points-wrapper .jump-points ul #jp-third {
+      border-left: none;
+      border-right: none; }
+      .jump-points-wrapper .jump-points ul #jp-third img {
+        width: 80%; }
 
 /**
     About RMC Page

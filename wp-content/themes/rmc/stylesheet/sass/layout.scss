@@ -487,10 +487,12 @@ $carousel_nav_dim:35px;
         text-align: center;
         ul{
             list-style: none;
+            border-left: 1px solid #e9e9e9;
             width: 100%;
             li{
                 display: inline-block; 
                 border-right: 1px solid #e9e9e9;
+                border-left: 1px solid #e9e9e9;
                 border-bottom: 1px solid #e9e9e9;
                 width: 24.99%;
                 margin-left: -3.9px;
@@ -498,7 +500,7 @@ $carousel_nav_dim:35px;
                     margin-top: 20px;
                     // width: 163px;
                     // height: 100px;
-                    max-height: 89px;
+                    max-height: 53px;
 
                 }
             }
@@ -507,11 +509,23 @@ $carousel_nav_dim:35px;
                 font-family: $font-arial;
                 font-size: 16px;
                 line-height: 25px;
+                padding-top: 10px;
             }
             #jp-first{
                 border-left: 1px solid #e9e9e9;
                 margin-left: 0px;
                 text-align: center;
+                border-right: none;
+                img{
+                    width: 80%;
+                }
+            }
+            #jp-third{
+                border-left: none;
+                border-right: none;
+                img{
+                    width: 80%;
+                }
             }
         }
     }
