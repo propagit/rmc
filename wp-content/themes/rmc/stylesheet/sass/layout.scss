@@ -485,6 +485,7 @@ $carousel_nav_dim:35px;
     }
     .jump-points{
         text-align: center;
+        margin-top: -5px;
         ul{
             list-style: none;
             border-left: 1px solid #e9e9e9;
@@ -500,7 +501,8 @@ $carousel_nav_dim:35px;
                     margin-top: 20px;
                     // width: 163px;
                     // height: 100px;
-                    max-height: 53px;
+                    //max-height: 53px;
+                    max-height: 52px;
 
                 }
             }
@@ -517,14 +519,21 @@ $carousel_nav_dim:35px;
                 text-align: center;
                 border-right: none;
                 img{
-                    width: 80%;
+                    //width: 80%;
+                    width: 65%;
+                }
+            }
+            #jp-second{
+                img{
+                    max-height: 47px;
                 }
             }
             #jp-third{
                 border-left: none;
                 border-right: none;
                 img{
-                    width: 80%;
+                    //width: 80%;
+                    width: 75%;
                     margin-top: -30px;
                     margin-left: 10px;
                 }
